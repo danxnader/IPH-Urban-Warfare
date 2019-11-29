@@ -146,13 +146,7 @@
 	name = "9mm submachine gun"
 	desc = "The WT-550 Saber is a cheap self-defense weapon, mass-produced by Ward-Takahashi for paramilitary and private use. Uses 9mm rounds."
 	icon_state = "wt550"
-	var/image/I = image(icon,src,"stock") //Add the stock to it.
-	I.pixel_x = -30
-	overlays += I
-
 	item_state = "wt550"
-	//safety_icon = "safety"
-	fire_sound = 'sound/weapons/gunshot/smgshot.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	caliber = "9mm"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
@@ -212,11 +206,9 @@
 	allowed_magazines = /obj/item/ammo_magazine/a762
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	safety_icon = "safety"
 	accuracy = 2
 	accuracy_power = 7
 	one_hand_penalty = 8
-	bulk = GUN_BULK_RIFLE
 	burst_delay = 1
 	wielded_item_state = "z8carbine-wielded"
 	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
