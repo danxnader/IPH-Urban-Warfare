@@ -256,7 +256,7 @@
 	name = "magazine (7.62mm)"
 	icon_state = "c762"
 	mag_type = MAGAZINE
-	caliber = "a556"
+	caliber = "a762"
 	matter = list(DEFAULT_WALL_MATERIAL = 1800)
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 25
