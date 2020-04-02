@@ -15,9 +15,9 @@ datum/preferences
 	S["name_is_always_random"]	>> pref.be_random_name
 	S["gender"]					>> pref.gender
 	S["age"]					>> pref.age
-	S["spawnpoint"]				>> pref.spawnpoint
+	//S["spawnpoint"]				>> pref.spawnpoint
 	S["OOC_Notes"]				>> pref.metadata
-	S["religion"]				>> pref.religion
+	//S["religion"]				>> pref.religion
 	//S["family"]					>> pref.family
 
 /datum/category_item/player_setup_item/general/basic/save_character(var/savefile/S)
@@ -25,9 +25,9 @@ datum/preferences
 	S["name_is_always_random"]	<< pref.be_random_name
 	S["gender"]					<< pref.gender
 	S["age"]					<< pref.age
-	S["spawnpoint"]				<< pref.spawnpoint
+	//S["spawnpoint"]				<< pref.spawnpoint
 	S["OOC_Notes"]				<< pref.metadata
-	S["religion"]				<< pref.religion
+	//S["religion"]				<< pref.religion
 	//S["family"]					<< pref.family
 
 /datum/category_item/player_setup_item/general/basic/sanitize_character()
@@ -38,9 +38,9 @@ datum/preferences
 	pref.real_name          = sanitize_name(pref.real_name, pref.species)
 	if(!pref.real_name || pref.real_name == "")
 		pref.real_name      = random_name(pref.gender, pref.species)
-	pref.spawnpoint         = sanitize_inlist(pref.spawnpoint, spawntypes(), initial(pref.spawnpoint))
+	//pref.spawnpoint         = sanitize_inlist(pref.spawnpoint, spawntypes(), initial(pref.spawnpoint))
 	pref.be_random_name     = sanitize_integer(pref.be_random_name, 0, 1, initial(pref.be_random_name))
-	if(!pref.religion)    pref.religion =  LEGAL_RELIGION
+	//if(!pref.religion)    pref.religion =  LEGAL_RELIGION
 
 /datum/category_item/player_setup_item/general/basic/content()
 	. = list()
@@ -98,6 +98,7 @@ datum/preferences
 			pref.age = max(min(round(text2num(new_age)), S.max_age), S.min_age)
 			return TOPIC_REFRESH
 
+/*
 	else if(href_list["spawnpoint"])
 		var/list/spawnkeys = list()
 		for(var/spawntype in spawntypes())
@@ -117,6 +118,7 @@ datum/preferences
 	else if(href_list["family"])
 		pref.family = !pref.family
 		return TOPIC_REFRESH
+*/
 	
 	else if(href_list["metadata"])
 		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , pref.metadata)) as message|null
