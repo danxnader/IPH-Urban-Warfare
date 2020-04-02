@@ -328,3 +328,58 @@
 		to_chat(user, "<span class='warning'>You need to open the cover to unload [src].</span>")
 		return
 	..()
+
+/obj/item/weapon/gun/projectile/automatic/ak74
+	name = "ak-74 rifle"
+	desc = "The rugged AK-74. Developed in 1974 and now used by both the Federals and Separatists on a daily basis. Uses 7.62 caliber ammo."
+	icon_state = "ak74"
+	item_state = null
+	w_class = ITEM_SIZE_HUGE
+	force = 11 //powerful
+	caliber = "a762"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c762
+	allowed_magazines = /obj/item/ammo_magazine/c762
+	one_hand_penalty = 4
+	wielded_item_state = "ak74-wielded"
+	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+	fire_sound = list('sound/weapons/newrifle.ogg','sound/weapons/newrifle2.ogg','sound/weapons/newrifle3.ogg')
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=6,    one_hand_penalty=5, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=6,    one_hand_penalty=6, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(0.6, 1.0, 1.2, 1.2, 1.5)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/ak74/update_icon()
+	icon_state = (ammo_magazine)? "ak74" : "ak74-empty"
+	wielded_item_state = (ammo_magazine)? "ak74-wielded" : "ak74-wielded-empty"
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/ak74/makeshift
+	name = "makeshift ak-74 rifle"
+	desc = "A poorly manufacted makeshift AK-74 rifle. Jams a lot and might not be as powerful as the original AK-74."
+	icon_state = "makeshiftak"
+	item_state = null
+	w_class = ITEM_SIZE_HUGE
+	force = 11 //powerful
+	caliber = "a762"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c762
+	allowed_magazines = /obj/item/ammo_magazine/c762
+	one_hand_penalty = 4
+	wielded_item_state = "ak74-wielded"
+	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+	fire_sound = list('sound/weapons/newrifle.ogg','sound/weapons/newrifle2.ogg','sound/weapons/newrifle3.ogg')
+
+/obj/item/weapon/gun/projectile/automatic/ak74/makeshift/update_icon()
+	icon_state = (ammo_magazine)? "makeshiftak" : "makeshiftak-empty"
+	wielded_item_state = (ammo_magazine)? "ak74-wielded" : "ak74-wielded-empty"
+	..()
