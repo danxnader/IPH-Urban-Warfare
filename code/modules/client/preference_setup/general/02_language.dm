@@ -1,6 +1,7 @@
 /datum/preferences
 	var/list/alternate_languages //Secondary language(s)
 
+/*
 /datum/category_item/player_setup_item/general/language
 	name = "Language"
 	sort_order = 2
@@ -89,3 +90,6 @@
 		pref.alternate_languages.Cut(S.num_alternate_languages + 1)
 
 	pref.alternate_languages = uniquelist(pref.alternate_languages)
+*/
+
+// Languages will be set for each side roundstart.
