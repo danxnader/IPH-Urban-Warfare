@@ -93,8 +93,19 @@
 	item_state = "sabre"
 	force_divisor = 0.4
 	thrown_force_divisor = 0.4
-	block_chance = 50
+	block_chance = 40
 
+/obj/item/weapon/material/sword/zweihander
+	name = "Zweihander"
+	desc = "A quite heavy sword."
+	icon_state = "zweihander"
+	item_state = "zweihander"
+	force_divisor = 0.8
+	thrown_force_divisor = 0.2
+	block_chance = 50
+	w_class = ITEM_SIZE_HUGE
+	weapon_speed_delay = 30
+	slot_flags = SLOT_BELT | SLOT_BACK
 
 /obj/item/weapon/material/sword/combat_knife
 	name = "combat knife"
