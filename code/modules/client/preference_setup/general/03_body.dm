@@ -247,12 +247,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 					. += "\tMachine-interface [organ_name]"
 				else
 					. += "\tMechanically assisted [organ_name]"
-/*
 	if(!ind)
 		. += "\[...\]<br><br>"
 	else
 		. += "<br><br>"
-*/ // Why was this even in
+//i see why
 
 	. += "</td><td><b>Preview</b><br>"
 	. += "<div class='statusDisplay'><center><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></center></div>"
