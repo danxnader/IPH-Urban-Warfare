@@ -200,3 +200,10 @@
 	icon_state = "wardenblueclothes"
 	item_state = "ba_suit"
 	worn_state = "wardenblueclothes"
+
+/obj/item/clothing/under/uniform/federal
+	name = "federal soldier uniform"
+	desc = "A green military uniform."
+	icon_state = "federal"
+	item_state = "federal"
+	worn_state = "federal"
