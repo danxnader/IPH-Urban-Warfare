@@ -188,7 +188,7 @@
 	desc = "A simple, solid color beret. This one has no emblems or insignia on it."
 	icon_state = "beret_white"
 
-/obj/item/clothing/head/beret/plaincolor
-	name = "beret"
-	desc = "A simple, solid color beret. This one has no emblems or insignia on it."
+/obj/item/clothing/head/cap/federal
+	name = "federla cap"
+	desc = "A simple cap in a lush camouflage."
 	icon_state = "federal_cap"
