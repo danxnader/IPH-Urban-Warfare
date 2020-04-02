@@ -80,3 +80,6 @@
 
 /turf/simulated/wall/other_gwall
 	icon = 'icons/turf/gwalls.dmi'
+
+/turf/simulated/wall/brick
+	icon_state = "brick"
