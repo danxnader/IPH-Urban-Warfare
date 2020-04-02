@@ -46,7 +46,7 @@
 	if(!pref.faction)    		pref.faction =     "None"
 	//if(!pref.religion)    		pref.religion =    "None"
 
-	pref.nanotrasen_relation = sanitize_inlist(pref.nanotrasen_relation, COMPANY_ALIGNMENTS, initial(pref.nanotrasen_relation))
+	//pref.nanotrasen_relation = sanitize_inlist(pref.nanotrasen_relation, COMPANY_ALIGNMENTS, initial(pref.nanotrasen_relation))
 
 /datum/category_item/player_setup_item/general/background/content(var/mob/user)
 	. += "<b>Background Information</b><br>"
@@ -92,7 +92,7 @@
 		return TOPIC_REFRESH
 */
 
-	else if(href_list["citizenship"])
+	if(href_list["citizenship"])
 		var/choice = input(user, "Please choose your current citizenship.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.citizenship) as null|anything in GLOB.using_map.citizenship_choices + list("None","Other")
 		if(!choice || !CanUseTopic(user))
 			return TOPIC_NOACTION

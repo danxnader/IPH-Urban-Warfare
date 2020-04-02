@@ -286,10 +286,10 @@ datum/preferences
 	character.gen_record = gen_record
 	character.exploit_record = exploit_record
 
-	character.home_system = home_system
+	//character.home_system = home_system
 	character.citizenship = citizenship
 	character.personal_faction = faction
-	character.religion = religion
+	//character.religion = religion
 
 	if(!character.isSynthetic())
 		character.nutrition = rand(140,360)

@@ -33,6 +33,7 @@ var/global/datum/matchmaker/matchmaker = new()
 	for(var/mob/M in to_warn)
 		to_chat(M,"<span class='warning'>You have new connections. Use \"See Relationship Info\" to view and finalize them.</span>")
 
+/*
 //This is where the families are made.  This is basically the big driver of everything.
 /datum/matchmaker/proc/do_family_matchmaking()
 	var/total_familes = round(GLOB.player_list.len * 0.2) + 1  // How many families we want Makes around 1 family per 4 people, and always at least on family
@@ -49,7 +50,7 @@ var/global/datum/matchmaker/matchmaker = new()
 	//Now that familes are created, add any left over humans to them
 	for(var/mob/living/carbon/human/H in player_list_copy)
 		var/datum/family/F = pick(families)
-		F.add_member(H)
+		F.add_member(H)*/
 	/* //Prints familes and memebers
 	for(var/datum/family/F in families)
 		to_world("Families head: [F.family_head.mind] Families last name = [F.name] Memebers are:")

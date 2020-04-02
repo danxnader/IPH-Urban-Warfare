@@ -76,6 +76,7 @@
 	if(!account_allowed || (H.mind && H.mind.initial_account))
 		return
 
+/*
 	var/loyalty = 1
 	if(H.client)
 		switch(H.client.prefs.nanotrasen_relation)
@@ -88,10 +89,11 @@
 	//give them an account in the station database
 	if(!(H.species && (H.species.type in economic_species_modifier)))
 		return //some bizarre species like shadow, slime, or monkey? You don't get an account.
+*/
 
 	var/species_modifier = economic_species_modifier[H.species.type]
 
-	var/money_amount = (rand(5,50) + rand(5, 50)) * loyalty * economic_modifier * species_modifier * GLOB.using_map.salary_modifier
+	var/money_amount = (rand(5,50) + rand(5, 50)) * economic_modifier * species_modifier * GLOB.using_map.salary_modifier
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null)
 	if(H.mind)
 		var/remembered_info = ""

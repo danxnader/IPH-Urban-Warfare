@@ -95,14 +95,16 @@ var/datum/antagonist/traitor/traitors
 	give_intel(traitor_mob)
 
 /datum/antagonist/traitor/proc/give_intel(mob/living/traitor_mob)
-	give_collaborators(traitor_mob)
+	//give_collaborators(traitor_mob)
 	give_codewords(traitor_mob)
 
+/*
 /datum/antagonist/traitor/proc/give_collaborators(mob/living/traitor_mob)
 	var/mob/living/carbon/human/M = get_nt_opposed()
 	if(M && M != traitor_mob)
 		to_chat(traitor_mob, "We have received credible reports that [M.real_name] might be willing to help our cause. If you need assistance, consider contacting them.")
 		traitor_mob.mind.store_memory("<b>Potential Collaborator</b>: [M.real_name]")
+*/
 
 /datum/antagonist/traitor/proc/give_codewords(mob/living/traitor_mob)
 	to_chat(traitor_mob, "<u><b>Your employers provided you with the following information on how to identify possible allies:</b></u>")
