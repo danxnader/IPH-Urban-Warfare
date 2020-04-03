@@ -12,7 +12,7 @@
 	//minimal_access = list(
 	//minimal_player_age = 18
 	ideal_character_age = 21
-	//outfit_type = /decl/hierarchy/outfit/job/federal/soldier
+	outfit_type = /decl/hierarchy/outfit/job/federal/soldier
 
 /datum/job/federalmedic
 	title = "Federal Medic"
