@@ -180,33 +180,29 @@ client
 	titles += "<center>[jointext(staff,"<br>")]</center>"
 	if(goodboys.len)
 		titles += "<center>STAFF'S GOOD BOYS:<br>[english_list(goodboys)]</center><br>"
-	
+
 
 	//Add round end stats to ticker
 	//These need to be in two vars because ???????????  But it doesn't print the two lines when it's in one var
 	var/end_round_stat1 =  "The floor was shit on [GLOB.shit_left] times.<br>\
 							The floor was pissed on [GLOB.piss_left] times.<br>"
-							
+
 	var/end_round_stat2 =  "[GLOB.total_deaths] people were lost in the meatgrinder in total.<br>\
 							[GLOB.total_orgasms] filthy bandits came during the battle.<br>\
 							//[GLOB.deaths_in_space] people died in space.<br>\
 						 	[GLOB.teeth_lost] teeth were lost.<br>"
-							
+
 	titles += "<center>[end_round_stat1]</center>"
 	titles += "<center>[end_round_stat2]</center>"
 
 
 	var/disclaimer = "<br>Sponsored by [GLOB.using_map.company_name].<br>All rights reserved.<br>\
-					 This motion picture is protected under the copyright laws of the Federation<br>, which are used everywhere throughout Earth.<br>\
+					 This motion picture is protected under the copyright laws of the Federation<br>, which are used everywhere throughout Earth.<br>"
 					 //Colony of First Publication: [pick("Mars", "Luna", "Earth", "Venus", "Phobos", "Ceres", "Tiamat", "Ceti Epsilon", "Eos", "Pluto", "Ouere",\
 					 //"Lordania", "Kingston", "Cinu", "Yuklid V", "Lorriman", "Tersten", "Gaia")].<br>"
 	disclaimer += pick("Use for parody prohibited.",
 					   "All stunts were performed by underpaid interns. Do NOT try at home.",
 					   "[GLOB.using_map.company_name] does not endorse behaviour depicted. Attempt at your own risk.",
-						"The story, all names, characters, and incidents portrayed in this production are fictitious. No identification with actual<br>\
-						persons (living or deceased), places, buildings, and products is intended or should be inferred.<br>\
-						This film is based on a true story and all individuals depicted are based on real people, despite what we just said.",
-						"No person or entity associated	with this film received payment or anything of value, or entered into any agreement.<br>\"
 						"No animals were harmed in the making of this motion picture except for those listed previously as dead. Do not try this at home.")
 	titles += "<center>[disclaimer]</center>"
 

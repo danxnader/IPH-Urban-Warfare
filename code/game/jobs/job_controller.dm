@@ -55,6 +55,16 @@ var/global/datum/controller/occupations/job_master
 				GLOB.service_positions |= job.title
 			if(job.department_flag & CIV)
 				GLOB.civilian_positions |= job.title
+			if(job.department_flag & FDR)
+				GLOB.civilian_positions |= job.title
+			if(job.department_flag & SPR)
+				GLOB.civilian_positions |= job.title
+			if(job.department_flag & COMFDR)
+				GLOB.civilian_positions |= job.title
+			if(job.department_flag & COMSPR)
+				GLOB.civilian_positions |= job.title
+			if(job.department_flag & CVL)
+				GLOB.civilian_positions |= job.title
 			if(job.department_flag & MSC)
 				GLOB.nonhuman_positions |= job.title
 
@@ -454,9 +464,9 @@ var/global/datum/controller/occupations/job_master
 					return H.Robotize()
 				if("AI")
 					return H
-				if("Captain")
+				if("Federal General")
 					var/sound/announce_sound = (ticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-					captain_announcement.Announce("All hands, Captain [H.real_name] on deck!", new_sound=announce_sound)
+					captain_announcement.Announce("Attention, General [H.real_name] on the battlefield!", new_sound=announce_sound)
 
 		// put any loadout items that couldn't spawn into storage or on the ground
 		for(var/datum/gear/G in spawn_in_storage)
@@ -506,8 +516,8 @@ var/global/datum/controller/occupations/job_master
 			var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
 			EA.password = GenerateKey()
 			EA.login = 	complete_login
-			to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
-			H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
+			//to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
+			//H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].") //E-mails weren't popular in 1994-1999, I don't think.
 		// END EMAIL GENERATION
 
 		//Gives glasses to the vision impaired
@@ -625,17 +635,17 @@ var/global/datum/controller/occupations/job_master
 			tmp_str += "HIGH=[level1]|MEDIUM=[level2]|LOW=[level3]|NEVER=[level4]|BANNED=[level5]|YOUNG=[level6]|-"
 			feedback_add_details("job_preferences",tmp_str)
 
-	
+
 	proc/SetCombatMusic(var/mob/living/carbon/human/H, var/rank)
 		switch(rank)
-			if("Count" || "Viscount")
+			if("Federal General" || "Separatist Leader")
 				H.combat_music = GLOB.command_combat_music
-			if("Head of Security" || "Security Officer")
+			if("Separatist Grunt" || "Federal Soldier")
 				H.combat_music = GLOB.security_combat_music
 			if("Supreme Arbiter" || "Arbiter")
 				H.combat_music = GLOB.religion_combat_music
 			if("Jester")
-				H.combat_music = GLOB.jester_combat_music 
+				H.combat_music = GLOB.jester_combat_music
 			else
 				H.combat_music = GLOB.generic_combat_music
 /**
@@ -718,6 +728,16 @@ var/global/datum/controller/occupations/job_master
 		return "Service"
 	if(job.department_flag & EXP)
 		return "Exploration"
+	if(job.department_flag & FDR)
+		return "Federation"
+	if(job.department_flag & SPR)
+		return "Separatists"
+	if(job.department_flag & COMFDR)
+		return "Federal Command"
+	if(job.department_flag & COMSPR)
+		return "Separatist Command"
+	if(job.department_flag & CVL)
+		return "Civilians"
 	if(job.department_flag & CRH)
 		return "Inquisition"
 	return "Common"

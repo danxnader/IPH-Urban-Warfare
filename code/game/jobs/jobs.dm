@@ -9,7 +9,12 @@ var/const/SRV               =(1<<7)
 var/const/SUP               =(1<<8)
 var/const/SPT               =(1<<9)
 var/const/EXP               =(1<<10)
-var/const/CRH              =(1<<11)
+var/const/CRH               =(1<<11)
+var/const/FDR               =(1<<12)
+var/const/COMFDR               =(1<<13)
+var/const/SPR               =(1<<14)
+var/const/COMSPR               =(1<<15)
+var/const/CVL               =(1<<16)
 
 GLOBAL_LIST_EMPTY(assistant_occupations)
 
@@ -35,11 +40,21 @@ GLOBAL_LIST_EMPTY(support_positions)
 
 GLOBAL_LIST_EMPTY(exploration_positions)
 
+GLOBAL_LIST_EMPTY(federal_positions)
+
+GLOBAL_LIST_EMPTY(separatist_positions)
+
+GLOBAL_LIST_EMPTY(federalcommand_positions)
+
+GLOBAL_LIST_EMPTY(separatistcommand_positions)
+
+GLOBAL_LIST_EMPTY(civilians_positions)
+
 GLOBAL_LIST_EMPTY(unsorted_positions) // for nano manifest
 
 
 /proc/guest_jobbans(var/job)
-	return ((job in GLOB.command_positions) || (job in GLOB.nonhuman_positions) || (job in GLOB.security_positions))
+	return ((job in GLOB.command_positions) || (job in GLOB.nonhuman_positions) || (job in GLOB.security_positions)) || (job in GLOB.federal_positions) || (job in GLOB.separatist_positions)
 
 /proc/get_job_datums()
 	var/list/occupations = list()
