@@ -294,7 +294,7 @@ var/list/mob/living/forced_ambiance_list = new
 	else if(hum)
 		if(!L.client.ambience_playing)
 			L.client.ambience_playing = 1
-			L.playsound_local(T,sound('sound/ambience/NEambi.ogg', repeat = 1, wait = 0, volume = 70, channel = 2))
+			L.playsound_local(T,sound('sound/ambience/regenerator.ogg', repeat = 1, wait = 0, volume = 70, channel = 2))
 	else
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0
