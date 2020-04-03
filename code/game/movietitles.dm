@@ -1,4 +1,4 @@
-#define CREDIT_ROLL_SPEED 185
+#define CREDIT_ROLL_SPEED 205
 #define CREDIT_SPAWN_SPEED 20
 #define CREDIT_ANIMATE_HEIGHT (14 * world.icon_size)
 #define CREDIT_EASE_DURATION 22
@@ -187,9 +187,9 @@ client
 	var/end_round_stat1 =  "The floor was shit on [GLOB.shit_left] times.<br>\
 							The floor was pissed on [GLOB.piss_left] times.<br>"
 							
-	var/end_round_stat2 =  "[GLOB.total_deaths] people died in total.<br>\
-							[GLOB.total_orgasms] lucky spacemen came during the shift.<br>\
-							[GLOB.deaths_in_space] people died in space.<br>\
+	var/end_round_stat2 =  "[GLOB.total_deaths] people were lost in the meatgrinder in total.<br>\
+							[GLOB.total_orgasms] filthy bandits came during the battle.<br>\
+							//[GLOB.deaths_in_space] people died in space.<br>\
 						 	[GLOB.teeth_lost] teeth were lost.<br>"
 							
 	titles += "<center>[end_round_stat1]</center>"
@@ -197,20 +197,16 @@ client
 
 
 	var/disclaimer = "<br>Sponsored by [GLOB.using_map.company_name].<br>All rights reserved.<br>\
-					 This motion picture is protected under the copyright laws of the Kingdom<br>, which are used everywhere throughout the galaxy.<br>\
-					 Colony of First Publication: [pick("Mars", "Luna", "Earth", "Venus", "Phobos", "Ceres", "Tiamat", "Ceti Epsilon", "Eos", "Pluto", "Ouere",\
-					 "Lordania", "Kingston", "Cinu", "Yuklid V", "Lorriman", "Tersten", "Gaia")].<br>"
+					 This motion picture is protected under the copyright laws of the Federation<br>, which are used everywhere throughout Earth.<br>\
+					 //Colony of First Publication: [pick("Mars", "Luna", "Earth", "Venus", "Phobos", "Ceres", "Tiamat", "Ceti Epsilon", "Eos", "Pluto", "Ouere",\
+					 //"Lordania", "Kingston", "Cinu", "Yuklid V", "Lorriman", "Tersten", "Gaia")].<br>"
 	disclaimer += pick("Use for parody prohibited.",
 					   "All stunts were performed by underpaid interns. Do NOT try at home.",
 					   "[GLOB.using_map.company_name] does not endorse behaviour depicted. Attempt at your own risk.",
-					   "Any unauthorized exhibition, distribution, or copying of this film or any part thereof (including soundtrack)<br>\
-						may result in an ERT being called to storm your home and take it back by force.",
 						"The story, all names, characters, and incidents portrayed in this production are fictitious. No identification with actual<br>\
 						persons (living or deceased), places, buildings, and products is intended or should be inferred.<br>\
 						This film is based on a true story and all individuals depicted are based on real people, despite what we just said.",
-						"No person or entity associated	with this film received payment or anything of value, or entered into any agreement, in connection<br>\
-						with the depiction of tobacco products, despite the copious amounts	of smoking depicted within.<br>\
-						(This disclaimer sponsored by Carcinoma - Carcinogens are our Business!(TM)).",
+						"No person or entity associated	with this film received payment or anything of value, or entered into any agreement.<br>\"
 						"No animals were harmed in the making of this motion picture except for those listed previously as dead. Do not try this at home.")
 	titles += "<center>[disclaimer]</center>"
 

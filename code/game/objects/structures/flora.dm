@@ -16,6 +16,15 @@
 	..()
 	icon_state = "pine_[rand(1, 3)]"
 
+/obj/structure/flora/tree/snowpine
+	name = "snow pine tree"
+	icon = 'icons/obj/flora/pinetrees.dmi'
+	icon_state = "snowpine_1"
+
+/obj/structure/flora/tree/snowpine/New()
+	..()
+	icon_state = "snowpine_[rand(1, 3)]"
+
 /obj/structure/flora/tree/pine/xmas
 	name = "xmas tree"
 	icon = 'icons/obj/flora/pinetrees.dmi'
