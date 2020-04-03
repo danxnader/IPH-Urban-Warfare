@@ -844,6 +844,28 @@
 		reagents.add_reagent(/datum/reagent/nutriment/protein, 6)
 		bitesize = 3
 
+/obj/item/weapon/reagent_containers/food/snacks/donkpocket
+	name = "Hot Pocket Donk"
+	desc = "Everyone loves Donks! Will expire in 79 years!."
+	icon_state = "donk_olive"
+	center_of_mass = "x=16;y=10"
+
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
+		bitesize = 3
+
+/obj/item/weapon/reagent_containers/food/snacks/donkpocket_tan
+	name = "Hot Pocket Donk"
+	desc = "Everyone loves Donks! Will expire in 79 years!."
+	icon_state = "donk_tan"
+	center_of_mass = "x=16;y=10"
+
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
+		bitesize = 3
+
 /obj/item/weapon/reagent_containers/food/snacks/tofuburger
 	name = "Tofu Burger"
 	desc = "What.. is that meat?"
