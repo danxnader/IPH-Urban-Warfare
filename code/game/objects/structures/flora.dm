@@ -19,7 +19,7 @@
 /obj/structure/flora/tree/snowpine
 	name = "snow pine tree"
 	icon = 'icons/obj/flora/pinetrees.dmi'
-	icon_state = "snowpine_1"
+	icon_state = "snowpine_1" //please never use this tree sprite
 
 /obj/structure/flora/tree/snowpine/New()
 	..()
