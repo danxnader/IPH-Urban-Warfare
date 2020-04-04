@@ -84,9 +84,32 @@
 /turf/simulated/wall/brick
 	icon_state = "brick"
 
-/turf/simulated/wall/wooden
-	icon = 'icons/turf/woodenwalls.dmi'
-	icon_state = "wood0"
+/turf/simulated/wall/wood
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "wood_preview"
+	color = "#824B28"
 
-/turf/simulated/wall/wooden/New(var/newloc)
-	..(newloc,"wood")
+/turf/simulated/wall/wood/New(var/newloc)
+	icon_state = null
+	color = null
+	..(newloc, "wood")
+
+/turf/simulated/wall/concrete
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "concrete_preview"
+	color = "#CCCCCC"
+
+/turf/simulated/wall/concrete/New(var/newloc)
+	icon_state = null
+	color = null
+	..(newloc, "concrete")
+
+/turf/simulated/wall/armedconcrete
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "concrete_preview"
+	color = "#CCCCCC"
+
+/turf/simulated/wall/armedconcrete/New(var/newloc)
+	icon_state = null
+	color = null
+	..(newloc, "concrete", "steel")
