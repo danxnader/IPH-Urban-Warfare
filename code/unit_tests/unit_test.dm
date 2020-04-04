@@ -203,7 +203,7 @@ SUBSYSTEM_DEF(unit_tests)
 	//
 	//Start the Round.
 	//
-	world.save_mode("extended")
+	world.save_mode("urban warfare")
 	for(var/test_datum_type in get_test_datums())
 		queue += new test_datum_type
 	log_unit_test("[queue.len] unit tests loaded.")
