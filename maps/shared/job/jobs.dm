@@ -123,6 +123,11 @@
 						///datum/job/chaplain,
 						)
 
+/datum/map/example
+	allowed_jobs = list(
+						/datum/job/federalsoldier
+						)
+
 /datum/job/assistant
 	title = "Assistant"
 	supervisors = "Everyone"
@@ -672,7 +677,24 @@
 		H.add_stats(rand(3,6), rand(12,16), rand(6,9))
 		H.generate_skills("cleaning")
 		..()
+		if(!H.religion_is_legal())//So that they can't be heretics.
+			H.religion = LEGAL_RELIGION
 
+/datum/job/federalsoldier
+	title = "Federal Soldier"
+	department = "Federation"
+	department_flag = FDR
+	total_positions = 10
+	spawn_positions = 1
+	supervisors = "whoever is higher-ranked"
+	economic_modifier = 7
+	ideal_character_age = 21
+	outfit_type = /decl/hierarchy/outfit/job/federal/soldier
+
+	equip(var/mob/living/carbon/human/H)
+		H.generate_stats(STAT_ST)
+		H.generate_skills("melee","ranged")
+		
 */
 /*
 //OFF STATION JOBS
