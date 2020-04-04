@@ -38,7 +38,6 @@
 	var/pressure_alert = 0
 	var/temperature_alert = 0
 	var/heartbeat = 0
-	var/global/list/valid_coordinates = list()
 	var/mob/living/carbon/human/checking_coords[4]
 	var/mob/living/carbon/human/can_check_distant_coordinates = FALSE
 
@@ -80,9 +79,9 @@
 		handle_pain()
 
 		handle_medical_side_effects()
-		
+
 		handle_blood_pools()
-		
+
 		if(!client && !mind)
 			species.handle_npc(src)
 
@@ -749,7 +748,7 @@
 			if (chem_effects[CE_PAINKILLER] > 100)
 				healths.overlays.Cut()
 				healths.icon_state = "health_numb"
-			
+
 			else if(using_alt_hud)//If we're using Lunahud we want the lunahud health face.
 				var/mhealth = (getBruteLoss() + getFireLoss())
 				switch(mhealth)
@@ -1312,6 +1311,9 @@
 						return 0
 					else
 						return 0
+
+proc/check_coords_check()
+	return
 
 /mob/living/carbon/human/proc/check_coordinates()
 	set category = "Scout"

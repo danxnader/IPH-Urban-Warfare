@@ -13,7 +13,6 @@
 	//minimal_player_age = 18
 	ideal_character_age = 21
 	outfit_type = /decl/hierarchy/outfit/job/federal/soldier
-	spawn_location = "JoinLateFederal"
 
 /datum/job/federalmedic
 	title = "Federal Medic"
@@ -30,7 +29,6 @@
 	//minimal_player_age = 7
 	ideal_character_age = 26
 	//outfit_type = /decl/hierarchy/outfit/job/federal/medic
-	spawn_location = "JoinLateFederal"
 
 /datum/job/federalofficer
 	title = "Federal Officer"
@@ -45,7 +43,6 @@
 	//access = list(
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/federal/officer
-	spawn_location = "JoinLateFederal"
 
 /datum/job/federalgeneral
 	title = "Federal General"
@@ -63,4 +60,3 @@
 	//minimal_access = list(
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/federal/general
-	spawn_location = "JoinLateFederal"
