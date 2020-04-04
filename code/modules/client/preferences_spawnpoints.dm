@@ -37,7 +37,6 @@ GLOBAL_VAR(spawntypes)
 	. = ..()
 #endif
 
-/*
 /datum/spawnpoint/arrivals
 	display_name = "Arrivals Shuttle"
 	msg = "has arrived on the station"
@@ -76,7 +75,6 @@ GLOBAL_VAR(spawntypes)
 	display_name = DEFAULT_SPAWNPOINT_ID
 	msg = "has arrived on the station"
 	always_visible = TRUE
-*/
 
 /datum/spawnpoint/separatist
 	display_name = "Separatist Operating Base"
