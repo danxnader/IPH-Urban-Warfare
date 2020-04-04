@@ -39,8 +39,8 @@
 			attack_message = "mangles"
 			damage_dealt = 5
 
-	if(shock(user, 70))
-		return
+	//if(shock(user, 70))
+		//return
 
 	if(HULK in user.mutations)
 		damage_dealt += 5
@@ -89,3 +89,18 @@
 
 	src.health -= damage*0.2
 	spawn(0) healthcheck()
+
+/obj/structure/fence/proc/healthcheck()
+	if(health <= 0)
+		if(!destroyed)
+			set_density(0)
+			destroyed = 1
+			update_icon()
+			new /obj/item/stack/rods(get_turf(src))
+
+		else
+			if(health <= -6)
+				new /obj/item/stack/rods(get_turf(src))
+				qdel(src)
+				return
+	return
