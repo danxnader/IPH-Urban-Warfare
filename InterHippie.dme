@@ -2336,7 +2336,7 @@
 #include "code\modules\religion\religion_subsystem.dm"
 #include "code\modules\religion\religion_tools.dm"
 #include "code\modules\religion\request_rewards.dm"
-#include "code\modules\religion\old gods\greed.dm"
+#include "code\modules\religion\old gods\allah.dm"
 #include "code\modules\religion\old gods\old_god_shrines.dm"
 #include "code\modules\religion\old gods\old_god_spells.dm"
 #include "code\modules\research\circuitprinter.dm"
