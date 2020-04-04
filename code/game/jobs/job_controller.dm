@@ -71,6 +71,21 @@ var/global/datum/controller/occupations/job_master
 		return 1
 
 
+		all_fireteams = list()
+		not_full_fireteams = list()
+
+		add_fireteam(/datum/fireteam/federal_squad)
+		add_fireteam(/datum/fireteam/federal_squad)
+		add_fireteam(/datum/fireteam/federal_squad)
+
+		add_fireteam(/datum/fireteam/separatist_squad)
+		add_fireteam(/datum/fireteam/separatist_squad)
+		add_fireteam(/datum/fireteam/separatist_squad)
+
+
+		return 1
+
+
 	proc/Debug(var/text)
 		if(!Debug2)	return 0
 		job_debug.Add(text)
@@ -445,12 +460,12 @@ var/global/datum/controller/occupations/job_master
 		// If they're head, give them the account info for their department
 		if(H.mind && job.head_position)
 			var/remembered_info = ""
-			var/datum/money_account/department_account = department_accounts[job.department]
+			//var/datum/money_account/department_account = department_accounts[job.department]
 
-			if(department_account)
-				remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
-				remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
-				remembered_info += "<b>Your department's account funds are:</b> T[department_account.money]<br>"
+			//if(department_account)
+				//remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
+				//remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
+				//remembered_info += "<b>Your department's account funds are:</b> T[department_account.money]<br>"
 
 			H.mind.store_memory(remembered_info)
 
@@ -487,6 +502,10 @@ var/global/datum/controller/occupations/job_master
 
 		if(job.supervisors)
 			to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+
+		for(var/datum/fireteam/ft in not_full_fireteams)
+			if(ft.add_member(H, job))
+				break
 
 		to_chat(H, "<b>To speak on your department's radio channel use :h. For the use of other channels, examine your headset.</b>")
 
@@ -741,3 +760,26 @@ var/global/datum/controller/occupations/job_master
 	if(job.department_flag & CRH)
 		return "Inquisition"
 	return "Common"
+
+/datum/controller/occupations/proc/add_fireteam(fireteam_type)
+	var/datum/fireteam/newFT = new fireteam_type()
+
+	if(!istype(newFT))
+		qdel(newFT)
+		return
+
+	var/maxID = 0
+	for(var/datum/fireteam/ft in all_fireteams)
+		if(ft.type != newFT.type)
+			continue
+		if(ft.id >= maxID)
+			maxID = ft.id
+
+	if(maxID >= newFT.max_fireteams)
+		return
+
+	newFT.id = maxID + 1
+
+	all_fireteams.Add(newFT)
+	not_full_fireteams.Add(newFT)
+	newFT.init()
