@@ -188,3 +188,10 @@
 	pumpsound = 'sound/weapons/boltpump.ogg'
 	ammo_type = /obj/item/ammo_casing/a762
 	wielded_item_state = "rifle-wielded"
+
+/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks //CONTINUING THE UNDYING LEGACY OF BULLSHIT
+	name = "\improper SKS"
+	desc = "An old, ragged russian rifle which barely works at this point. Used only by the most poor and desperate (YOU)."
+	icon_state = "sks_open"
+	item_state = "sks_open"
+	jam_chance = 25 //this gun is BAAD
