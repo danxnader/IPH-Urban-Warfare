@@ -3,6 +3,10 @@
 
 
 // ===
+
+#define AREA_INSIDE 0
+#define AREA_OUTSIDE 1
+
 /area
 	var/global/global_uid = 0
 	var/uid
