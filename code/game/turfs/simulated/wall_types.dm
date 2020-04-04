@@ -83,3 +83,10 @@
 
 /turf/simulated/wall/brick
 	icon_state = "brick"
+
+/turf/simulated/wall/wooden
+	icon = 'icons/turf/woodenwalls.dmi'
+	icon_state = "wood0"
+
+/turf/simulated/wall/wooden/New(var/newloc)
+	..(newloc,"wood")
