@@ -5,7 +5,7 @@
 	desc = "A special baton, heated red hot by electricity for branding heretics, and other criminals. Activate it to select the brand."
 	icon_state = "brander"
 	item_state = "baton"
-	var/brand = "HERETIC"
+	var/brand = "SEPARATIST"
 
 
 
@@ -29,7 +29,7 @@
 
 /obj/item/weapon/brander/attack_self(mob/user)
 	..()
-	var/input = input(user,"Select Brand Type", "Brands") as null|anything in list("HERETIC", "THIEF", "RAPIST", "CRIMINAL")
+	var/input = input(user,"Select Brand Type", "Brands") as null|anything in list("SEPARATIST", "THIEF", "RAPIST", "CRIMINAL")
 	if(input)
 		brand = input
 
@@ -38,7 +38,8 @@
 //The machine
 /obj/machinery/arbiter_computer
 	var/mob/living/suspect
-	name = "Heretic scanner machine"
+	name = "Separatist Scanner machine"
+	desc = "Uses the power of rectal invasion to determine if someone is a heretic or not."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "arbiter_computer"
 	density = 1
