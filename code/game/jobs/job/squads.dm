@@ -29,17 +29,17 @@
 		if(new_name && new_name != code)
 			name = new_name
 			for(var/member in members)
-				member << "<b>Your fireteam [code] is now called \"[name]\".</b>"
+				to_chat(member, "<b>Your fireteam [code] is now called \"[name]\".</b>")
 	return 1
 
 /datum/fireteam/proc/greet_and_equip_member(var/mob/living/carbon/human/H)
 	var/remembered_info = ""
 	if(!name)
 		remembered_info += "<b><font size=3>You are in the [squad_type]</font></b>"
-		H << "<b><font size=3>You are in the [squad_type] [code]</font></b>"
+		to_chat(H, "<b><font size=3>You are in the [squad_type] [code]</font></b>")
 	else
 		remembered_info += "<b><font size=3>You are in the [squad_type] [code] \"[name]\</font></b>"
-		H << "<b><font size=3>You are in the [squad_type] [code] \"[name]\</font></b>"
+		to_chat(H, "<b><font size=3>You are in the [squad_type] [code] \"[name]\</font></b>")
 
 	H.mind.store_memory(remembered_info)
 

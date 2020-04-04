@@ -746,12 +746,12 @@ proc/establish_old_db_connection()
 			fd_fireteams++
 		if(ft.side == "Separatists")
 			sp_fireteams++
-	world << "<font size=3>Fireteams report: [sp_fireteams] Separatist full fireteams, [fd_fireteams] Federals full fireteams."
+	to_chat(world, "<font size=3>Fireteams report: [sp_fireteams] Separatist full fireteams, [fd_fireteams] Federals full fireteams.")
 	for(var/datum/fireteam/ft in job_master.all_fireteams)
 		var/text = "[get_side_name(ft.side)] - [ft.code]"
 		if(ft.name)
 			text += " called as \"[ft.name]\"."
-		world << "<font size=2>-[text]</font>"
+		to_chat(world, "<font size=2>-[text]</font>")
 	return 1
 
 /proc/get_side_name(var/side)

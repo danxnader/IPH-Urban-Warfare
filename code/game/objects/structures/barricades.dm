@@ -63,10 +63,10 @@
 	if(istype(W, /obj/item/weapon/shovel/))
 		if(anchored)
 			playsound(src.loc, 'sound/effects/rustle1.ogg', 100, 1)
-			user << "<span class='notice'>Now displacing the sandbags...</span>"
+			to_chat(user, "<span class='notice'>Now displacing the sandbags...</span>")
 			if(do_after(user, 40,src))
 				if(!src) return
-				user << "<span class='notice'>You displaced the sandbags!</span>"
+				to_chat(user, "<span class='notice'>You displaced the sandbags!</span>")
 				qdel(src)
 				new /obj/item/weapon/sandbag(src.loc)
 
@@ -78,10 +78,10 @@
 
 /obj/item/weapon/sandbag/attack_self(mob/user as mob)
 	if(sand_amount < 1)
-		user << "\red You need more sand to make wall."
+		to_chat(user, "\red You need more sand to make wall.")
 		return
 	else
-		user << "\red You begin to place the sandbags."
+		to_chat(user, "\red You begin to place the sandbags.")
 		if(do_after(user, 40, src))
 			var/obj/structure/sandbag/R = new (user.loc)
 			R.set_dir(user.dir)
@@ -93,22 +93,20 @@
 /obj/item/weapon/sandbag/attackby(obj/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/weapon/ore/glass))
 		if(sand_amount >= 1)
-			user << "\red [name] is full!"
+			to_chat(user, "\red [name] is full!")
 			return
 		user.drop_item()
 		qdel(O)
 		sand_amount++
 		w_class++
 		update_icon()
-		user << "You need [4 - sand_amount] more units."
+		to_chat(user, "You need [4 - sand_amount] more units.")
 
 /obj/item/weapon/sandbag/update_icon()
 	if(sand_amount >= 1)
 		icon_state = "sandbag"
 	else
 		icon_state = "sandbag_empty"
-
-//obj/item/weapon/ore/glass
 
 /obj/structure/foxhole
 	name = "foxhole"
@@ -138,7 +136,7 @@
 	cover = get_turf(src)
 	if(!cover)
 		return 1
-	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
+	if(get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
 
 	var/chance = 20
@@ -169,10 +167,10 @@
 	if(istype(W, /obj/item/weapon/shovel/))
 		if(anchored)
 			playsound('sound/effects/rustle1.ogg', 100, 1)
-			user << "<span class='notice'>Now displacing the foxhole...</span>"
+			to_chat(user, "<span class='notice'>Now displacing the foxhole...</span>")
 			if(do_after(user, 40,src))
 				if(!src) return
-				user << "<span class='notice'>You displaced the foxhole!</span>"
+				to_chat(user, "<span class='notice'>You displaced the foxhole!</span>")
 				qdel(src)
 
 
@@ -237,17 +235,17 @@
 	if(istype(W, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(health < 150)
-			user << "It's too damaged for that. Better just to build a new one."
+			to_chat(user, "It's too damaged for that. Better just to build a new one.")
 			return
 
 		if(health >= 500)
-			user << "It's already in perfect condition."
+			to_chat(user, "It's already in perfect condition.")
 			return
 
 		if(WT.remove_fuel(0, user))
 			user.visible_message("\blue [user] begins repairing damage to the [src].","\blue You begin repairing the damage to the [src].")
 			if(do_after(user,50))
-				user.visible_message("\blue [user] repairs the damaged [src].","\blue Your repair the [src]'s damage.")
+				user.visible_message("\blue [user] repairs the damaged [src].","\blue You repair the [src]'s damage.")
 				health += 150
 				if(health > 500) health = 500
 				update_health()
