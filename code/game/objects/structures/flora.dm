@@ -3,9 +3,24 @@
 	name = "tree"
 	anchored = 1
 	density = 1
+	icon = 'icons/obj/flora/jungletrees.dmi'
+	icon_state = "tree1"
 	pixel_x = -16
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/flora/tree/New()
+	..()
+	icon_state = "tree[rand(1, 7)]"
+
+/obj/structure/flora/tree/small
+	name = "small tree"
+	icon = 'icons/obj/flora/jungletreesmall.dmi'
+	icon_state = "treesmall1"
+
+/obj/structure/flora/tree/small/New()
+	..()
+	icon_state = "treesmall[rand(1, 7)]"
 
 /obj/structure/flora/tree/pine
 	name = "pine tree"
@@ -44,33 +59,48 @@
 
 
 //grass
-/obj/structure/flora/grass
-	name = "grass"
+/obj/structure/flora/snow/grass
+	name = "snowed grass"
 	icon = 'icons/obj/flora/snowflora.dmi'
 	anchored = 1
 
-/obj/structure/flora/grass/brown
+/obj/structure/flora/snow/grass/brown
 	icon_state = "snowgrass1bb"
 
-/obj/structure/flora/grass/brown/New()
+/obj/structure/flora/snow/grass/brown/New()
 	..()
 	icon_state = "snowgrass[rand(1, 3)]bb"
 
 
-/obj/structure/flora/grass/green
+/obj/structure/flora/snow/grass/green
 	icon_state = "snowgrass1gb"
 
-/obj/structure/flora/grass/green/New()
+/obj/structure/flora/snow/grass/green/New()
 	..()
 	icon_state = "snowgrass[rand(1, 3)]gb"
 
-/obj/structure/flora/grass/both
+/obj/structure/flora/snow/grass/both
 	icon_state = "snowgrassall1"
 
-/obj/structure/flora/grass/both/New()
+/obj/structure/flora/snow/grass/both/New()
 	..()
 	icon_state = "snowgrassall[rand(1, 3)]"
 
+/obj/structure/flora/grass //ACTUAL grass, not the bullshit that was above.
+	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon_state = "grassa1"
+	anchored = 1
+
+/obj/structure/flora/grass/New()
+	..()
+	icon_state = "grassa[rand(1, 5)]"
+
+/obj/structure/flora/grass/grassb
+	icon_state = "grassb1"
+
+/obj/structure/flora/grass/grassb/New()
+	..()
+	icon_state = "grassb[rand(1, 5)]"
 
 //bushes
 /obj/structure/flora/bush
@@ -207,6 +237,29 @@
 	..()
 	icon_state = "fullgrass_[rand(1, 3)]"
 
+/obj/structure/flora/ausbushes/busha
+	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon_state = "busha1"
+
+/obj/structure/flora/ausbushes/busha/New()
+	..()
+	icon_state = "busha[rand(1, 3)]"
+
+/obj/structure/flora/ausbushes/bushb
+	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon_state = "bushb1"
+
+/obj/structure/flora/ausbushes/bushb/New()
+	..()
+	icon_state = "bushb[rand(1, 3)]"
+
+/obj/structure/flora/ausbushes/bushc
+	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon_state = "bushc1"
+
+/obj/structure/flora/ausbushes/bushc/New()
+	..()
+	icon_state = "bushc[rand(1, 3)]"
 
 //potted plants credit: Flashkirby
 /obj/structure/flora/pottedplant
