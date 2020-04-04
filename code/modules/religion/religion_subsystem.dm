@@ -1,6 +1,6 @@
 //The main controller of old gods stuff.  Basically the plan is for this subprocess to just juggle the old gods, and leave most of the variables and work to them.
 SUBSYSTEM_DEF(old_gods)
-	name = "Old God Subsystem"
+	name = "Religion Subsystem"
 	wait = 600
 	priority = 20
 
@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(old_gods)
 	..()
 
 /datum/controller/subsystem/old_gods/stat_entry(msg)
-	..("old god is here")
+	..("the deities are here")
 
 /datum/controller/subsystem/old_gods/Recover()
-	log_debug("Old Gods are recovering!")
+	log_debug("The Deities are recovering!")
