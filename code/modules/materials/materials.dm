@@ -745,6 +745,15 @@ var/list/name_to_material
 	sheet_plural_name = "bricks"
 	conductive = 0
 
+/material/concrete
+	name = "concrete"
+	display_name = "block of concrete"
+	icon_base = "concrete"
+	icon_colour = "#808080"
+	sheet_singular_name = "block"
+	sheet_plural_name = "blocks"
+	conductive = 0
+
 /material/cult/place_dismantled_girder(var/turf/target)
 	new /obj/structure/girder/cult(target)
 
