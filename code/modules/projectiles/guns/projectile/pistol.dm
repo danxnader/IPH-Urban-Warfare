@@ -128,6 +128,13 @@
 	allowed_magazines = /obj/item/ammo_magazine/mc9mm
 	jam_chance = 15
 
+/obj/item/weapon/gun/projectile/pistol/makarov
+	name = "makarov pistol"
+	desc = "A cheap, but powerful russian firearm."
+	icon_state = "makarov"
+	item_state = null
+	jam_chance = 10
+
 /obj/item/weapon/gun/projectile/pistol/flash
 	name = "holdout signal pistol"
 	magazine_type = /obj/item/ammo_magazine/mc9mm/flash
