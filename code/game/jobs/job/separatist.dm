@@ -13,6 +13,7 @@
 	//minimal_player_age = 14
 	//ideal_character_age = 21
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/grunt
+	spawn_location = JoinLateSeparatist
 
 /datum/job/separatistmedic //this role, unlike the federal medic, will rely on brute surgery instead of expensive chemicals.
 	title = "Separatist Medic"
@@ -27,6 +28,7 @@
 	//access = list(
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/medic
+	spawn_location = JoinLateSeparatist
 
 /datum/job/separatistpartisan
 	title = "Separatist Partisan" //unga bunga local populace who just got enlisted
@@ -41,6 +43,7 @@
 	//access = list(
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/partisan
+	spawn_location = JoinLateSeparatist
 
 /datum/job/separatistofficer
 	title = "Separatist Officer"
@@ -56,6 +59,7 @@
 	//minimal_access = list(
 	//minimal_player_age = 3
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/officer
+	spawn_location = JoinLateSeparatist
 
 /datum/job/separatistleader
 	title = "Separatist Leader"
@@ -73,3 +77,4 @@
 	//minimal_access = list(
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/leader
+	spawn_location = JoinLateSeparatist
