@@ -37,6 +37,7 @@ GLOBAL_VAR(spawntypes)
 	. = ..()
 #endif
 
+/*
 /datum/spawnpoint/arrivals
 	display_name = "Arrivals Shuttle"
 	msg = "has arrived on the station"
@@ -75,3 +76,22 @@ GLOBAL_VAR(spawntypes)
 	display_name = DEFAULT_SPAWNPOINT_ID
 	msg = "has arrived on the station"
 	always_visible = TRUE
+*/
+
+/datum/spawnpoint/separatist
+	display_name = "Separatist Operating Base"
+	msg = "has arrived to the battlefield, inshallah!"
+	restrict_job = list("Separatist Leader", "Separatist Officer", "Separatist Medic", "Separatist Partisan", "Separatist Grunt")
+
+/datum/spawnpoint/separatist/New()
+	..()
+	turfs = latejoin_separatist
+
+/datum/spawnpoint/federal
+	display_name = "Federal Army HQ"
+	msg = "has arrived to the battlefield and is awaiting instructions"
+	restrict_job = list("Federal General", "Federal Officer", "Federal Medic", "Federal Soldier")
+
+/datum/spawnpoint/federal/New()
+	..()
+	turfs = latejoin_federal
