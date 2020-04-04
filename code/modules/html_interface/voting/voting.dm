@@ -173,7 +173,7 @@ datum/controller/vote
 				else
 					i++
 
-			if(mode != "gamemode" || (firstChoice == "Extended" || ticker.hide_mode == 0)) // Announce unhidden gamemodes or other results, but not other gamemodes
+			if(mode != "gamemode" || (firstChoice == "Urban Warfare" || ticker.hide_mode == 0)) // Announce unhidden gamemodes or other results, but not other gamemodes
 				text += "<b>Vote Result: [firstChoice]</b>"
 				if(secondChoice)
 					text += "\nSecond place: [secondChoice]"
