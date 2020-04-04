@@ -182,15 +182,15 @@
 	user.face_atom(src)
 
 	if (!locate(src) in get_step(user, user.dir))
-		user << "<span class = 'danger'>Get behind the artillery to use it.</span>"
+		to_chat(user, "<span class = 'danger'>Get behind the artillery to use it.</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		user << "<span class = 'danger'>You have no hands to use this with.</span>"
+		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
 		return FALSE
 
 	if (!anchored)
-		user << "<span class = 'danger'>The artillery piece must be wrenched to the ground to use.</span>"
+		to_chat(user, "<span class = 'danger'>The artillery piece must be wrenched to the ground to use.</span>")
 		return FALSE
 
 	var/value = href_list["value"]
@@ -214,11 +214,11 @@
 		//var/area = get_area(user)
 
 		if (AREA_INSIDE)
-			user << "<span class = 'danger'>You can't fire from inside.</span>"
+			to_chat(user, "<span class = 'danger'>You can't fire from inside.</span>")
 			return
 
 		if (state == "OPEN")
-			user << "<span class='danger'>Close the shell loading slot first.</span>"
+			to_chat(user, "<span class='danger'>Close the shell loading slot first.</span>")
 			return
 
 		if (blind_fire_toggle)
@@ -272,23 +272,23 @@
 
 
 		if (!valid_coords_check)
-			user << "<span class='danger'>You have no knowledge of this location.</span>"
+			to_chat(user, "<span class='danger'>You have no knowledge of this location.</span>")
 			return
 
 		if (abs(offset_x) > 0 || abs(offset_y) > 0)
 			if (abs(offset_x) + abs(offset_y) < 20)
-				user << "<span class='danger'>This location is too close to fire to.</span>"
+				to_chat(user, "<span class='danger'>This location is too close to fire to.</span>")
 				return
 			else if (other)
 				var/obj/item/artillery_shell/shell = other.use_slot()
 				if (shell && do_after(user, 30, src))
 					other.fire(target_x, target_y, shell)
-					user << "<span class='danger'>You fire the artillery!</span>"
+					to_chat(user, "<span class='danger'>You fire the artillery!</span>")
 				else
-					user << "<span class='danger'>Load a shell in first.</span>"
+					to_chat(user, "<span class='danger'>Load a shell in first.</span>")
 					return
 		else
-			user << "<span class='danger>Set an offset x and offset y coordinate.</span>"
+			to_chat(user, "<span class='danger>Set an offset x and offset y coordinate.</span>")
 			return
 
 	if (href_list["open"])
@@ -302,7 +302,7 @@
 			if (other.drop_casing)
 				var/obj/o = new/obj/item/artillery_shell/casing(get_step(src, dir))
 				o.icon_state = casing_state
-				user << "<span class='danger'>The casing falls out of the artillery.</span>"
+				to_chat(user, "<span class='danger'>The casing falls out of the artillery.</span>")
 				if (other)
 					other.drop_casing = FALSE
 				playsound(get_turf(src), 'sound/effects/Stamp.wav', 100, TRUE)
@@ -318,7 +318,7 @@
 	for (var/i in 1 to 10)
 		if (href_list["load_slot_[i]"])
 			if (state == "CLOSED")
-				user << "<span class = 'danger'>The shell loading slot must be open to add a shell.</span>"
+				to_chat(user, "<span class = 'danger'>The shell loading slot must be open to add a shell.</span>")
 				return
 
 			if (do_after(user, 10, src))
@@ -405,24 +405,24 @@
 	if (istype(W, /obj/item/weapon/wrench))
 		if (anchored)
 			playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
-			M << "<span class='notice'>Now unsecuring the artillery piece...</span>"
+			to_chat(M, "<span class='notice'>Now unsecuring the artillery piece...</span>")
 			if (do_after(M, 20, src))
 				if (!src) return
-				M << "<span class='notice'>You unsecured the artillery piece.</span>"
+				to_chat(M, "<span class='notice'>You unsecured the artillery piece.</span>")
 				anchored = FALSE
 		else if (!anchored)
 			playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
-			M << "<span class='notice'>Now securing the artillery piece...</span>"
+			to_chat(M, "<span class='notice'>Now securing the artillery piece...</span>")
 			if (do_after(M, 20, src))
 				if (!src) return
-				M << "<span class='notice'>You secured the artillery piece.</span>"
+				to_chat(M, "<span class='notice'>You secured the artillery piece.</span>")
 				anchored = TRUE
 	else if (istype(W, /obj/item/artillery_shell) && !istype(W, /obj/item/artillery_shell/none))
 		if (!anchored)
-			M << "<span class = 'danger'>The artillery piece must be wrench to the ground to use.</span>"
+			to_chat(M, "<span class = 'danger'>The artillery piece must be wrench to the ground to use.</span>")
 			return
 		if (state == "CLOSED")
-			M << "<span class = 'danger'>The shell loading slot must be open to add a shell.</span>"
+			to_chat(M, "<span class = 'danger'>The shell loading slot must be open to add a shell.</span>")
 			return
 			// load first and only slot
 		load_slot(1, M)
@@ -530,7 +530,7 @@
 		if (!t)
 			return
 
-		var/power_mult = 1.0 //experimental. 2 is a bit high.
+		var/power_mult = 2.0 //experimental
 
 		var/travel_time = 0
 
@@ -543,7 +543,7 @@
 			if (prob(66))
 				for (var/mob/living/carbon/human/H in range(15, t))
 					if (!(H.disabilities & DEAF))
-						H << "<span class = 'userdanger'>You think you can hear the sound of artillery flying in! Take cover!</span>"
+						to_chat(H, "<span class = 'userdanger'>You think you can hear the sound of artillery flying in! Take cover!</span>")
 
 		spawn (travel_time - 20) // the new artillery sound takes about 2 seconds to reach the explosion point, so start playing it now
 			var/list/heard = playsound(t, "artillery_in", 100, TRUE)
