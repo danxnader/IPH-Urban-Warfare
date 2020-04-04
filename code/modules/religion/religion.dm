@@ -22,9 +22,9 @@
 	selectable_punishments = subtypesof(/datum/punishment/)
 
 /datum/religion/machina
-	name = "Deo Machina"
+	name = "Orthodox Christianity"
 	holy_item = /obj/item/weapon/brander
-	whisper_lines = list("Remeber the prayer.", "Verina provides.", "Follow the Arbiters.")
+	whisper_lines = list("Remember the prayer.", "Jesus provides.")
 	offering_items = list(/obj/item/weapon/spacecash/bundle/c10)
 
 /*
@@ -46,9 +46,9 @@
 /mob/living/proc/reveal_self()
 	var/msg = ""
 	if (religion_is_legal())  //Non-heretics will still deny
-		msg = "I'm not one I swear it!"
+		msg = "I'm not a separatist, I swear!"
 	else
-		msg = "Yes!  I'm a heretic!"
+		msg = "Yes! I'm a separatist!"
 	agony_scream()
 	say(NewStutter(msg))
 
@@ -63,15 +63,16 @@ proc/generate_random_prayer()//This generates a new one.
 	prayer += "Amen."
 	return prayer
 
+/*
 /mob/living/proc/recite_prayer()
-	set category = "Deo Machina"
+	set category = "Christian"
 	set name = "Recite the prayer"
 	say(mind.prayer)
-
+*/
 
 //Try to reveal a random heretic
 /mob/living/proc/interrogate()
-	set category = "Deo Machina"
+	set category = "Interrogation"
 	set name = "Interrogate"
 	var/list/victims = list()
 	for(var/mob/living/carbon/human/C in oview(1))
@@ -79,7 +80,7 @@ proc/generate_random_prayer()//This generates a new one.
 	var/mob/living/carbon/human/T = input(src, "Who will we interrogate?") as null|anything in victims
 	if(!T) return
 	if(!(T in view(1))) return
-	say("[T] are you a heretic!?")
+	say("[T], are you a separatist!?")
 	if(prob((T.getHalLoss()/3) - T.stats[STAT_HT]))  //Higher con helps your resist torture
 		T.reveal_self()
 		return
@@ -89,7 +90,7 @@ proc/generate_random_prayer()//This generates a new one.
 	var/msg = " is one of them!"
 	var/name = ""
 	if (religion_is_legal())  //Non-heretics will say nothing
-		msg = "I dont know!"
+		msg = "I don't know!"
 		say(NewStutter(msg))
 		return
 	else
@@ -99,6 +100,7 @@ proc/generate_random_prayer()//This generates a new one.
 		else
 			say("I'm the only one!")
 
+*/
 /* ILLEGAL RELIGION PROCS */
 /datum/religion/proc/claim_territory(area/territory,var/claiming_religion)
 	GLOB.all_religions[claiming_religion].territories |= territory.name
@@ -113,7 +115,9 @@ proc/generate_random_prayer()//This generates a new one.
 		if(territory.name in GLOB.all_religions[name].territories)
 			return name
 	return null
+*/
 
+/*
 //This is general, and should be overloaded for ~flavor~
 /datum/religion/proc/generate_random_phrase()
 		var/phrase = pick("Oh great [name] ", "Oh our Lord [name]. ", "[name], our Lord and Saviour. ")
@@ -121,6 +125,7 @@ proc/generate_random_prayer()//This generates a new one.
 		phrase += pick("[name] be praised. ", "[name] save us all. ", "[name] guide us all. ")
 		phrase += "Amen."
 		return phrase
+*/ // No, no more prayers.
 
 /datum/religion/proc/whisper_to_followers()
 	var/whisper_line = pick(whisper_lines)
@@ -129,6 +134,7 @@ proc/generate_random_prayer()//This generates a new one.
 			playsound(player, "sound/effects/badmood[pick(1,4)].ogg",50,1)
 			to_chat(player, "<span class='danger'>[whisper_line]</span>")
 
+/*
 //Makes a request, and tells all followers about it
 /datum/religion/proc/request()
 	request = pick(selectable_requests)
@@ -148,7 +154,9 @@ proc/generate_random_prayer()//This generates a new one.
 	var/datum/punishment/punishment = pick(selectable_punishments)
 	punishment = new punishment
 	punishment.do_punishment(target)
+*/
 
+/*
 /datum/religion/proc/can_claim_for_gods(mob/user, atom/target)
 	//Check the area for if there's another shrine already, or the arbiters have already claimed it with TODO:?????
 	var/area/A = get_area(target)
@@ -167,6 +175,7 @@ proc/generate_random_prayer()//This generates a new one.
 
 	// If you pass the gaunlet of checks, you're good to proceed
 	return TRUE
+*/
 
 /datum/religion/proc/spawn_item(mob/living/user, var/divisor = 0.1)
 	var/turf/T = get_turf(user)
@@ -182,8 +191,8 @@ proc/generate_random_prayer()//This generates a new one.
 				new reward_obj(T)
 
 /mob/living/proc/praise_god()
-	set category = "Old God Magic"
-	set name = "Praise god"
+	set category = "Muslim Prayers"
+	set name = "Praise Allah"
 
 	var/datum/religion/user_religion = GLOB.all_religions[religion]
 	//You need your god's item to do this
@@ -194,7 +203,7 @@ proc/generate_random_prayer()//This generates a new one.
 	var/praise_sound = "sound/effects/Cultistemessage[pick(1,10)].ogg"
 	if(!doing_something)
 		var/self = "You raise your [user_religion.holy_item] and chant praise to your god."
-		visible_message("<span class='warning'>\The [src] begins speaking praise for their god.</span>", "<span class='notice'>[self]</span>", "[src] praises their god! .")
+		visible_message("<span class='warning'>\The [src] begins speaking praise for Allah himself.</span>", "<span class='notice'>[self]</span>", "[src] praises Allah!")
 		doing_something = 1
 		if(do_after(src, timer))
 			//These variables used to just be functions that returned a hard coded value.  So don't blame me, this is actually faster.
@@ -208,7 +217,7 @@ proc/generate_random_prayer()//This generates a new one.
 					user_religion.request = null
 			return 1
 		else
-			to_chat(src, "<span class='notice'>Your prayer is interupted</span>")
+			to_chat(src, "<span class='notice'>Your prayer is interrupted!</span>")
 			doing_something = 0
 			return
 		return 0
@@ -217,7 +226,7 @@ proc/generate_random_prayer()//This generates a new one.
 		return 0
 	return 0
 
-
+/*
 /mob/living/proc/make_shrine()
 	set category = "Old God Magic"
 	set name = "Create shrine"
@@ -245,3 +254,6 @@ proc/generate_random_prayer()//This generates a new one.
 	//If we somehow got here
 	doing_something = 0
 	return 0
+*/
+
+// no shrines either, oops
