@@ -94,6 +94,11 @@ GLOBAL_LIST_INIT(blunt_swing, list('sound/weapons/blunt_swing1.ogg','sound/weapo
 GLOBAL_LIST_INIT(swing_sound, list('sound/weapons/swing_01.ogg', 'sound/weapons/swing_02.ogg', 'sound/weapons/swing_03.ogg'))
 GLOBAL_LIST_INIT(chop_sound,list('sound/weapons/chop1.ogg','sound/weapons/chop2.ogg','sound/weapons/chop3.ogg'))
 
+GLOBAL_LIST_INIT(artillery_out,list('sound/weapons/new_exp_1.ogg', 'sound/weapons/new_exp_2.ogg', 'sound/weapons/new_exp_high_1.ogg', 'sound/weapons/new_exp_high_2.ogg', 'sound/weapons/new_exp_high_3.ogg')
+GLOBAL_LIST_INIT(artillery_in,list('sound/weapons/new_artillery_incoming01.ogg', 'sound/weapons/new_artillery_incoming02.ogg', 'sound/weapons/new_artillery_incoming03.ogg', 'sound/weapons/new_artillery_incoming04.ogg', 'sound/weapons/new_artillery_incoming05.ogg', 'sound/weapons/new_artillery_incoming06.ogg')
+GLOBAL_LIST_INIT(artillery_out_distance,list('sound/weapons/explo_distant01.ogg', 'sound/weapons/explo_distant02.ogg', 'sound/weapons/explo_distant03.ogg', 'sound/weapons/explo_distant04.ogg', 'sound/weapons/explo_distant05.ogg', 'sound/weapons/explo_distant06.ogg', 'sound/weapons/explo_distant07.ogg', 'sound/weapons/explo_distant08.ogg')
+GLOBAL_LIST_INIT(artillery_in_distance,list('sound/weapons/explo_distant01.ogg', 'sound/weapons/explo_distant02.ogg', 'sound/weapons/explo_distant03.ogg', 'sound/weapons/explo_distant04.ogg', 'sound/weapons/explo_distant05.ogg', 'sound/weapons/explo_distant06.ogg', 'sound/weapons/explo_distant07.ogg', 'sound/weapons/explo_distant08.ogg')
+
 /*
 job music
 */
