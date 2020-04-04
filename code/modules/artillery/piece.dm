@@ -211,7 +211,7 @@
 
 	if (href_list["fire"])
 
-		var/area = get_area(user)
+		//var/area = get_area(user)
 
 		if (AREA_INSIDE)
 			user << "<span class = 'danger'>You can't fire from inside.</span>"

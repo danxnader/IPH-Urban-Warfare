@@ -100,7 +100,7 @@ proc/generate_random_prayer()//This generates a new one.
 		else
 			say("I'm the only one!")
 
-*/
+/*
 /* ILLEGAL RELIGION PROCS */
 /datum/religion/proc/claim_territory(area/territory,var/claiming_religion)
 	GLOB.all_religions[claiming_religion].territories |= territory.name
@@ -211,11 +211,11 @@ proc/generate_random_prayer()//This generates a new one.
 			playsound(get_turf(src), praise_sound,30,0)
 			doing_something = 0
 			user_religion.spawn_item(src)
-			if(user_religion.request)
-				if(user_religion.request.check_complete(src))
-					user_religion.reward(src)
-					user_religion.request = null
-			return 1
+			//if(user_religion.request)
+				//if(user_religion.request.check_complete(src))
+					//user_religion.reward(src)
+					//user_religion.request = null
+			//return 1
 		else
 			to_chat(src, "<span class='notice'>Your prayer is interrupted!</span>")
 			doing_something = 0

@@ -28,13 +28,13 @@
 	shrine_religion = GLOB.all_religions[shrine_religion]
 	shrine_religion.favor -= 30
 	near_camera()
-	shrine_religion.claim_territory(A,shrine_religion.name)
+	//shrine_religion.claim_territory(A,shrine_religion.name)
 	log_and_message_admins("created \an [src.name] rune at \the [A.name] - [loc.x]-[loc.y]-[loc.z].")
 	return
 
 //Used when someone breaks a shrine
 /obj/old_god_shrine/proc/destroy()
-	shrine_religion.lose_territory(get_area(src), shrine_religion.name)
+	//shrine_religion.lose_territory(get_area(src), shrine_religion.name)
 	qdel(src)
 
 /obj/old_god_shrine/attackby(obj/item/W as obj, var/mob/living/user)
@@ -45,7 +45,7 @@
 		shrine_religion.favor += 30
 		destroy()
 	playsound(src.loc, pick(sounds), 100, 1)
-	if(W.damtype == BRUTE || W.damtype == BURN) 
+	if(W.damtype == BRUTE || W.damtype == BURN)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if (W.force >= src.toughness)
 			user.do_attack_animation(src)
@@ -94,4 +94,3 @@
 					return
 			selected_spell.spell_consume(spell_components)
 			selected_spell.spell_effect(M,spell_components)
-	

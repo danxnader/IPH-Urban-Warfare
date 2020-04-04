@@ -7,7 +7,7 @@
 // spell_effect: All spells have an effect when they are activated and the requirments are met.  Define anything you want the spell to do here.
 
 // THESE ARE THE ONLY THINGS YOU NEED TO DO TO CREATE A NEW OLD GOD SPELL.  THERE ARE SOME THINGS NOT TO DO
-// DO NOT OVERRIDE 
+// DO NOT OVERRIDE
 
 
 /datum/old_god_spell
@@ -16,12 +16,14 @@
 	var/old_god = LEGAL_RELIGION
 	var/phrase = "Test Phrase"
 
+/*
 	New()
 		phrase = GLOB.all_religions[old_god].generate_random_phrase()
+*/
 
 	proc/spell_effect(var/mob/living/user)
 		to_world("Something is fucked up, you should not be seeing this.  It's from old god spell code, go tell a coder.")
-	
+
 	//Helper to make spells involving paper easier TODO: same thing for blood/limbs/organs
 	proc/get_player_from_paper(var/obj/item/weapon/paper/target_paper)
 		for(var/mob/player in GLOB.player_list)
@@ -44,7 +46,7 @@
 		smoke.attach(user)
 		smoke.start()
 
-//Yeah this is fucking stupid, but I can't make associatve lists like list(NORTH=1) because fucking byond, so we need to do list("NORTH"=1) and pass through here.  
+//Yeah this is fucking stupid, but I can't make associatve lists like list(NORTH=1) because fucking byond, so we need to do list("NORTH"=1) and pass through here.
 proc/DIRECTION_TO_VAL(var/direction)
 	switch(direction)
 		if("NORTH") return NORTH

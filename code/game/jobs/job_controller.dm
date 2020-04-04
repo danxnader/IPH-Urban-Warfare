@@ -552,14 +552,8 @@ var/global/datum/controller/occupations/job_master
 			H.mind.religion = H.religion
 			if(H.religion_is_legal())
 				GLOB.all_religions[LEGAL_RELIGION].followers += H.name // I don't think I want to save copies of the entire entity.
-				to_chat(H, "You are a worshipper of <b><font color='red'>[H.religion]</font></b>. It's the only legal religion in this land, do not be swayed by the heretics of the <b>[ILLEGAL_RELIGION]</b>.")
-				if(prob(95) || rank == "Supreme Arbiter")//Only a 5% chance to not remember the prayer, but supreme arbiter never forgets
-					H.mind.prayer = accepted_prayer
-					H.verbs += /mob/living/proc/recite_prayer
-					to_chat(H, "<span class='notice'>The prayer today is: <b>[H.mind.prayer]</b> Remember this prayer.</span>")
-				else
-					to_chat(H, "<span class='danger'>Try as you might... you just can't seem to remember the prayer today. This won't look good to the Arbiters.")
-				if(rank == "Supreme Arbiter")
+				to_chat(H, "You are a worshipper of <b><font color='red'>[H.religion]</font></b>. It's the only legal religion in this land, do not be swayed by the heretics of <b>[ILLEGAL_RELIGION]</b>.")
+				if(rank == "Federal Officer")
 					H.mind.prayer = accepted_prayer
 					H.verbs += /mob/living/proc/interrogate
 			else
@@ -568,7 +562,7 @@ var/global/datum/controller/occupations/job_master
 				//H.religion = "Your god here"
 				H.religion = pick(GLOB.all_religions - ILLEGAL_RELIGION - LEGAL_RELIGION)
 				to_chat(H, "You are a worshipper of the <b><font color='red'>[H.religion]</font>. It is not a legal religion of this land. Do not be caught by the <b>Inquisition</b>. Check your notes for who your brothers and sisters are.")
-				H.verbs += /mob/living/proc/make_shrine
+				//H.verbs += /mob/living/proc/make_shrine
 				H.verbs += /mob/living/proc/praise_god
 				var/obj/item/I = GLOB.all_religions[H.religion].holy_item.type
 				I = new I()
