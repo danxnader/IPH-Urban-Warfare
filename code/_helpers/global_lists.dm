@@ -88,6 +88,9 @@ var/global/list/string_slot_flags = list(
 	"holster" = SLOT_HOLSTER
 )
 
+//coordinates
+var/global/list/valid_coordinates = list()
+
 //////////////////////////
 /////Initial Building/////
 //////////////////////////
