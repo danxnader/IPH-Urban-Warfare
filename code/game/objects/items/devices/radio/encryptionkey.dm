@@ -112,6 +112,16 @@
 	icon_state = "srv_cypherkey"
 	channels = list("Service" = 1)
 
+/obj/item/device/encryptionkey/fed
+	name = "federal encryption key"
+	icon_state = "bin_cypherkey"
+	channels = list("Federal" = 1)
+
+/obj/item/device/encryptionkey/spr
+	name = "separatist encryption key"
+	icon_state = "bin_cypherkey"
+	channels = list("Separatist" = 1)
+
 /obj/item/device/encryptionkey/headset_inquisition
 	name = "inquisition radio key"
 	icon_state = "hos_cypherkey"
