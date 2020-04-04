@@ -26,6 +26,7 @@
 			GLOB.latejoin += loc
 			delete_me = 1
 			return
+*/
 		if("JoinLateGateway")
 			GLOB.latejoin_gateway += loc
 			delete_me = 1
@@ -36,6 +37,15 @@
 			return
 		if("JoinLateCyborg")
 			GLOB.latejoin_cyborg += loc
+			delete_me = 1
+			return
+*/
+		if("JoinLateFederal")
+			latejoin_federal += loc
+			delete_me = 1
+			return
+		if("JoinLateSeparatist")
+			latejoin_separatist += loc
 			delete_me = 1
 			return
 		if("prisonwarp")
