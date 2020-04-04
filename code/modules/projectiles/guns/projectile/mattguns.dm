@@ -32,16 +32,13 @@
 		return 1
 	return 0
 
-/*
 //This is OP at the moment.
 /obj/item/weapon/gun/projectile/shotgun/pump/boltaction/verb/scope()
-	set category = "Object"
+	set category = "Weapon"
 	set name = "Use Iron Sights"
 	set popup_menu = 1
 
 	toggle_scope(usr, 2.0)
-*/
-
 
 //AMMO
 /obj/item/ammo_casing/brifle
