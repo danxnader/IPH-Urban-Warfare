@@ -16,6 +16,9 @@ var/global/datum/controller/occupations/job_master
 		//Debug info
 	var/list/job_debug = list()
 
+	var/list/all_fireteams = list()
+	var/list/not_full_fireteams = list()
+
 
 	proc/SetupOccupations(var/setup_titles = 0)
 		occupations = list()
@@ -69,7 +72,6 @@ var/global/datum/controller/occupations/job_master
 				GLOB.nonhuman_positions |= job.title
 
 		return 1
-
 
 		all_fireteams = list()
 		not_full_fireteams = list()

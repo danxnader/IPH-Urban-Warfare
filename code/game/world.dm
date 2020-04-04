@@ -485,7 +485,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 		if(config.server) //if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 			open_link(C, "byond://[config.server]")
-	
+
 	if(config.wait_for_sigusr1_reboot && reason != 3)
 		text2file("foo", "reboot_called")
 		to_world("<span class=danger>World reboot waiting for external scripts. Please be patient.</span>")
@@ -735,3 +735,28 @@ proc/establish_old_db_connection()
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
+
+/hook/shuttle_move/proc/announce_mission_start()
+	var/fd_fireteams = 0
+	var/sp_fireteams = 0
+	for(var/datum/fireteam/ft in job_master.all_fireteams)
+		if(!ft.is_full())
+			continue
+		if(ft.side == "Federals")
+			fd_fireteams++
+		if(ft.side == "Separatists")
+			sp_fireteams++
+	world << "<font size=3>Fireteams report: [sp_fireteams] Separatist full fireteams, [fd_fireteams] Federals full fireteams."
+	for(var/datum/fireteam/ft in job_master.all_fireteams)
+		var/text = "[get_side_name(ft.side)] - [ft.code]"
+		if(ft.name)
+			text += " called as \"[ft.name]\"."
+		world << "<font size=2>-[text]</font>"
+	return 1
+
+/proc/get_side_name(var/side)
+	if(side == "Federals")
+		return "Federal Army"
+	if(side == "Separatist")
+		return "Separatist Forces"
+	return null

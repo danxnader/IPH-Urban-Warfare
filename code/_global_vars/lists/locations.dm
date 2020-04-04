@@ -12,6 +12,9 @@ GLOBAL_LIST_EMPTY(latejoin_cyborg)
 GLOBAL_LIST_EMPTY(latejoin_federal)
 GLOBAL_LIST_EMPTY(latejoin_separatist)
 
+var/list/latejoin_federal  = list()
+var/list/latejoin_separatist  = list()
+
 GLOBAL_LIST_EMPTY(prisonwarp) // Prisoners go to these
 GLOBAL_LIST_EMPTY(tdome1)
 GLOBAL_LIST_EMPTY(tdome2)

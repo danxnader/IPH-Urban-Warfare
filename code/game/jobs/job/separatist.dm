@@ -42,7 +42,7 @@
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/partisan
 
-/datum/job/roboticist
+/datum/job/separatistofficer
 	title = "Separatist Officer"
 	department = "Separatists"
 	department_flag = COMSPR
