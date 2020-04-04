@@ -219,3 +219,9 @@
 	desc = "A strange chair, not from around here."
 	base_icon = "bogchair"
 	icon_state = "bogchair_preview"
+
+/obj/structure/bed/chair/bench
+	name = "bench"
+	desc = "Sit here, rest and listen to the sounds of your dying comrades."
+	icon_state = "pillar"
+	base_icon = "pillar"
