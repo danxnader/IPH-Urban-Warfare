@@ -24,6 +24,7 @@
 			return 1
 	return 0
 
+/*
 /datum/request/offering/
 	name ="Offering"
 	message = "You're god demands an offering!"
@@ -40,6 +41,7 @@
 			qdel(O)
 			return 1
 	return 0
+*/
 
 /*	Rewards get defined individually with thier own special verb
 	All reward code should be self contained.  All the actual "reward" function will do is
@@ -75,7 +77,7 @@
 
 /datum/reward/str_up/
 	name = "Strength blessing"
-	message="You feel an incredible power within you"
+	message="You feel an incredible power building within you"
 
 /datum/reward/str_up/do_reward(var/mob/living/target)
 	var/initial = target.stats[STAT_ST] 
