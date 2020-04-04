@@ -1,8 +1,8 @@
 /obj/structure/fence
 	name = "fence"
 	desc = "A fence. There's nothing else to say."
-	//icon = 'icons/obj/structures.dmi'
-	//icon_state = "fence"
+	icon = 'icons/turf/fence.dmi'
+	icon_state = "fence"
 	density = 1
 	anchored = 1
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -10,7 +10,6 @@
 	explosion_resistance = 1
 	var/health = 15
 	var/destroyed = 0
-
 
 /obj/structure/fence/ex_act(severity)
 	qdel(src)
