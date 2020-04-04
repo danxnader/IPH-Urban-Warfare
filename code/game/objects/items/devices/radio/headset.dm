@@ -8,7 +8,7 @@
 	subspace_transmission = 1
 	canhear_range = 0 // can't hear headsets from very far away
 
-	slot_flags = SLOT_EARS
+	slot_flags = SLOT_ID //yes.
 	var/translate_binary = 0
 	var/translate_hive = 0
 	var/obj/item/device/encryptionkey/keyslot1 = null
@@ -218,6 +218,20 @@
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/ert
+
+/obj/item/device/radio/headset/federal
+	name = "federal radio headset"
+	desc = "The headset of the federal forces."
+	icon_state = "fed_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/fed
+
+/obj/item/device/radio/headset/separatist
+	name = "separatist radio headset"
+	desc = "The headset of the separatist forces."
+	icon_state = "spr_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/spr
 
 /obj/item/device/radio/headset/ia
 	name = "internal affair's headset"
