@@ -154,3 +154,21 @@
 	// Change my name back, don't want to be named Tom (666)
 	SetName(initial(name))
 	real_name = name
+
+/mob/living/simple_animal/mouse/gray/Amir
+	name = "Amir"
+	desc = "A pet mouse, adored by the separatists."
+
+/mob/living/simple_animal/mouse/gray/Amir/New()
+	..()
+	SetName(initial(name))
+	real_name = name
+
+/mob/living/simple_animal/mouse/white/Pushok
+	name = "Pushok"
+	desc = "A pet mouse, adored by the federals. Named after it's white color."
+
+/mob/living/simple_animal/mouse/white/Pushok/New()
+	..()
+	SetName(initial(name))
+	real_name = name
