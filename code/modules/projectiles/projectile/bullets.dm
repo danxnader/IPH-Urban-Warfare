@@ -67,6 +67,17 @@
 
 	return 0
 
+/obj/item/projectile/bullet/distantsound
+	var/far_dist = 0
+	var/frequency = get_rand_frequency()
+	for(var/mob/M in GLOB.player_list)
+		var/turf/M_turf = get_turf(M)
+			var/dist = get_dist(M_turf, epicenter)
+				if(dist <= far_dist)
+					var/far_volume = Clamp(far_dist, 30, 50) // Volume is based.
+					far_volume += (dist <= far_dist * 0.5 ? 50 : 0) // add 50 volume if the mob is pretty close
+					M.playsound_local(epicenter, 'sound/weapons/Distant[1,5].ogg', far_volume, 1, frequency, falloff = 5)
+
 //For projectiles that actually represent clouds of projectiles
 /obj/item/projectile/bullet/pellet
 	name = "shrapnel" //'shrapnel' sounds more dangerous (i.e. cooler) than 'pellet'
