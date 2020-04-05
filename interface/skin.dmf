@@ -1,3 +1,5 @@
+macro "default"
+
 
 menu "menu"
 	elem 
