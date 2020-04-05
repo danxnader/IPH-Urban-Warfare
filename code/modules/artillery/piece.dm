@@ -51,7 +51,7 @@
 //	var/jammed_until = -1
 
 	density = TRUE
-	name = "7,5 cm FK 18"
+	name = "2A61 Pat-B"
 	icon = 'icons/obj/artillery_piece.dmi'
 	icon_state = "base"
 	layer = MOB_LAYER + 1 //just above mobs
