@@ -359,10 +359,6 @@
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
 			H.check_skills()
-	else
-		if(ishuman(usr))
-			var/mob/living/carbon/human/H = usr
-			H.check_family()
 
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1
