@@ -11,6 +11,7 @@
 	var/global/global_uid = 0
 	var/uid
 	var/area_flags
+	var/artillery_integrity = 100
 
 /area/New()
 	icon_state = ""
@@ -304,7 +305,7 @@ var/list/mob/living/forced_ambiance_list = new
 			L.client.ambience_playing = 0
 			sound_to(L, sound(null, channel = 2))
 
-	
+
 	if(src.ambience.len && prob(75))
 		if((world.time >= L.client.played + 3 MINUTES))
 			var/sound = pick(ambience)
@@ -375,3 +376,13 @@ var/list/mob/living/forced_ambiance_list = new
 /area/proc/has_turfs()
 	return !!(locate(/turf) in src)
 
+/area/proc/arty_act(loss)
+	if (prob(25))
+		artillery_integrity -= loss * 1.33
+	else if (prob(50))
+		artillery_integrity -= loss
+	else
+		artillery_integrity -= loss * 0.75
+	if (artillery_integrity > 0)
+		return FALSE
+	return TRUE

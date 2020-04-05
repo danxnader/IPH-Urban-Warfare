@@ -225,3 +225,21 @@
 	desc = "Sit here, rest and listen to the sounds of your dying comrades."
 	icon_state = "pillar"
 	base_icon = "pillar"
+
+/obj/structure/bed/chair/gunner
+	name = "gunner's seat"
+	desc = "a seat next to the gun trigger."
+	icon_state = "officechair_white"
+	anchored = FALSE
+
+/obj/structure/bed/chair/gunner/update_icon()
+	return
+
+/obj/structure/bed/chair/loader
+	name = "loader's seat"
+	desc = "A seat at the gun loader's position."
+	icon_state = "officechair_white"
+	anchored = FALSE
+
+/obj/structure/bed/chair/loader/update_icon()
+	return

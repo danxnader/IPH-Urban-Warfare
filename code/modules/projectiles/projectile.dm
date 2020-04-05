@@ -20,6 +20,7 @@
 	var/xo = null
 	var/current = null
 	var/shot_from = "" // name of the object which shot us
+	var/firer_original_dir = null
 	var/atom/original = null // the target clicked (not necessarily where the projectile is headed). Should probably be renamed to 'target' or something.
 	var/turf/starting = null // the projectile's starting turf
 	var/list/permutated = list() // we've passed through these atoms, don't try to hit them again
@@ -70,6 +71,21 @@
 	var/datum/vector_loc/location		// current location of the projectile in pixel space
 	var/matrix/effect_transform			// matrix to rotate and scale projectile effects - putting it here so it doesn't
 										//  have to be recreated multiple times
+
+	var/btype = "normal" //normal, AP (armor piercing) and HP (hollow point)
+	var/atype = "normal"
+
+/obj/item/projectile/proc/checktype()
+	if (btype == "AP")
+		damage *= 0.70
+		penetrating *= 2
+		armor_penetration *= 3
+		return
+	else if (btype == "HP")
+		damage *= 1.3
+		penetrating = 0
+		armor_penetration /= 3
+		return
 
 /obj/item/projectile/Initialize()
 	damtype = damage_type //TODO unify these vars properly
@@ -175,6 +191,10 @@
 
 	original = target
 	def_zone = target_zone
+
+	firer = usr
+	firer_original_dir = firer.dir
+	shot_from = src
 
 	spawn()
 		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
