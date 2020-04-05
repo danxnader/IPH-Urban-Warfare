@@ -25,6 +25,6 @@
 		winset(src, "default-[ref(key)]", "parent=default;name=[key];command=[command]")
 
 	if(prefs.hotkeys)
-		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
+		winset(src, null, "input.focus=true")
 	else
-		winset(src, null, "input.focus=false input.background-color=[COLOR_INPUT_DISABLED]")
+		winset(src, null, "mapwindow.map.focus=true")
