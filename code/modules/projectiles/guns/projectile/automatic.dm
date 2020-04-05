@@ -11,7 +11,7 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	multi_aim = 1
 	burst_delay = 2
-	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
+	fire_sound = 'sound/weapons/newrifle2.ogg'
 	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
 
@@ -346,7 +346,6 @@
 	wielded_item_state = "ak74-wielded"
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
-	fire_sound = list('sound/weapons/newrifle.ogg','sound/weapons/newrifle2.ogg','sound/weapons/newrifle3.ogg')
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
