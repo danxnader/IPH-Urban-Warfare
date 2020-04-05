@@ -162,6 +162,7 @@
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	apply_fps(prefs.clientfps)
+	toggle_fullscreen()
 
 	. = ..()	//calls mob.Login()
 	chatOutput.start()
@@ -208,8 +209,10 @@
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
 
+/*
 	if(get_preference_value(/datum/client_preference/fullscreen_mode) == GLOB.PREF_YES)
 		toggle_fullscreen(TRUE)
+*/
 
 	//////////////
 	//DISCONNECT//
