@@ -181,9 +181,12 @@
 	name = "Aunt"
 	desc = "They are your Aunt"
 
-
+/*
 /mob/living/carbon/human/verb/check_family()
+	set name = "Check my Family"
+	set category = "IC"
 	var/message = "<big><b>Family:</b></big>\n"
 	for(var/datum/relation/family/R in matchmaker.get_relationships(mind))
 		message += "[R.connected_relation.relation_holder.current.name] is my [R.name].\n"
 	to_chat(src, message)
+*/
