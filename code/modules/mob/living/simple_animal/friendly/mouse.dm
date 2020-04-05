@@ -120,8 +120,8 @@
 			limb.germ_level += rand(75, 150)
 			if(virus)
 				infect_virus2(H, virus)
-		visible_message("<span class='warning'>\[src] bites [H]'s [organ_name_by_zone(H, limb.organ_tag)]!</span>"),
-						"<span class='warning'>\You bite [H]'s [organ_name_by_zone(H, limb.organ_tag)]!</span>")
+		visible_message(SPAN_DANGER("[src] bites [H]'s [organ_name_by_zone(H, limb.organ_tag)]!"),
+						SPAN_WARNING("You bite [H]'s [organ_name_by_zone(H, limb.organ_tag)]!"))
 		admin_attack_log(src, H, "Bit the victim", "Was bitten", "bite")
 		do_attack_animation(H)
 		playsound(loc, attack_sound, 25, 1, 1)
