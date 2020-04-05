@@ -87,7 +87,8 @@
 
 	refresh_client_images()
 	reload_fullscreen() // Reload any fullscreen overlays this mob has.
+	toggle_fullscreen() // toggles fullscreen mode on login.
 	add_click_catcher()
 
 	//set macro to normal incase it was overriden (like cyborg currently does)
-	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true")
+	//winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true") //let's see if this fixes that issue
