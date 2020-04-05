@@ -9,10 +9,11 @@
 	var/use = 200 // 200W light
 	var/unlocked = 0
 	var/open = 0
-	var/brightness_on = 8		//can't remember what the maxed out value is. also, it's a streetlight.
+	var/brightness_on = 12		//can't remember what the maxed out value is. also, it's a streetlight.
 
 /obj/machinery/streetlight/New()
 	cell = new/obj/item/weapon/cell/crap(src)
+	turn_on()
 	..()
 
 /obj/machinery/streetlight/proc/turn_off(var/loud = 0)
@@ -47,3 +48,16 @@
 /obj/machinery/streetlight/attack_ai(mob/user as mob)
 	if(istype(user, /mob/living/silicon/robot) && Adjacent(user))
 		return attack_hand(user)
+
+/obj/machinery/streetlight/proc/turn_on(var/loud = 0)
+	if(!cell)
+		return 0
+	if(cell.charge < (use * CELLRATE))
+		return 0
+
+	on = 1
+	set_light(brightness_on, brightness_on / 2)
+	update_icon()
+	if(loud)
+		visible_message("\The [src] turns on.")
+	return 1
