@@ -104,13 +104,31 @@
 	[get_footer()]
 	"}
 
-/datum/browser/proc/open(var/use_onclose = 1)
+/datum/browser/proc/open(use_onclose = TRUE)
+	if(isnull(window_id))	//null check because this can potentially nuke goonchat
+		stack_trace("Browser [title] tried to open with a null ID")
+		to_chat(user, "<span class='userdanger'>The [title] browser you tried to open failed a sanity check! Please report this on github!</span>")
+		return
 	var/window_size = ""
-	if (width && height)
+	if(width && height)
 		window_size = "size=[width]x[height];"
+	if(length(stylesheets))
+		send_asset_list(user, stylesheets, verify=FALSE)
+	if(length(scripts))
+		send_asset_list(user, scripts, verify=FALSE)
 	user << browse(get_content(), "window=[window_id];[window_size][window_options]")
-	if (use_onclose)
-		onclose(user, window_id, ref)
+	if(use_onclose)
+		setup_onclose()
+
+
+/datum/browser/proc/setup_onclose()
+	set waitfor = FALSE //winexists sleeps, so we don't need to.
+	for(var/i in 1 to 10)
+		if(QDELETED(user))
+			return
+		if(winexists(user, window_id))
+			onclose(user, window_id, ref)
+			break
 
 /datum/browser/proc/update(var/force_open = 0, var/use_onclose = 1)
 	if(force_open)
@@ -119,7 +137,10 @@
 		send_output(user, get_content(), "[window_id].browser")
 
 /datum/browser/proc/close()
-	user << browse(null, "window=[window_id]")
+	if(!isnull(window_id))//null check because this can potentially nuke goonchat
+		user << browse(null, "window=[window_id]")
+	else
+		stack_trace("Browser [title] tried to close with a null ID")
 
 // This will allow you to show an icon in the browse window
 // This is added to mob so that it can be used without a reference to the browser object
@@ -153,6 +174,7 @@
 // to pass a "close=1" parameter to the atom's Topic() proc for special handling.
 // Otherwise, the user mob's machine var will be reset directly.
 //
+
 /proc/onclose(mob/user, windowid, var/atom/ref=null)
 	if(!user || !user.client) return
 	var/param = "null"
@@ -172,25 +194,80 @@
 // if a valid atom reference is supplied, call the atom's Topic() with "close=1"
 // otherwise, just reset the client mob's machine var.
 //
-/client/verb/windowclose(var/atomref as text)
-	set hidden = 1						// hide this verb from the user's panel
-	set name = ".windowclose"			// no autocomplete on cmd line
+
+/datum/browser/modal/alert/New(User,Message,Title,Button1="Ok",Button2,Button3,StealFocus = 1,Timeout=6000)
+	if(!User)
+		return
+
+	var/output =  {"<center><b>[Message]</b></center><br />
+		<div style="text-align:center">
+		<a style="font-size:large;float:[( Button2 ? "left" : "right" )]" href="?src=[ref(src)];button=1">[Button1]</a>"}
+
+	if(Button2)
+		output += {"<a style="font-size:large;[( Button3 ? "" : "float:right" )]" href="?src=[ref(src)];button=2">[Button2]</a>"}
+
+	if(Button3)
+		output += {"<a style="font-size:large;float:right" href="?src=[ref(src)];button=3">[Button3]</a>"}
+
+	output += {"</div>"}
+
+	..(User, ckey("[User]-[Message]-[Title]-[world.time]-[rand(1,10000)]"), Title, 350, 150, src, StealFocus, Timeout)
+	set_content(output)
+
+/datum/browser/modal/alert/Topic(href,href_list)
+	. = ..()
+	if(.)
+		return
+	if(href_list["close"] || !user || !user.client)
+		//opentime = 0
+		return
+	//if(href_list["button"])
+		//var/button = text2num(href_list["button"])
+		//if(button <= 3 && button >= 1)
+			//selectedbutton = button
+	//opentime = 0
+	close()
+
+//designed as a drop in replacement for alert(); functions the same. (outside of needing User specified)
+/proc/tgalert(mob/User, Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1, Timeout = 6000)
+	if(!User)
+		User = usr
+	switch(askuser(User, Message, Title, Button1, Button2, Button3, StealFocus, Timeout))
+		if(1)
+			return Button1
+		if(2)
+			return Button2
+		if(3)
+			return Button3
+
+//Same shit, but it returns the button number, could at some point support unlimited button amounts.
+/proc/askuser(mob/User,Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1, Timeout = 6000)
+	if(!istype(User))
+		if(istype(User, /client/))
+			var/client/C = User
+			User = C.mob
+		else
+			return
+	var/datum/browser/modal/alert/A = new(User, Message, Title, Button1, Button2, Button3, StealFocus, Timeout)
+	A.open()
+	//A.wait()
+	//if(A.selectedbutton)
+		//return A.selectedbutton
 
 //	log_debug("windowclose: [atomref]")
 
+/client/verb/windowclose(atomref as text)
+	set hidden = TRUE						// hide this verb from the user's panel
+	set name = ".windowclose"			// no autocomplete on cmd line
+
 	if(atomref!="null")				// if passed a real atomref
 		var/hsrc = locate(atomref)	// find the reffed atom
+		var/href = "close=1"
 		if(hsrc)
-//			log_debug("[src] Topic [href] [hsrc]")
-
 			usr = src.mob
-			src.Topic("close=1", list("close"="1"), hsrc)	// this will direct to the atom's
+			src.Topic(href, params2list(href), hsrc)	// this will direct to the atom's
 			return										// Topic() proc via client.Topic()
-
 	// no atomref specified (or not found)
 	// so just reset the user mob's machine var
-	if(src && src.mob)
-//		log_debug("[src] was [src.mob.machine], setting to null")
-
-		src.mob.unset_machine()
-	return
+	//if(mob)
+		//mob.set_initial_data()

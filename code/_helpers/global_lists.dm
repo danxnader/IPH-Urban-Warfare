@@ -151,6 +151,25 @@ var/global/list/valid_coordinates = list()
 		var/datum/job/J = new T
 		joblist[J.title] = J
 
+	// Keybindings
+	for(var/KB in subtypesof(/datum/keybinding))
+		var/datum/keybinding/keybinding = KB
+		if(!initial(keybinding.keybind_signal))
+			continue
+		var/datum/keybinding/instance = new keybinding
+		GLOB.keybindings_by_name[instance.name] = instance
+
+		// Classic
+		if(LAZYLEN(instance.classic_keys))
+			for(var/bound_key in instance.classic_keys)
+				LAZYADD(GLOB.classic_keybinding_list_by_key[bound_key], list(instance.name))
+
+		// Hotkey
+		if(LAZYLEN(instance.hotkey_keys))
+			for(var/bound_key in instance.hotkey_keys)
+				LAZYADD(GLOB.hotkey_keybinding_list_by_key[bound_key], list(instance.name))
+
+
 	//Languages and species.
 	paths = typesof(/datum/language)-/datum/language
 	for(var/T in paths)

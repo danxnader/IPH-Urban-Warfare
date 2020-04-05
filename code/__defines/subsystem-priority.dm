@@ -24,6 +24,7 @@
 #define SS_PRIORITY_PROCESSING    30	// Generic datum processor. Replaces objects processor.
 #define SS_PRIORITY_CHAR_SETUP    25	// Writes player preferences to savefiles.
 #define SS_PRIORITY_GARBAGE       25	// Garbage collection.
+#define SS_PRIORITY_INPUT         35  	// Everything just WORKS
 #define SS_PRIORITY_VINES         25	// Spreading vine effects.
 #define SS_PRIORITY_AO       40	// processing_objects processing.
 #define SS_PRIORITY_WIRELESS      10	// Wireless connection setup.

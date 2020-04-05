@@ -192,3 +192,8 @@
 	var/scrambling = 0//For crawling.
 
 	var/emote_cd = 0//Emote cooldown.
+
+	//Input
+	var/datum/focus //What receives our keyboard inputs. src by default
+	var/memory_throttle_time = 0
+	var/updating_glide_size = TRUE //Whether the mob is updating glide size when movespeed updates or not

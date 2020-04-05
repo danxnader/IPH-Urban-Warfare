@@ -33,40 +33,22 @@
 /client/proc/client_dir(input, direction=-1)
 	return turn(input, direction*dir2angle(dir))
 
-/client/Northeast()
-	diagonal_action(NORTHEAST)
-/client/Northwest()
-	diagonal_action(NORTHWEST)
-/client/Southeast()
-	diagonal_action(SOUTHEAST)
-/client/Southwest()
-	diagonal_action(SOUTHWEST)
 
-/client/proc/diagonal_action(direction)
-	switch(client_dir(direction, 1))
-		if(NORTHEAST)
-			swap_hand()
-			return
-		if(SOUTHEAST)
-			attack_self()
-			return
-		if(SOUTHWEST)
-			if(isliving(usr))
-				var/mob/living/carbon/C = usr
-				C.toggle_throw_mode()
-			else
-				to_chat(usr, "<span class='warning'>This mob type cannot throw items.</span>")
-			return
-		if(NORTHWEST)
-			if(isliving(usr))
-				var/mob/living/carbon/C = usr
-				if(!C.get_active_hand())
-					to_chat(usr, "<span class='warning'>You have nothing to drop in your hand.</span>")
-					return
-				drop_item()
-			else
-				to_chat(usr, "<span class='warning'>This mob type cannot drop items.</span>")
-			return
+/client/verb/swap_hand()
+	set hidden = 1
+	if(istype(mob, /mob/living))
+		var/mob/living/L = mob
+		L.swap_hand()
+	if(istype(mob,/mob/living/silicon/robot))
+		var/mob/living/silicon/robot/R = mob
+		R.cycle_modules()
+	return
+
+/client/verb/attack_self()
+	set hidden = 1
+	if(mob)
+		mob.mode()
+	return
 
 /mob/proc/hotkey_drop()
 	to_chat(usr, "<span class='warning'>This mob type cannot drop items.</span>")
@@ -86,25 +68,6 @@
 		return
 	usr.stop_pulling()
 
-/client/verb/swap_hand()
-	set hidden = 1
-	if(istype(mob, /mob/living))
-		var/mob/living/L = mob
-		L.swap_hand()
-	if(istype(mob,/mob/living/silicon/robot))
-		var/mob/living/silicon/robot/R = mob
-		R.cycle_modules()
-	return
-
-
-
-/client/verb/attack_self()
-	set hidden = 1
-	if(mob)
-		mob.mode()
-	return
-
-
 /client/verb/toggle_throw_mode()
 	set hidden = 1
 	if(!istype(mob, /mob/living/carbon))
@@ -114,13 +77,11 @@
 	else
 		return
 
-
 /client/verb/drop_item()
 	set hidden = 1
 	if(!isrobot(mob) && mob.stat == CONSCIOUS && isturf(mob.loc))
 		return mob.drop_item()
 	return
-
 
 /client/Center()
 	/* No 3D movement in 2D spessman game. dir 16 is Z Up
@@ -133,36 +94,60 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
-	if (direct & (direct - 1))
-		if (direct & 1)
-			if (direct & 4)
-				if (step(src, NORTH))
-					step(src, EAST)
-				else
-					if (step(src, EAST))
-						step(src, NORTH)
-			else
-				if (direct & 8)
-					if (step(src, NORTH))
-						step(src, WEST)
-					else
-						if (step(src, WEST))
-							step(src, NORTH)
-		else
-			if (direct & 2)
-				if (direct & 4)
-					if (step(src, SOUTH))
-						step(src, EAST)
-					else
-						if (step(src, EAST))
-							step(src, SOUTH)
-				else
-					if (direct & 8)
-						if (step(src, SOUTH))
-							step(src, WEST)
-						else
-							if (step(src, WEST))
-								step(src, SOUTH)
+	if(loc != newloc)
+		if(!(direct & (direct - 1))) //Cardinal move
+			. = ..()
+		else //Diagonal move, split it into cardinal moves
+			moving_diagonally = FIRST_DIAG_STEP
+			var/first_step_dir
+			// The `&& moving_diagonally` checks are so that a forceMove taking
+			// place due to a Crossed, Bumped, etc. call will interrupt
+			// the second half of the diagonal movement, or the second attempt
+			// at a first half if step() fails because we hit something.
+			if(direct & NORTH)
+				if(direct & EAST)
+					if(step(src, NORTH) && moving_diagonally)
+						first_step_dir = NORTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, EAST)
+					else if(moving_diagonally && step(src, EAST))
+						first_step_dir = EAST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, NORTH)
+				else if(direct & WEST)
+					if(step(src, NORTH) && moving_diagonally)
+						first_step_dir = NORTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, WEST)
+					else if(moving_diagonally && step(src, WEST))
+						first_step_dir = WEST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, NORTH)
+			else if(direct & SOUTH)
+				if(direct & EAST)
+					if(step(src, SOUTH) && moving_diagonally)
+						first_step_dir = SOUTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, EAST)
+					else if(moving_diagonally && step(src, EAST))
+						first_step_dir = EAST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, SOUTH)
+				else if(direct & WEST)
+					if(step(src, SOUTH) && moving_diagonally)
+						first_step_dir = SOUTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, WEST)
+					else if(moving_diagonally && step(src, WEST))
+						first_step_dir = WEST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, SOUTH)
+			if(moving_diagonally == SECOND_DIAG_STEP)
+				if(!.)
+					set_dir(first_step_dir)
+			moving_diagonally = 0
+			return
+
 	else
 		var/atom/A = src.loc
 
@@ -181,6 +166,7 @@
 			Moved(A, direct)
 	return
 
+/*
 // Called on a successful Move().
 /atom/movable/proc/Moved(atom/oldloc)
 	if(ismob(src))
@@ -191,6 +177,7 @@
 		src:check_shadow()
 	*/
 	return
+*/
 
 /client/proc/Move_object(direct)
 	if(mob && mob.control_object)
@@ -206,6 +193,8 @@
 /client/Move(n, direct)
 	if(!mob)
 		return // Moved here to avoid nullrefs below
+	if(world.time < move_delay) //do not move anything ahead of this check please
+		return FALSE
 
 	if(mob.control_object)	Move_object(direct)
 

@@ -51,6 +51,8 @@ datum/preferences
 	. += "<br>"
 	. += "<b>Gender:</b> <a href='?src=\ref[src];gender=1'><b>[gender2text(pref.gender)]</b></a><br>"
 	. += "<b>Age:</b> <a href='?src=\ref[src];age=1'>[pref.age]</a><br>"
+	. += "<b>Hotkey mode:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Default"]</a><br>"
+
 /*
 	//. += "<b>Spawn Point</b>: <a href='?src=\ref[src];spawnpoint=1'>[pref.spawnpoint]</a><br>"
 	//. += "<b>RELIGION</b> "
@@ -114,12 +116,12 @@ datum/preferences
 		else
 			pref.religion = LEGAL_RELIGION
 		return TOPIC_REFRESH
-	
+
 	else if(href_list["family"])
 		pref.family = !pref.family
 		return TOPIC_REFRESH
 */
-	
+
 	else if(href_list["metadata"])
 		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , pref.metadata)) as message|null
 		if(new_metadata && CanUseTopic(user))

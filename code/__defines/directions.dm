@@ -6,4 +6,8 @@
 #define N_NORTHEAST 32
 #define N_NORTHWEST 512
 #define N_SOUTHEAST 64
-#define N_SOUTHWEST 1024 
+#define N_SOUTHWEST 1024
+
+// Diagonal movement for movable atoms
+#define FIRST_DIAG_STEP 	1
+#define SECOND_DIAG_STEP 	2

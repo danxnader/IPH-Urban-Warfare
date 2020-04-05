@@ -5,6 +5,7 @@
 	glide_size = 8
 
 	var/last_move = null
+	var/last_move_time = 0
 	var/anchored = 0
 	// var/elevation = 2    - not used anywhere
 	var/move_speed = 10
@@ -17,6 +18,8 @@
 	var/throw_range = 7
 	var/moved_recently = 0
 	var/mob/pulledby = null
+	var/moving_diagonally = 0 //to know whether we're in the middle of a diagonal move,
+	var/direct
 	var/item_state = null // Used to specify the item state for the on-mob overlays.
 
 /atom/movable/Destroy()
@@ -42,6 +45,186 @@
 		return
 	..()
 	return
+
+/atom/movable/Move(atom/newloc, direct, glide_size_override)
+	. = FALSE
+	//var/atom/movable/pullee = pulling
+	//var/turf/T = loc
+	//if(!moving_from_pull)
+		//check_pulling()
+	var/atom/oldloc = loc
+	if(!loc || !newloc)
+		return FALSE
+
+	if (.)
+		if(!loc)
+			GLOB.moved_event.raise_event(src, oldloc, null)
+
+		// freelook
+		if(opacity)
+			updateVisibility(src)
+
+		if(!direct)
+			direct = get_dir(src, newloc)
+		set_dir(direct)
+
+	if(!loc.Exit(src, newloc))
+		return
+
+	if(!newloc.Enter(src, src.loc))
+		return
+
+	// Past this is the point of no return
+	SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_MOVE, newloc)
+	var/area/oldarea = get_area(oldloc)
+	var/area/newarea = get_area(newloc)
+	loc = newloc
+	. = TRUE
+	oldloc.Exited(src, newloc)
+	if(oldarea != newarea)
+		oldarea.Exited(src, newloc)
+
+	for(var/i in oldloc)
+		if(i == src) // Multi tile objects
+			continue
+		var/atom/movable/thing = i
+		thing.Uncrossed(src)
+
+	newloc.Entered(src, oldloc)
+	if(oldarea != newarea)
+		newarea.Entered(src, oldloc)
+
+	for(var/i in loc)
+		if(i == src) // Multi tile objects
+			continue
+		var/atom/movable/thing = i
+		thing.Crossed(src)
+
+	var/old_loc = loc
+	. = ..()
+	if (.)
+		// observ
+		if(!loc)
+			GLOB.moved_event.raise_event(src, old_loc, null)
+
+		// freelook
+		if(opacity)
+			updateVisibility(src)
+
+	if(loc != newloc)
+		if(!(direct & (direct - 1))) //Cardinal move
+			. = ..()
+		else //Diagonal move, split it into cardinal moves
+			moving_diagonally = FIRST_DIAG_STEP
+			var/first_step_dir
+			// The `&& moving_diagonally` checks are so that a forceMove taking
+			// place due to a Crossed, Bumped, etc. call will interrupt
+			// the second half of the diagonal movement, or the second attempt
+			// at a first half if step() fails because we hit something.
+			if(direct & NORTH)
+				if(direct & EAST)
+					if(step(src, NORTH) && moving_diagonally)
+						first_step_dir = NORTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, EAST)
+					else if(moving_diagonally && step(src, EAST))
+						first_step_dir = EAST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, NORTH)
+				else if(direct & WEST)
+					if(step(src, NORTH) && moving_diagonally)
+						first_step_dir = NORTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, WEST)
+					else if(moving_diagonally && step(src, WEST))
+						first_step_dir = WEST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, NORTH)
+			else if(direct & SOUTH)
+				if(direct & EAST)
+					if(step(src, SOUTH) && moving_diagonally)
+						first_step_dir = SOUTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, EAST)
+					else if(moving_diagonally && step(src, EAST))
+						first_step_dir = EAST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, SOUTH)
+				else if(direct & WEST)
+					if(step(src, SOUTH) && moving_diagonally)
+						first_step_dir = SOUTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, WEST)
+					else if(moving_diagonally && step(src, WEST))
+						first_step_dir = WEST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, SOUTH)
+			if(moving_diagonally == SECOND_DIAG_STEP)
+				if(!.)
+					set_dir(first_step_dir)
+			moving_diagonally = 0
+			return
+
+	if(!loc || (loc == oldloc && oldloc != newloc))
+		last_move = 0
+		return
+
+		Moved(oldloc, direct)
+
+/*
+	//if(. && pulling && pulling == pullee && pulling != moving_from_pull) //we were pulling a thing and didn't lose it during our move.
+		//if(pulling.anchored)
+			//stop_pulling()
+		else
+			var/pull_dir = get_dir(src, pulling)
+			//puller and pullee more than one tile away or in diagonal position
+			if(get_dist(src, pulling) > 1 || (moving_diagonally != SECOND_DIAG_STEP && ((pull_dir - 1) & pull_dir)))
+				pulling.moving_from_pull = src
+				pulling.Move(T, get_dir(pulling, T)) //the pullee tries to reach our previous position
+				pulling.moving_from_pull = null
+			check_pulling()
+*/
+
+	last_move = direct
+	last_move_time = world.time
+	set_dir(direct)
+
+		// lighting
+	if (light_sources)	// Yes, I know you can for-null safely, but this is slightly faster. Hell knows why.
+		for (var/datum/light_source/L in light_sources)
+			L.source_atom.update_light()
+
+	if(!direct)
+		direct = get_dir(src, newloc)
+	set_dir(direct)
+
+	if(!loc.Exit(src, newloc))
+		return
+
+	if(!newloc.Enter(src, loc))
+		return
+
+	if(!newloc || newloc == loc)
+		return
+
+		// lighting
+		if (light_sources)	// Yes, I know you can for-null safely, this is slightly faster. Hell knows why.
+			for (var/datum/light_source/L in light_sources)
+				L.source_atom.update_light()
+
+/atom/movable/proc/Moved(atom/oldloc, direction, Forced = FALSE)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, direction, Forced)
+	if(ismob(src))
+		src:check_shadow()
+	if(isturf(loc))
+		if(opacity)
+			updateVisibility(src)
+		//else
+			//if(light)
+				//light.changed()
+	//for(var/_F in followers)
+		//var/mob/dead/observer/F = _F
+		//F.forceMove(loc)
 
 /atom/movable/proc/forceMove(atom/destination)
 	if(loc == destination)
@@ -73,39 +256,6 @@
 			if(is_new_area && is_destination_turf)
 				destination.loc.Entered(src, origin)
 	return 1
-
-/atom/movable/forceMove(atom/dest)
-	var/old_loc = loc
-	. = ..()
-	if (.)
-		// observ
-		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
-
-		// freelook
-		if(opacity)
-			updateVisibility(src)
-
-		// lighting
-		if (light_sources)	// Yes, I know you can for-null safely, but this is slightly faster. Hell knows why.
-			for (var/datum/light_source/L in light_sources)
-				L.source_atom.update_light()
-
-/atom/movable/Move(...)
-	var/old_loc = loc
-	. = ..()
-	if (.)
-		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
-
-		// freelook
-		if(opacity)
-			updateVisibility(src)
-
-		// lighting
-		if (light_sources)	// Yes, I know you can for-null safely, this is slightly faster. Hell knows why.
-			for (var/datum/light_source/L in light_sources)
-				L.source_atom.update_light()
 
 //called when src is thrown into hit_atom
 /atom/movable/proc/throw_impact(atom/hit_atom, var/speed)
@@ -299,4 +449,4 @@
 			forceMove(T)
 
 /atom/movable/proc/get_bullet_impact_effect_type()
-	return BULLET_IMPACT_NONE 
+	return BULLET_IMPACT_NONE
