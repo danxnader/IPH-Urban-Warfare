@@ -680,6 +680,7 @@
 				icon_state = "cannon"
 	return
 
+
 /obj/structure/cannon/relaymove(var/mob/mob, direction)
 	if (direction)
 		// prevents going over the invisible wall
