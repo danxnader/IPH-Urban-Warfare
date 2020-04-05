@@ -131,6 +131,5 @@ Thanks to spacemaniac and mcdonald for help with the JS side of this.
 	winset(src, "saybutton", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
 	winset(src, "asset_cache_browser", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
 	winset(src, "asset_cache_browser", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-
 	winset(src, "input", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
 	winset(src, "input", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
