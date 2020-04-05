@@ -20,7 +20,7 @@
 	tube.dir = builder.dir
 	base.other = tube
 	tube.other = base
-	base.anchored = FALSE
+	base.anchored = TRUE
 	tube.anchored = TRUE
 
 	if (fake_builder)
