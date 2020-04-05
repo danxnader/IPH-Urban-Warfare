@@ -20,7 +20,7 @@
 	tube.dir = builder.dir
 	base.other = tube
 	tube.other = base
-	base.anchored = FALSE
+	base.anchored = TRUE
 	tube.anchored = TRUE
 
 	if (fake_builder)
@@ -51,7 +51,7 @@
 //	var/jammed_until = -1
 
 	density = TRUE
-	name = "7,5 cm FK 18"
+	name = "2A61 Pat-B"
 	icon = 'icons/obj/artillery_piece.dmi'
 	icon_state = "base"
 	layer = MOB_LAYER + 1 //just above mobs
