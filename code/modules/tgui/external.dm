@@ -30,9 +30,10 @@
   *
   * return list Data to be sent to the UI.
  **/
+ /*
 /datum/proc/ui_data(mob/user, ui_key = "main")
 	return list() // Not implemented.
-
+*/
 
  /**
   * public

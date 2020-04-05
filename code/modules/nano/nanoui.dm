@@ -71,7 +71,7 @@ nanoui is used to open and update nano browser uis
   *
   * @return /nanoui new nanoui object
   */
-/datum/nanoui/New(nuser, nsrc_object, nui_key, ntemplate_filename, ntitle = 0, nwidth = 0, nheight = 0, var/atom/nref = null, var/datum/nanoui/master_ui = null, var/datum/topic_state/state = GLOB.default_state)
+/datum/nanoui/New(nuser, nsrc_object, nui_key, ntemplate_filename, ntitle = 0, nwidth = 0, nheight = 0, atom/nref, datum/nanoui/master_ui, datum/topic_state/state = GLOB.default_state)
 	user = nuser
 	src_object = nsrc_object
 	ui_key = nui_key
@@ -94,9 +94,24 @@ nanoui is used to open and update nano browser uis
 	if (nref)
 		ref = nref
 
-	add_common_assets()
-	var/datum/asset/assets = get_asset_datum(/datum/asset/nanoui)
-	assets.send(user, ntemplate_filename)
+	add_common_assets()	
+
+
+	if(user.client)
+		var/datum/asset/assets = get_asset_datum(/datum/asset/directories/nanoui)
+
+		// Avoid opening the window if the resources are not loaded yet.
+		if(!assets.check_sent(user.client))
+			to_chat(user, "Resources are still loading. Please wait.")
+			assets.send(user.client)
+			close()
+
+//Do not qdel nanouis. Use close() instead.
+/datum/nanoui/Destroy()
+	user = null
+	src_object = null
+	state = null
+	. = ..()
 
  /**
   * Use this proc to add assets which are common to (and required by) all nano uis
@@ -114,6 +129,7 @@ nanoui is used to open and update nano browser uis
 	add_script("nano_base_callbacks.js") // The NanoBaseCallbacks JS, this is used to set up (before and after update) callbacks which are common to all UIs
 	add_script("nano_base_helpers.js") // The NanoBaseHelpers JS, this is used to set up template helpers which are common to all UIs
 	add_stylesheet("shared.css") // this CSS sheet is common to all UIs
+	add_stylesheet("tgui.css") // this CSS sheet is common to all UIs
 	add_stylesheet("icons.css") // this CSS sheet is common to all UIs
 
  /**
@@ -403,7 +419,7 @@ nanoui is used to open and update nano browser uis
   * @return nothing
   */
 /datum/nanoui/proc/open()
-	if(!user.client)
+	if(!user || !user.client)
 		return
 
 	// An attempted fix to UIs sometimes locking up spamming runtime errors due to src_object being null for whatever reason.
@@ -462,8 +478,9 @@ nanoui is used to open and update nano browser uis
 		return
 	var/params = "\ref[src]"
 
-	spawn(2)
-		winset(user, window_id, "on-close=\"nanoclose [params]\"")
+	if(!user || !user.client)
+		return
+	winset(user, window_id, "on-close=\"nanoclose [params]\"")
 
  /**
   * Push data to an already open UI window
@@ -530,8 +547,8 @@ nanoui is used to open and update nano browser uis
   *
   * @return nothing
   */
-/datum/nanoui/proc/update(var/force_open = 0)
-	src_object.ui_interact(user, ui_key, src, force_open)
+///datum/nanoui/proc/update(var/force_open = 0)
+	//src_object.ui_interact(user, ui_key, src, force_open)
 
  /**
   * Sends a message to the client-side JS.
@@ -554,3 +571,6 @@ nanoui is used to open and update nano browser uis
 		world.log << url_decode(winget(ui.user, ui.window_id, "*"))
 		ui.close()
 	to_chat(src, "<span class='notice'>All Nano UIs should be closed now.</span>")
+
+/datum/nanoui/proc/update(var/force_open = 0)
+	src_object.ui_interact(user, ui_key, src, force_open, master_ui, state)
