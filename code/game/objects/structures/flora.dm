@@ -5,7 +5,8 @@
 	density = 1
 	icon = 'icons/obj/flora/jungletrees.dmi'
 	icon_state = "tree1"
-	pixel_x = -16
+	pixel_x = -48
+	pixel_y = -16 //i have no idea why this was THAT misplaced
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 
