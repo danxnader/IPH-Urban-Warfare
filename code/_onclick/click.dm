@@ -522,6 +522,11 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 		else
 			scrambling = 0
 
+/mob/proc/check_click_intercept(params,A)
+	//Client level intercept
+	if(client?.click_intercept)
+		if(call(client.click_intercept, "InterceptClickOn")(src, params, A))
+			return TRUE
 /atom/proc/middle_click_intent_check(var/mob/M)
 	if(M.middle_click_intent == "kick")
 		return kick_act(M)

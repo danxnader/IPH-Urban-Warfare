@@ -20,7 +20,7 @@
 
 
 	if(savefile_version < 35)
-		WRITE_FILE(S["focus_chat"], FALSE)
+		WRITE_FILE(S["hotkeys"], FALSE)
 
 	if(savefile_version < 34)
 		READ_FILE(S["key_bindings"], key_bindings)
@@ -46,7 +46,7 @@
 		WRITE_FILE(S["key_bindings"], null)
 
 	if(savefile_version < 23)
-		WRITE_FILE(S["focus_chat"], TRUE)
+		WRITE_FILE(S["hotkeys"], TRUE)
 
 /datum/preferences/proc/save_preferences()
 	if(!path)				return 0

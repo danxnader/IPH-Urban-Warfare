@@ -17,6 +17,7 @@
 	if(mind && mind.current == src)
 		spellremove(src)
 	ghostize(0)
+	set_focus(src)
 	..()
 	return QDEL_HINT_HARDDEL
 
@@ -1090,6 +1091,7 @@ mob/proc/yank_out_object()
 	if(src.throw_icon)
 		src.throw_icon.icon_state = "act_throw_on"
 
+/*
 /mob/proc/toggle_antag_pool()
 	set name = "Toggle Add-Antag Candidacy"
 	set desc = "Toggles whether or not you will be considered a candidate by an add-antag vote."
@@ -1108,6 +1110,7 @@ mob/proc/yank_out_object()
 		to_chat(usr, "You must be observing or in the lobby to join the antag pool.")
 /mob/proc/is_invisible_to(var/mob/viewer)
 	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility)
+*/
 
 /mob/living/proc/report_stamina()
 	var/msg = "You should not see this!"
@@ -1167,3 +1170,47 @@ mob/proc/yank_out_object()
 		return
 	var/obj/screen/zone_sel/selector = mob.zone_sel
 	selector.set_selected_zone(next_in_list(mob.zone_sel.selecting,zones))
+
+// reset_perspective(thing) set the eye to the thing (if it's equal to current default reset to mob perspective)
+// reset_perspective() set eye to common default : mob on turf, loc otherwise
+/mob/proc/reset_perspective(atom/A)
+	if(!client)
+		return
+
+	if(A)
+		if(ismovableatom(A))
+			//Set the the thing unless it's us
+			if(A != src)
+				client.perspective = EYE_PERSPECTIVE
+				client.eye = A
+			else
+				client.eye = client.mob
+				client.perspective = MOB_PERSPECTIVE
+		else if(isturf(A))
+			//Set to the turf unless it's our current turf
+			if(A != loc)
+				client.perspective = EYE_PERSPECTIVE
+				client.eye = A
+			else
+				client.eye = client.mob
+				client.perspective = MOB_PERSPECTIVE
+	else
+		//Reset to common defaults: mob if on turf, otherwise current loc
+		if(isturf(loc))
+			client.eye = client.mob
+			client.perspective = MOB_PERSPECTIVE
+		else
+			client.perspective = EYE_PERSPECTIVE
+			client.eye = loc
+
+	return TRUE
+
+
+/mob/Moved(atom/oldloc, direction)
+	if(client && (client.view != world.view || client.pixel_x || client.pixel_y))
+		for(var/obj/item/item in contents)
+			if(item.zoom)
+				item.zoom(src)
+				click_intercept = null
+				break
+	return ..()

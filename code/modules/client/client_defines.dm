@@ -31,6 +31,7 @@
 	// Because discarding that input makes the game less responsive.
 	var/next_move_dir_add // On next move, add this dir to the move that would otherwise be done
 	var/next_move_dir_sub // On next move, subtract this dir from the move that would otherwise be done
+	var/datum/click_intercept = null // Needs to implement InterceptClickOn(user,params,atom) proc
 
 	///Amount of keydowns in the last keysend checking interval
 	var/client_keysend_amount = 0

@@ -167,6 +167,14 @@
 		set_macros()
 		update_movement_keys()
 
+	if (prefs.hotkeys)
+		// If hotkey mode is enabled, then clicking the map will automatically
+		// unfocus the text bar. This removes the red color from the text bar
+		// so that the visual focus indicator matches reality.
+		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
+	else
+		winset(src, null, "input.focus=false input.background-color=[COLOR_INPUT_ENABLED]")
+
 	. = ..()	//calls mob.Login()
 	chatOutput.start()
 	prefs.sanitize_preferences()

@@ -303,9 +303,9 @@ datum/preferences
 	if("hotkeys")
 		hotkeys = !hotkeys
 	if(hotkeys)
-		winset(user, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
+		winset(user, null, "input.focus=true")
 	else
-		winset(user, null, "input.focus=true input.background-color=[COLOR_INPUT_DISABLED]")
+		winset(user, null, "mapwindow.map.focus=true")
 
 	..()
 

@@ -19,9 +19,15 @@
 
 	virtual_mob = null // Hear no evil, speak no evil
 
-/mob/new_player/New()
-	..()
-	verbs += /mob/proc/toggle_antag_pool
+/mob/new_player/Initialize()
+	if(length(GLOB.newplayer_start))
+		forceMove(pick(GLOB.newplayer_start))
+	else
+		forceMove(locate(1, 1, 1))
+
+	lastarea = get_area(loc)
+
+	return ..()
 
 /mob/new_player/verb/new_player_panel()
 	set src = usr
@@ -180,7 +186,7 @@
 		if(client.prefs.real_name in GLOB.player_name_list)
 			to_chat(usr, "<span class='danger'>Our records show we already employ a [name].  Please change your name to join the crew.</span>")
 			return
-		
+
 		var/datum/species/S = all_species[client.prefs.species]
 		if(!check_species_allowed(S))
 			return 0
@@ -417,7 +423,7 @@
 	dat += "Choose from the following open/valid positions:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
 	dat += "<table>"
-	
+
 	for(var/datum/job/job in job_master.occupations)
 		//Suprisingly, get_announcement_frequency is perfect for getting the name from the depratment_flag var
 		if(department != get_department_names(job))

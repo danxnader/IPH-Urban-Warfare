@@ -85,6 +85,7 @@
 	var/lying = 0
 	var/lying_prev = 0
 	var/canmove = 1
+	var/last_move_intent
 	//Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
 	var/incorporeal_move = 0 //0 is off, 1 is normal, 2 is for ninjas.
 	var/unacidable = 0
@@ -197,3 +198,8 @@
 	var/datum/focus //What receives our keyboard inputs. src by default
 	var/memory_throttle_time = 0
 	var/updating_glide_size = TRUE //Whether the mob is updating glide size when movespeed updates or not
+
+	var/datum/click_intercept
+	var/atom/movable/interactee //the thing that the mob is currently interacting with (e.g. a computer, another mob (stripping a mob), manning a hmg)
+
+	var/notransform = FALSE

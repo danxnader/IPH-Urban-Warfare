@@ -195,6 +195,9 @@
 		return // Moved here to avoid nullrefs below
 	if(world.time < move_delay) //do not move anything ahead of this check please
 		return FALSE
+	else
+		next_move_dir_add = 0
+		next_move_dir_sub = 0
 
 	if(mob.control_object)	Move_object(direct)
 
@@ -202,7 +205,79 @@
 		Process_Incorpmove(direct)
 		return
 
-	if(moving)	return 0
+	if(!mob?.loc)
+		return FALSE
+
+	if(!n || !direct)
+		return FALSE
+
+	if(mob.notransform)
+		return FALSE	//This is sota the goto stop mobs from moving var
+
+	if(!isliving(mob))
+		return mob.Move(n, direct)
+
+	if(mob.stat == DEAD)
+		mob.ghostize()
+		return FALSE
+
+	var/mob/living/L = mob  //Already checked for isliving earlier
+
+	var/double_delay = FALSE
+	if(direct in GLOB.diagonals)
+		double_delay = TRUE
+
+	//Check if you are being grabbed and if so attemps to break it
+	if(L.pulledby)
+		if(L.incapacitated(TRUE))
+			return
+		else if(L.restrained(TRUE))
+			move_delay = world.time + 10 //to reduce the spam
+			to_chat(src, "<span class='warning'>You're restrained! You can't move!</span>")
+			return
+		else
+			return L.resist_grab(TRUE)
+
+	if(L.buckled)
+		return L.buckled.relaymove(L, direct)
+
+	if(!L.canmove)
+		return
+
+	if(isobj(L.loc) || ismob(L.loc))//Inside an object, tell it we moved
+		var/atom/O = L.loc
+		return O.relaymove(L, direct)
+
+	if(isturf(L.loc))
+		if(double_delay && L.cadecheck()) //Hacky
+			direct = get_cardinal_dir(n, L.loc)
+			direct = DIRFLIP(direct)
+			n = get_step(L.loc, direct)
+
+/*
+		L.last_move_intent = world.time + 10
+		switch(L.m_intent)
+			if(L.m_intent == "run")
+				move_delay = 2 + CONFIG_GET(RUN_SPEED)
+			if(L.m_intent == "walk")
+				move_delay = 7 + CONFIG_GET(WALK_SPEED)
+		move_delay += L.movement_delay(direct)
+		//We are now going to move
+		moving = TRUE
+		glide_size = 32 / max(move_delay, tick_lag) * tick_lag
+*/
+
+		if(L.confused)
+			step(L, pick(GLOB.cardinal))
+		else
+			. = ..()
+
+		moving = FALSE
+		if(double_delay)
+			move_delay = world.time + (move_delay * SQRTWO)
+		else
+			move_delay = world.time + move_delay
+		return .
 
 	if(world.time < move_delay)	return
 
@@ -227,8 +302,8 @@
 		return
 
 	if(isliving(mob))
-		var/mob/living/L = mob
-		if(L.incorporeal_move)//Move though walls
+		var/mob/living/F = mob
+		if(F.incorporeal_move)//Move though walls
 			Process_Incorpmove(direct)
 			return
 		if(mob.client)
@@ -331,11 +406,11 @@
 		if(locate(/obj/item/grab, mob))
 			for (var/obj/item/grab/G in mob)
 				move_delay = max(move_delay, world.time + G.grab_slowdown())
-				var/list/L = mob.ret_grab()
-				if(istype(L, /list))
-					if(L.len == 2)
-						L -= mob
-						var/mob/M = L[1]
+				var/list/R = mob.ret_grab()
+				if(istype(R, /list))
+					if(R.len == 2)
+						R -= mob
+						var/mob/M = R[1]
 						if(M)
 							if ((get_dist(mob, M) <= 1 || M.loc == mob.loc))
 								var/turf/T = mob.loc
@@ -348,11 +423,11 @@
 									if ((get_dist(mob, M) > 1 || diag))
 										step(M, get_dir(M.loc, T))
 					else
-						for(var/mob/M in L)
+						for(var/mob/M in R)
 							M.other_mobs = 1
 							if(mob != M)
 								M.animate_movement = 3
-						for(var/mob/M in L)
+						for(var/mob/M in R)
 							spawn( 0 )
 								step(M, direct)
 								return
@@ -591,3 +666,12 @@
 	set name = ".moveleft"
 	set instant = 1
 	Move(get_step(mob, WEST), WEST)
+
+/mob/proc/cadecheck()
+	var/list/coords = list(list(x + 1, y, z), list(x, y + 1, z), list(x - 1, y, z), list(x, y - 1, z))
+	for(var/i in coords)
+		var/list/L = i
+		var/turf/T = locate(L[1], L[2], L[3])
+		for(var/obj/structure/barricade/B in T.contents)
+			return TRUE
+	return FALSE

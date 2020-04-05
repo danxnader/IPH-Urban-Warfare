@@ -1740,8 +1740,8 @@
 /mob/living/carbon/human/get_adjusted_metabolism(metabolism)
 	return ..() * (species ? species.metabolism_mod : 1)
 
-/mob/living/carbon/human/is_invisible_to(var/mob/viewer)
-	return (is_cloaked() || ..())
+///mob/living/carbon/human/is_invisible_to(var/mob/viewer)
+	//return (is_cloaked() || ..())
 
 /mob/living/carbon/human/help_shake_act(mob/living/carbon/M)
 	if(src != M)

@@ -26,10 +26,11 @@ SUBSYSTEM_DEF(input)
 	"Any" = "\"KeyDown \[\[*\]\]\"",
 	"Any+UP" = "\"KeyUp \[\[*\]\]\"",
 	"O" = "ooc",
+	"L" = "looc",
 	"T" = "say",
 	"M" = "me",
 	"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
-	"Tab" = "\".winset \\\"input.focus=true?map.focus=true input.background-color=[COLOR_INPUT_DISABLED]:input.focus=true input.background-color=[COLOR_INPUT_ENABLED]\\\"\"",
+	"Tab" = "\".winset \\\"input.focus=true ? mapwindow.map.focus=true : input.focus=true\\\"\"",,
 	"Escape" = "\".winset \\\"input.text=\\\"\\\"\\\"\"")
 
 
@@ -39,6 +40,7 @@ SUBSYSTEM_DEF(input)
 		var/client/user = clients[i]
 		user.set_macros()
 		user.update_movement_keys()
+
 
 /datum/controller/subsystem/input/fire()
 	var/list/clients = GLOB.clients //Cache, makes it faster.
