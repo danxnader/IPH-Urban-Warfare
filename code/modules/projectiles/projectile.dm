@@ -188,6 +188,9 @@
 /obj/item/projectile/proc/launch_from_gun(atom/target, mob/user, obj/item/weapon/gun/launcher, var/target_zone, var/x_offset=0, var/y_offset=0)
 	if(user == target) //Shooting yourself
 		user.bullet_act(src, target_zone)
+		var/turf/t1 = get_turf(src)
+		var/list/heard = playsound(t1, fire_sound, 0, TRUE)
+		playsound(t1, "Distant_1", 100, TRUE, excluded = heard)
 		qdel(src)
 		return 0
 
