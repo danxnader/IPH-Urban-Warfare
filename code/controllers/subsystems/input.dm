@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(input)
 	"T" = "say",
 	"M" = "me",
 	"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
-	"Tab" = "\".winset \\\"input.focus=true ? mapwindow.map.focus=true : input.focus=true\\\"\"",,
+	"Tab" = "\".winset \\\"input.focus=false ? mapwindow.map.focus=true : input.focus=true\\\"\"",,
 	"Escape" = "\".winset \\\"input.text=\\\"\\\"\\\"\"")
 
 
