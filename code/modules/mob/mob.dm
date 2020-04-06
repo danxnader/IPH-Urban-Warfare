@@ -634,6 +634,14 @@
 	for(var/mob/M in viewers())
 		M.see(message)
 
+/mob/forceMove(atom/destination)
+	. = ..()
+	if(!.)
+		return
+	stop_pulling()
+	if(buckled)
+		buckled.unbuckle_mob(src)
+
 /mob/Stat()
 	..()
 	. = (is_client_active(10 MINUTES))
