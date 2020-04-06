@@ -34,22 +34,6 @@ default behaviour is:
  - passive mob checks to see if its mob_bump_flag is in the non-passive's mob_bump_flags
  - if si, the proc returns
 */
-
-/mob/living/Move(atom/newloc, direct)
-	if(buckled && buckled.loc != newloc) //not updating position
-		if(!buckled.anchored)
-			return buckled.Move(newloc, direct)
-		else
-			return FALSE
-
-	. = ..()
-
-	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1 && (pulledby != moving_from_pull))//separated from our puller and not in the middle of a diagonal move.
-		pulledby.stop_pulling()
-
-	if(s_active && !(s_active in contents))
-		s_active.close(src)
-
 /mob/living/proc/can_move_mob(var/mob/living/swapped, swapping = 0, passive = 0)
 	if(!swapped)
 		return 1
@@ -299,7 +283,7 @@ default behaviour is:
 
 /mob/living/proc/adjustHalLoss(var/amount)
 	adjustBruteLoss(amount * 0.5)
-
+		
 
 /mob/living/proc/setHalLoss(var/amount)
 	adjustBruteLoss((amount * 0.5)-getBruteLoss())
@@ -393,51 +377,6 @@ default behaviour is:
 
 /mob/living/proc/can_inject(var/mob/user, var/target_zone)
 	return 1
-
-/mob/living/Move(atom/newloc, direct)
-	if(buckled)
-		if(buckled.loc != newloc) //not updating position
-			if(!buckled.anchored)
-				return buckled.Move(newloc, direct)
-			else
-				return FALSE
-	else if(lying)
-		if(direct & EAST)
-			lying = 90
-		else if(direct & WEST)
-			lying = 270
-		update_transform()
-		lying_prev = lying
-
-	. = ..()
-
-	if(pulledby)
-		if(moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1 && (pulledby != moving_from_pull))//separated from our puller and not in the middle of a diagonal move.
-			pulledby.stop_pulling()
-		else if(isliving(pulledby))
-			var/mob/living/living_puller = pulledby
-			living_puller.set_pull_offsets(src)
-
-	if(s_active && !(s_active in contents) && !COMSIG_ATOM_CANREACH)
-		s_active.close(src)
-
-/mob/living/Moved(oldLoc, dir)
-	. = ..()
-	update_camera_location(oldLoc)
-
-/mob/living/forceMove(atom/destination)
-	. = ..()
-	//Only bother updating the camera if we actually managed to move
-	if(.)
-		update_camera_location(destination)
-		if(client)
-			reset_perspective()
-
-/mob/living/proc/do_camera_update(oldLoc)
-	return
-
-/mob/living/proc/update_camera_location(oldLoc)
-	return
 
 /mob/living/proc/get_organ_target()
 	var/mob/shooter = src
@@ -693,47 +632,6 @@ default behaviour is:
 
 	update_vision_cone()
 
-/mob/living/proc/set_pull_offsets(mob/living/pulled_mob)
-	if(pulled_mob.buckled)
-		return //don't make them change direction or offset them if they're buckled into something.
-	if(pulled_mob.loc == loc)
-		reset_pull_offsets(pulled_mob)
-		return
-	var/offset = 0
-/*
-	switch(grab_state)
-		if(GRAB_PASSIVE)
-			offset = GRAB_PIXEL_SHIFT_PASSIVE
-		if(GRAB_AGGRESSIVE)
-			offset = GRAB_PIXEL_SHIFT_AGGRESSIVE
-		if(GRAB_NECK)
-			offset = GRAB_PIXEL_SHIFT_NECK
-		if(GRAB_KILL)
-			offset = GRAB_PIXEL_SHIFT_NECK
-*/
-	pulled_mob.set_dir(get_dir(pulled_mob, src))
-	switch(pulled_mob.dir)
-		if(NORTH)
-			animate(pulled_mob, pixel_x = 0, pixel_y = offset, 0.3 SECONDS)
-		if(SOUTH)
-			animate(pulled_mob, pixel_x = 0, pixel_y = -offset, 0.3 SECONDS)
-		if(EAST)
-			if(pulled_mob.lying == 270) //update the dragged dude's direction if we've turned
-				pulled_mob.lying = 90
-				pulled_mob.update_transform() //force a transformation update, otherwise it'll take a few ticks for update_mobility() to do so
-				pulled_mob.lying_prev = pulled_mob.lying
-			animate(pulled_mob, pixel_x = offset, pixel_y = 0, 0.3 SECONDS)
-		if(WEST)
-			if(pulled_mob.lying == 90)
-				pulled_mob.lying = 270
-				pulled_mob.update_transform()
-				pulled_mob.lying_prev = pulled_mob.lying
-			animate(pulled_mob, pixel_x = -offset, pixel_y = 0, 0.3 SECONDS)
-
-/mob/living/proc/reset_pull_offsets(mob/living/pulled_mob, override)
-	if(!override && pulled_mob.buckled)
-		return
-	animate(pulled_mob, pixel_x = 0, pixel_y = 0, 0.1 SECONDS)
 
 /mob/living/proc/CheckStamina()
 	if(staminaloss <= 0)
@@ -744,12 +642,12 @@ default behaviour is:
 			adjustStaminaLoss(-5)
 		else
 			adjustStaminaLoss(-1)
-
+	
 	if(m_intent == "run" && staminaloss < 50)
 		adjustStaminaLoss(1)
 	else
 		adjustStaminaLoss(-2)
-
+	
 	if(staminaloss >= STAMINA_EXHAUST && !stat)//Oh shit we've lost too much stamina and now we're tired!
 		Exhaust()
 		return

@@ -34,7 +34,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 /mob/observer/ghost/New(mob/body)
 	see_in_dark = 100
-	//verbs += /mob/proc/toggle_antag_pool
+	verbs += /mob/proc/toggle_antag_pool
 
 	var/turf/T
 	if(ismob(body))

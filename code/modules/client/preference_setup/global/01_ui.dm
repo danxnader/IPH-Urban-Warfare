@@ -16,7 +16,6 @@
 	S["UI_style_alpha"]	>> pref.UI_style_alpha
 	S["ooccolor"]		>> pref.ooccolor
 	S["clientfps"]		>> pref.clientfps
-	S["hotkeys"]		<< pref.hotkeys
 
 /datum/category_item/player_setup_item/player_global/ui/save_preferences(var/savefile/S)
 	S["UI_style"]		<< pref.UI_style
@@ -24,7 +23,6 @@
 	S["UI_style_alpha"]	<< pref.UI_style_alpha
 	S["ooccolor"]		<< pref.ooccolor
 	S["clientfps"]		<< pref.clientfps
-	S["hotkeys"]		<< pref.hotkeys
 
 /datum/category_item/player_setup_item/player_global/ui/sanitize_preferences()
 	pref.UI_style		= sanitize_inlist(pref.UI_style, all_ui_styles, initial(pref.UI_style))
@@ -40,14 +38,12 @@
 	. += "-Color: <a href='?src=\ref[src];select_color=1'><b>[pref.UI_style_color]</b></a> <table style='display:inline;' bgcolor='[pref.UI_style_color]'><tr><td>__</td></tr></table> <a href='?src=\ref[src];reset=ui'>reset</a><br>"
 	. += "-Alpha(transparency): <a href='?src=\ref[src];select_alpha=1'><b>[pref.UI_style_alpha]</b></a> <a href='?src=\ref[src];reset=alpha'>reset</a><br>"
 	if(can_select_ooc_color(user))
-		. += "<b>OOC Color:</b>"
+		. += "<b>OOC Color:</b> "
 		if(pref.ooccolor == initial(pref.ooccolor))
 			. += "<a href='?src=\ref[src];select_ooc_color=1'><b>Using Default</b></a><br>"
 		else
 			. += "<a href='?src=\ref[src];select_ooc_color=1'><b>[pref.ooccolor]</b></a> <table style='display:inline;' bgcolor='[pref.ooccolor]'><tr><td>__</td></tr></table> <a href='?src=\ref[src];reset=ooc'>reset</a><br>"
 	. += "<b>Client FPS:</b> <a href='?src=\ref[src];select_fps=1'><b>[pref.clientfps]</b></a><br>"
-	. += "<b>Hotkey mode:</b> <a href='?_src_=prefs;preference=hotkeys'>[pref.hotkeys ? "Default" : "Hotkeys"]</a><br>"
-
 
 /datum/category_item/player_setup_item/player_global/ui/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["select_style"])

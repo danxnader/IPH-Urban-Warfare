@@ -1,13 +1,3 @@
-/mob/living/carbon/human/Move(NewLoc, direct)
-	. = ..()
-	if(!.)
-		return
-	if(interactee)// moving stops any kind of interaction
-		return UI_CLOSE
-	if(shoes && !buckled)
-		var/obj/item/clothing/shoes/S = shoes
-		S.handle_movement()
-
 /mob/living/carbon/human/movement_delay()
 	var/tally = ..()
 
@@ -140,8 +130,3 @@
 	if(shoes && (shoes.item_flags & ITEM_FLAG_NOSLIP) && istype(shoes, /obj/item/clothing/shoes/magboots))  //magboots + dense_object = no floating
 		return 1
 	return 0
-
-
-///mob/living/carbon/human/Moved(atom/oldloc, direction)
-	//Process_Cloaking_Router(src)
-	//return ..()

@@ -350,12 +350,8 @@
 	if(istype(user, /mob/living/silicon/robot) && Adjacent(user)) // Robots can open/close it, but not the AI.
 		attack_hand(user)
 
-/obj/structure/closet/relaymove(mob/user, direct)
-	if(!isturf(loc))
-		return
-	if(user.incapacitated(TRUE))
-		return
-	if(!direct)
+/obj/structure/closet/relaymove(mob/user as mob)
+	if(user.stat || !isturf(src.loc))
 		return
 
 	if(!src.open())

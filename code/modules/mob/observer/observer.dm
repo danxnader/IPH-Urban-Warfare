@@ -38,28 +38,6 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 		updateallghostimages()
 	. = ..()
 
-/mob/observer/Move(atom/newloc, direct)
-	var/oldloc = loc
-	set_dir(direct)
-	//if(loc != newloc)
-		//unfollow()
-	if(newloc)
-		forceMove(newloc)
-		return
-	else
-		forceMove(get_turf(src))  //Get out of closets and such as a ghost
-		if((direct & NORTH) && y < world.maxy)
-			y++
-		else if((direct & SOUTH) && y > 1)
-			y--
-		if((direct & EAST) && x < world.maxx)
-			x++
-		else if((direct & WEST) && x > 1)
-			x--
-
-	Moved(oldloc, direct)
-
-
 mob/observer/check_airflow_movable()
 	return FALSE
 

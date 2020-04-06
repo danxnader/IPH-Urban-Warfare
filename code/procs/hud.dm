@@ -14,8 +14,8 @@ proc/process_med_hud(var/mob/M, var/local_scanner, var/mob/Alt)
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.med_hud_users)
 	for(var/mob/living/carbon/human/patient in P.Mob.in_view(P.Turf))
 
-		//if(patient.is_invisible_to(P.Mob))
-			//continue
+		if(patient.is_invisible_to(P.Mob))
+			continue
 
 		if(local_scanner)
 			P.Client.images += patient.hud_list[HEALTH_HUD]
@@ -34,8 +34,8 @@ proc/process_sec_hud(var/mob/M, var/advanced_mode, var/mob/Alt)
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.sec_hud_users)
 	for(var/mob/living/carbon/human/perp in P.Mob.in_view(P.Turf))
 
-		//if(perp.is_invisible_to(P.Mob))
-			//continue
+		if(perp.is_invisible_to(P.Mob))
+			continue
 
 		P.Client.images += perp.hud_list[ID_HUD]
 		if(advanced_mode)

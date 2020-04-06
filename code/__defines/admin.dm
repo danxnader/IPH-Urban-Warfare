@@ -46,14 +46,3 @@
 #define TICKET_CLOSED 0   // Ticket has been resolved or declined
 #define TICKET_OPEN     1 // Ticket has been created, but not responded to
 #define TICKET_ASSIGNED 2 // An admin has assigned themself to the ticket and will respond
-
-///Max length of a keypress command before it's considered to be a forged packet/bogus command
-#define MAX_KEYPRESS_COMMANDLENGTH 16
-///Maximum keys that can be bound to one button
-#define MAX_COMMANDS_PER_KEY 5
-///Max amount of keypress messages per second over two seconds before client is autokicked
-#define MAX_KEYPRESS_AUTOKICK 50
-///Length of held key rolling buffer
-#define HELD_KEY_BUFFER_LENGTH 15
-///Maximum keys allowed per keybind
-#define MAX_KEYS_PER_KEYBIND 3

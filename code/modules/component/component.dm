@@ -1,7 +1,7 @@
 /datum/component
 	var/enabled = TRUE
 	var/dupe_mode = COMPONENT_DUPE_HIGHLANDER
-	//var/list/signal_procs
+	var/list/signal_procs
 	var/datum/parent
 
 /datum/component/New(datum/P, ...)
@@ -36,7 +36,6 @@
 		LAZYREMOVE(P.datum_components, src)
 		parent = null
 
-/*
 /datum/component/proc/RegisterSignal(sig_type, proc_on_self, override = FALSE)
 	if(!src || src.gc_destroyed)
 		return
@@ -49,7 +48,6 @@
 		. = procs[sig_type]
 	spawn(0)
 		procs[sig_type] = call(src, proc_on_self)()
-*/
 
 /datum/component/proc/ReceiveSignal(sigtype, ...)
 	var/list/sps = signal_procs
@@ -63,7 +61,7 @@
 /datum/component/proc/OnTransfer(datum/new_parent)
 	return
 
-///datum/var/list/datum_components //list of /datum/component
+/datum/var/list/datum_components //list of /datum/component
 
 /datum/proc/SendSignal(sigtype, ...)
 	var/list/comps = datum_components
@@ -114,19 +112,3 @@
 	C.OnTransfer(src)
 	C.parent = src
 	SendSignal(COMSIG_COMPONENT_ADDED, C)
-
-/datum/proc/_SendSignal(sigtype, list/arguments)
-	var/target = comp_lookup[sigtype]
-	if(!length(target))
-		var/datum/C = target
-		if(!C.signal_enabled)
-			return null
-		var/proctype = C.signal_procs[src][sigtype]
-		return null | CallAsync(C, proctype, arguments)
-	. = null
-	for(var/I in target)
-		var/datum/C = I
-		if(!C.signal_enabled)
-			continue
-		var/proctype = C.signal_procs[src][sigtype]
-		. |= CallAsync(C, proctype, arguments)

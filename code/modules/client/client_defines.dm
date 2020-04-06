@@ -24,29 +24,6 @@
 
 	var/fullscreen = FALSE
 
-	//Mob related
-	var/list/keys_held = list() // A list of any keys held currently
-	var/current_key_address = 0
-
-	var/list/char_render_holders			//Should only be a key-value list of north/south/east/west = obj/screen.
-
-	// These next two vars are to apply movement for keypresses and releases made while move delayed.
-	// Because discarding that input makes the game less responsive.
-	var/next_move_dir_add // On next move, add this dir to the move that would otherwise be done
-	var/next_move_dir_sub // On next move, subtract this dir from the move that would otherwise be done
-	var/datum/click_intercept = null // Needs to implement InterceptClickOn(user,params,atom) proc
-
-	///Amount of keydowns in the last keysend checking interval
-	var/client_keysend_amount = 0
-	///World tick time where client_keysend_amount will reset
-	var/next_keysend_reset = 0
-	///World tick time where keysend_tripped will reset back to false
-	var/next_keysend_trip_reset = 0
-	///When set to true, user will be autokicked if they trip the keysends in a second limit again
-	var/keysend_tripped = FALSE
-	///custom movement keys for this client
-	var/list/movement_keys = list()
-
 		///////////////
 		//SOUND STUFF//
 		///////////////

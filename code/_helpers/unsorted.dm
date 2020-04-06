@@ -1109,7 +1109,3 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /proc/pass()
 	return
-
-/proc/CallAsync(datum/source, proctype, list/arguments)
-	set waitfor = FALSE
-	return call(source, proctype)(arglist(arguments))
