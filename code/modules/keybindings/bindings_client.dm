@@ -15,11 +15,6 @@
 		client_keysend_amount = 0
 		next_keysend_reset = world.time + (1 SECONDS)
 
-	//Focus Chat failsafe. Overrides movement checks to prevent WASD.
-	if(!prefs.hotkeys && length(_key) == 1 && _key != "Alt" && _key != "Ctrl" && _key != "Shift")
-		winset(src, null, "input.focus=true ; input.text=[url_encode(_key)]")
-		return
-
 	//The "tripped" system is to confirm that flooding is still happening after one spike
 	//not entirely sure how byond commands interact in relation to lag
 	//don't want to kick people if a lag spike results in a huge flood of commands being sent
@@ -44,7 +39,7 @@
 
 	//Focus Chat failsafe. Overrides movement checks to prevent WASD.
 	if(prefs.hotkeys && length(_key) == 1 && _key != "Alt" && _key != "Ctrl" && _key != "Shift")
-		winset(src, null, "input.focus=false ; input.text=[url_encode(_key)]")
+		winset(src, null, "input.focus=true ; input.text=[url_encode(_key)]")
 		return
 
 	//offset by 1 because the buffer address is 0 indexed because the math was simpler
@@ -84,12 +79,6 @@
 		if(keys_held[i] == _key)
 			keys_held[i] = null
 			break
-
-	// Check if chat should have focus but doesn't, give it focus and pre-enter the key.
-	if(prefs.hotkeys && !winget(src, null, "input.focus"))
-		winset(src, null, "input.focus=true")
-		winset(src, null, "input=[list2params(list(text = _key))]")
-		return
 
 	//Can't just do a remove because it would alter the length of the rolling buffer, instead search for the key then null it out if it exists
 	for(var/i in 1 to HELD_KEY_BUFFER_LENGTH)
