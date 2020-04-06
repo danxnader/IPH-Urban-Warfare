@@ -484,6 +484,15 @@
 	unset_machine()
 	reset_view(null)
 
+/mob/Moved(atom/oldloc, direction)
+	if(client && (client.view != world.view || client.pixel_x || client.pixel_y))
+		for(var/obj/item/item in contents)
+			if(item.zoom)
+				item.zoom(src)
+				click_intercept = null
+				break
+	return ..()
+
 /mob/Topic(href, href_list)
 	if(href_list["mach_close"])
 		var/t1 = text("window=[href_list["mach_close"]]")
@@ -524,8 +533,7 @@
 	show_inv(usr)
 
 
-/mob/verb/stop_pulling()
-
+/mob/verb/stop_pullingsomething()
 	set name = "Stop Pulling"
 	set category = "IC"
 
@@ -535,7 +543,7 @@
 		if(pullin)
 			pullin.icon_state = "pull0"
 
-/mob/proc/start_pulling(var/atom/movable/AM)
+/mob/proc/start_pullingsomething(var/atom/movable/AM)
 
 	if ( !AM || !usr || src==AM || !isturf(src.loc) )	//if there's no person pulling OR the person is pulling themself OR the object being pulled is inside something: abort!
 		return
@@ -1204,13 +1212,3 @@ mob/proc/yank_out_object()
 			client.eye = loc
 
 	return TRUE
-
-
-/mob/Moved(atom/oldloc, direction)
-	if(client && (client.view != world.view || client.pixel_x || client.pixel_y))
-		for(var/obj/item/item in contents)
-			if(item.zoom)
-				item.zoom(src)
-				click_intercept = null
-				break
-	return ..()

@@ -9,7 +9,6 @@
 	var/anchored = 0
 	// var/elevation = 2    - not used anywhere
 	var/move_speed = 10
-	var/l_move_time = 1
 	var/m_flag = 1
 	var/throwing = 0
 	var/thrower
@@ -19,6 +18,8 @@
 	var/moved_recently = 0
 	var/mob/pulledby = null
 	var/moving_diagonally = 0 //to know whether we're in the middle of a diagonal move,
+	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
+	var/atom/movable/pulling
 	var/direct
 	var/item_state = null // Used to specify the item state for the on-mob overlays.
 
@@ -33,40 +34,18 @@
 			pulledby.pulling = null
 		pulledby = null
 
-/atom/movable/Bump(var/atom/A, yes)
-	if(src.throwing)
-		src.throw_impact(A)
-		src.throwing = 0
-
-	spawn(0)
-		if (A && yes)
-			A.last_bumped = world.time
-			A.Bumped(src)
-		return
-	..()
-	return
-
-/atom/movable/Move(atom/newloc, direct, glide_size_override)
+////////////////////////////////////////
+// Here's where we rewrite how byond handles movement except slightly different
+// To be removed on step_ conversion
+// All this work to prevent a second bump
+/atom/movable/Move(atom/newloc, direct=0)
 	. = FALSE
-	//var/atom/movable/pullee = pulling
-	//var/turf/T = loc
-	//if(!moving_from_pull)
-		//check_pulling()
-	var/atom/oldloc = loc
-	if(!loc || !newloc)
-		return FALSE
+	if(!newloc || newloc == loc)
+		return
 
-	if (.)
-		if(!loc)
-			GLOB.moved_event.raise_event(src, oldloc, null)
-
-		// freelook
-		if(opacity)
-			updateVisibility(src)
-
-		if(!direct)
-			direct = get_dir(src, newloc)
-		set_dir(direct)
+	if(!direct)
+		direct = get_dir(src, newloc)
+	set_dir(direct)
 
 	if(!loc.Exit(src, newloc))
 		return
@@ -76,6 +55,7 @@
 
 	// Past this is the point of no return
 	SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_MOVE, newloc)
+	var/atom/oldloc = loc
 	var/area/oldarea = get_area(oldloc)
 	var/area/newarea = get_area(newloc)
 	loc = newloc
@@ -99,17 +79,17 @@
 			continue
 		var/atom/movable/thing = i
 		thing.Crossed(src)
+//
+////////////////////////////////////////
 
-	var/old_loc = loc
-	. = ..()
-	if (.)
-		// observ
-		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
-
-		// freelook
-		if(opacity)
-			updateVisibility(src)
+/atom/movable/Move(atom/newloc, direct)
+	var/atom/movable/pullee = pulling
+	var/turf/T = loc
+	if(!moving_from_pull)
+		check_pulling()
+	if(!loc || !newloc)
+		return FALSE
+	var/atom/oldloc = loc
 
 	if(loc != newloc)
 		if(!(direct & (direct - 1))) //Cardinal move
@@ -169,93 +149,205 @@
 		last_move = 0
 		return
 
+	if(.)
 		Moved(oldloc, direct)
 
-/*
-	//if(. && pulling && pulling == pullee && pulling != moving_from_pull) //we were pulling a thing and didn't lose it during our move.
-		//if(pulling.anchored)
-			//stop_pulling()
-		else
+	if(. && pulling && pulling == pullee && pulling != moving_from_pull) //we were pulling a thing and didn't lose it during our move.
+		if(pulling.anchored)
 			var/pull_dir = get_dir(src, pulling)
 			//puller and pullee more than one tile away or in diagonal position
 			if(get_dist(src, pulling) > 1 || (moving_diagonally != SECOND_DIAG_STEP && ((pull_dir - 1) & pull_dir)))
 				pulling.moving_from_pull = src
 				pulling.Move(T, get_dir(pulling, T)) //the pullee tries to reach our previous position
 				pulling.moving_from_pull = null
-			check_pulling()
-*/
+			//check_pulling()
 
 	last_move = direct
 	last_move_time = world.time
 	set_dir(direct)
 
-		// lighting
-	if (light_sources)	// Yes, I know you can for-null safely, but this is slightly faster. Hell knows why.
-		for (var/datum/light_source/L in light_sources)
-			L.source_atom.update_light()
 
-	if(!direct)
-		direct = get_dir(src, newloc)
-	set_dir(direct)
-
-	if(!loc.Exit(src, newloc))
+/atom/movable/Bump(atom/A, yes) //yes arg is to distinguish our calls of this proc from the calls native from byond.
+	if(throwing)
+		throw_impact(A)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_BUMP, A)
+	spawn( 0 )
+		if ((A && yes))
+			A.last_bumped = world.time
+			A.Bumped(src)
 		return
+	..()
+	return
 
-	if(!newloc.Enter(src, loc))
-		return
+/atom/movable/proc/start_pulling(atom/movable/AM, suppress_message = FALSE)
+	if(QDELETED(AM))
+		return FALSE
 
-	if(!newloc || newloc == loc)
-		return
+	if(!(AM.can_be_pulled(src)))
+		return FALSE
 
-		// lighting
-		if (light_sources)	// Yes, I know you can for-null safely, this is slightly faster. Hell knows why.
-			for (var/datum/light_source/L in light_sources)
-				L.source_atom.update_light()
+	// If we're pulling something then drop what we're currently pulling and pull this instead.
+	if(pulling)
+		var/pulling_old = pulling
+		stop_pulling()
+		// Are we pulling the same thing twice? Just stop pulling.
+		if(pulling_old == AM)
+			return FALSE
+	if(AM.pulledby)
+		//log_combat(AM, AM.pulledby, "pulled from", src)
+		AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
+	pulling = AM
+	AM.pulledby = src
+	//AM.glide_modifier_flags |= GLIDE_MOD_PULLED
+	if(ismob(AM))
+		var/mob/M = AM
+		if(M.buckled)
+			if(!M.buckled.anchored)
+				return start_pulling(M.buckled)
+			//M.buckled.set_glide_size(glide_size)
+		//else
+			//M.set_glide_size(glide_size)
+		//log_combat(src, M, "grabbed", addition = "passive grab")
+		if(!suppress_message)
+			visible_message("<span class='warning'>[src] has grabbed [M] passively!</span>")
+	//else
+		//pulling.set_glide_size(glide_size)
+	return TRUE
+
+
+/atom/movable/proc/stop_pulling()
+	if(!pulling)
+		return FALSE
+
+	//setGrabState(GRAB_PASSIVE)
+
+	pulling.pulledby = null
+	//pulling.glide_modifier_flags &= ~GLIDE_MOD_PULLED
+	if(ismob(pulling))
+		var/mob/pulled_mob = pulling
+		pulled_mob.update_canmove() //Mob gets up if it was lyng down in a chokehold.
+		//if(pulled_mob.buckled)
+			//pulled_mob.buckled.reset_glide_size()
+		//else
+			//pulled_mob.reset_glide_size()
+	//else
+		//pulling.reset_glide_size()
+	pulling = null
+
+	return TRUE
+
+
+/atom/movable/proc/Move_Pulled(turf/target)
+	if(!pulling)
+		return FALSE
+	if(pulling.anchored || !pulling.Adjacent(src))
+		stop_pulling()
+		return FALSE
+	var/move_dir = get_dir(pulling.loc, target)
+	var/turf/destination_turf = get_step(pulling.loc, move_dir)
+	if(!Adjacent(destination_turf) || (destination_turf == loc && pulling.density))
+		return FALSE
+	pulling.Move(destination_turf, move_dir)
+	return TRUE
+
+
+/atom/movable/proc/check_pulling()
+	if(pulling)
+		var/atom/movable/pullee = pulling
+		if(pullee && get_dist(src, pullee) > 1)
+			stop_pulling()
+			return
+		if(!isturf(loc))
+			stop_pulling()
+			return
+		if(pullee && !isturf(pullee.loc) && pullee.loc != loc) //to be removed once all code that changes an object's loc uses forceMove().
+			stop_pulling()
+			return
+		if(pulling.anchored)
+			stop_pulling()
+			return
+	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
+		pulledby.stop_pulling()
+
+
+/atom/movable/proc/can_be_pulled(user)
+	if(src == user || !isturf(loc))
+		return FALSE
+	if(anchored || throwing)
+		return FALSE
+	return TRUE
+
+
+//oldloc = old location on atom, inserted when forceMove is called and ONLY when forceMove is called!
+/atom/movable/Crossed(atom/movable/AM, oldloc)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSSED, AM)
+
 
 /atom/movable/proc/Moved(atom/oldloc, direction, Forced = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, direction, Forced)
-	if(ismob(src))
-		src:check_shadow()
-	if(isturf(loc))
-		if(opacity)
-			updateVisibility(src)
-		//else
-			//if(light)
-				//light.changed()
-	//for(var/_F in followers)
-		//var/mob/dead/observer/F = _F
-		//F.forceMove(loc)
+	for(var/thing in light_sources) // Cycle through the light sources on this atom and tell them to update.
+		var/datum/light_source/L = thing
+		L.source_atom.update_light()
+	return TRUE
+
 
 /atom/movable/proc/forceMove(atom/destination)
-	if(loc == destination)
-		return 0
-	var/is_origin_turf = isturf(loc)
-	var/is_destination_turf = isturf(destination)
-	// It is a new area if:
-	//  Both the origin and destination are turfs with different areas.
-	//  When either origin or destination is a turf and the other is not.
-	var/is_new_area = (is_origin_turf ^ is_destination_turf) || (is_origin_turf && is_destination_turf && loc.loc != destination.loc)
-
-	var/atom/origin = loc
-	loc = destination
-
-	if(origin)
-		origin.Exited(src, destination)
-		if(is_origin_turf)
-			for(var/atom/movable/AM in origin)
-				AM.Uncrossed(src)
-			if(is_new_area && is_origin_turf)
-				origin.loc.Exited(src, destination)
-
+	. = FALSE
 	if(destination)
-		destination.Entered(src, origin)
-		if(is_destination_turf) // If we're entering a turf, cross all movable atoms
-			for(var/atom/movable/AM in loc)
-				if(AM != src)
-					AM.Crossed(src)
-			if(is_new_area && is_destination_turf)
-				destination.loc.Entered(src, origin)
-	return 1
+		. = doMove(destination)
+	else
+		CRASH("No valid destination passed into forceMove")
+
+/atom/movable/proc/moveToNullspace()
+	return doMove(null)
+
+/atom/movable/proc/doMove(atom/destination)
+	. = FALSE
+	if(destination)
+		if(pulledby)
+			pulledby.stop_pulling()
+		var/atom/oldloc = loc
+		var/same_loc = oldloc == destination
+		var/area/old_area = get_area(oldloc)
+		var/area/destarea = get_area(destination)
+
+		loc = destination
+
+		if(!same_loc)
+			if(oldloc)
+				oldloc.Exited(src, destination)
+				if(old_area && old_area != destarea)
+					old_area.Exited(src, destination)
+			for(var/atom/movable/AM in oldloc)
+				AM.Uncrossed(src)
+			//var/turf/oldturf = get_turf(oldloc)
+			//var/turf/destturf = get_turf(destination)
+			//var/old_z = (oldturf ? oldturf.z : null)
+			//var/dest_z = (destturf ? destturf.z : null)
+			//if (old_z != dest_z)
+			//	onTransitZ(old_z, dest_z)
+			destination.Entered(src, oldloc)
+			if(destarea && old_area != destarea)
+				destarea.Entered(src, oldloc)
+
+			for(var/atom/movable/AM in destination)
+				if(AM == src)
+					continue
+				AM.Crossed(src, oldloc)
+
+		Moved(oldloc, NONE, TRUE)
+		. = TRUE
+
+	//If no destination, move the atom into nullspace (don't do this unless you know what you're doing)
+	else
+		. = TRUE
+		if (loc)
+			var/atom/oldloc = loc
+			var/area/old_area = get_area(oldloc)
+			oldloc.Exited(src, null)
+			if(old_area)
+				old_area.Exited(src, null)
+		loc = null
 
 //called when src is thrown into hit_atom
 /atom/movable/proc/throw_impact(atom/hit_atom, var/speed)

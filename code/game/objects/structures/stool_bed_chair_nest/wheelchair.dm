@@ -6,7 +6,7 @@
 	buckle_movable = 1
 
 	var/driving = 0
-	var/mob/living/pulling = null
+	var/mob/living/pullingthings = null
 	var/bloodiness
 
 /obj/structure/bed/chair/wheelchair/update_icon()
@@ -30,30 +30,30 @@
 /obj/structure/bed/chair/wheelchair/relaymove(mob/user, direction)
 	// Redundant check?
 	if(user.stat || user.stunned || user.weakened || user.paralysis || user.lying || user.restrained())
-		if(user==pulling)
-			pulling = null
+		if(user==pullingthings)
+			pullingthings = null
 			user.pulledby = null
 			to_chat(user, "<span class='warning'>You lost your grip!</span>")
 		return
-	if(buckled_mob && pulling && user == buckled_mob)
-		if(pulling.stat || pulling.stunned || pulling.weakened || pulling.paralysis || pulling.lying || pulling.restrained())
-			pulling.pulledby = null
-			pulling = null
-	if(user.pulling && (user == pulling))
-		pulling = null
+	if(buckled_mob && pullingthings && user == buckled_mob)
+		if(pullingthings.stat || pullingthings.stunned || pullingthings.weakened || pullingthings.paralysis || pullingthings.lying || pullingthings.restrained())
+			pullingthings.pulledby = null
+			pullingthings = null
+	if(pullingthings && (user == pullingthings))
+		pullingthings = null
 		user.pulledby = null
 		return
 	if(propelled)
 		return
-	if(pulling && (get_dist(src, pulling) > 1))
-		pulling = null
+	if(pullingthings && (get_dist(src, pulling) > 1))
+		pullingthings = null
 		user.pulledby = null
-		if(user==pulling)
+		if(user==pullingthings)
 			return
-	if(pulling && (get_dir(src.loc, pulling.loc) == direction))
+	if(pullingthings && (get_dir(src.loc, pullingthings.loc) == direction))
 		to_chat(user, "<span class='warning'>You cannot go there.</span>")
 		return
-	if(pulling && buckled_mob && (buckled_mob == user))
+	if(pullingthings && buckled_mob && (buckled_mob == user))
 		to_chat(user, "<span class='warning'>You cannot drive while being pushed.</span>")
 		return
 
@@ -67,7 +67,7 @@
 		buckled_mob.buckled = src
 	//--2----Move driver----2--//
 	if(pulling)
-		T = pulling.loc
+		T = pullingthings.loc
 		if(get_dist(src, pulling) >= 1)
 			step(pulling, get_dir(pulling.loc, src.loc))
 	//--3--Move wheelchair--3--//
@@ -75,15 +75,15 @@
 	if(buckled_mob) // Make sure it stays beneath the occupant
 		Move(buckled_mob.loc)
 	set_dir(direction)
-	if(pulling) // Driver
-		if(pulling.loc == src.loc) // We moved onto the wheelchair? Revert!
-			pulling.forceMove(T)
+	if(pullingthings) // Driver
+		if(pullingthings.loc == src.loc) // We moved onto the wheelchair? Revert!
+			pullingthings.forceMove(T)
 		else
 			spawn(0)
-			if(get_dist(src, pulling) > 1) // We are too far away? Losing control.
-				pulling = null
+			if(get_dist(src, pullingthings) > 1) // We are too far away? Losing control.
+				pullingthings = null
 				user.pulledby = null
-			pulling.set_dir(get_dir(pulling, src)) // When everything is right, face the wheelchair
+			pullingthings.set_dir(get_dir(pullingthings, src)) // When everything is right, face the wheelchair
 	if(bloodiness)
 		create_track()
 	driving = 0
@@ -141,10 +141,10 @@
 	..()
 	if(!buckled_mob)	return
 
-	if(propelled || (pulling && (pulling.a_intent == I_HURT)))
+	if(propelled || (pullingthings && (pullingthings.a_intent == I_HURT)))
 		var/mob/living/occupant = unbuckle_mob()
 
-		if (pulling && (pulling.a_intent == I_HURT))
+		if (pullingthings && (pullingthings.a_intent == I_HURT))
 			occupant.throw_at(A, 3, 3, pulling)
 		else if (propelled)
 			occupant.throw_at(A, 3, propelled)

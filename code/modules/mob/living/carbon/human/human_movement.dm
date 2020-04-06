@@ -130,3 +130,8 @@
 	if(shoes && (shoes.item_flags & ITEM_FLAG_NOSLIP) && istype(shoes, /obj/item/clothing/shoes/magboots))  //magboots + dense_object = no floating
 		return 1
 	return 0
+
+
+/mob/living/carbon/human/Moved(atom/oldloc, direction)
+	//Process_Cloaking_Router(src)
+	return ..()

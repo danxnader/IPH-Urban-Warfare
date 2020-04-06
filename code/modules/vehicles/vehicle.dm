@@ -47,7 +47,7 @@
 	//spawn the cell you want in each vehicle
 
 /obj/vehicle/Move()
-	if(world.time > l_move_time + move_delay)
+	if(world.time > last_move_time + move_delay)
 		var/old_loc = get_turf(src)
 		if(on && powered && cell.charge < (charge_use * CELLRATE))
 			turn_off()

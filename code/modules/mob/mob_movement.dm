@@ -92,118 +92,23 @@
 	*/
 	return
 
-//This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
-/atom/movable/Move(newloc, direct)
-	if(loc != newloc)
-		if(!(direct & (direct - 1))) //Cardinal move
-			. = ..()
-		else //Diagonal move, split it into cardinal moves
-			moving_diagonally = FIRST_DIAG_STEP
-			var/first_step_dir
-			// The `&& moving_diagonally` checks are so that a forceMove taking
-			// place due to a Crossed, Bumped, etc. call will interrupt
-			// the second half of the diagonal movement, or the second attempt
-			// at a first half if step() fails because we hit something.
-			if(direct & NORTH)
-				if(direct & EAST)
-					if(step(src, NORTH) && moving_diagonally)
-						first_step_dir = NORTH
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, EAST)
-					else if(moving_diagonally && step(src, EAST))
-						first_step_dir = EAST
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, NORTH)
-				else if(direct & WEST)
-					if(step(src, NORTH) && moving_diagonally)
-						first_step_dir = NORTH
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, WEST)
-					else if(moving_diagonally && step(src, WEST))
-						first_step_dir = WEST
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, NORTH)
-			else if(direct & SOUTH)
-				if(direct & EAST)
-					if(step(src, SOUTH) && moving_diagonally)
-						first_step_dir = SOUTH
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, EAST)
-					else if(moving_diagonally && step(src, EAST))
-						first_step_dir = EAST
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, SOUTH)
-				else if(direct & WEST)
-					if(step(src, SOUTH) && moving_diagonally)
-						first_step_dir = SOUTH
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, WEST)
-					else if(moving_diagonally && step(src, WEST))
-						first_step_dir = WEST
-						moving_diagonally = SECOND_DIAG_STEP
-						. = step(src, SOUTH)
-			if(moving_diagonally == SECOND_DIAG_STEP)
-				if(!.)
-					set_dir(first_step_dir)
-			moving_diagonally = 0
-			return
-
-	else
-		var/atom/A = src.loc
-
-		var/olddir = dir //we can't override this without sacrificing the rest of movable/New()
-		. = ..()
-		if(direct != olddir)
-			dir = olddir
-			set_dir(direct)
-
-		src.move_speed = world.time - src.l_move_time
-		src.l_move_time = world.time
-		src.m_flag = 1
-		if ((A != src.loc && A && A.z == src.z))
-			src.last_move = get_dir(A, src.loc)
-		if(.)
-			Moved(A, direct)
-	return
-
-/*
-// Called on a successful Move().
-/atom/movable/proc/Moved(atom/oldloc)
-	if(ismob(src))
-		src:check_shadow()
-
-	/*  We not longer do this
-	if(istype(src, /obj/item))
-		src:check_shadow()
-	*/
-	return
-*/
-
 /client/proc/Move_object(direct)
 	if(mob && mob.control_object)
 		if(mob.control_object.density)
 			step(mob.control_object,direct)
 			if(!mob.control_object)	return
-			mob.control_object.dir = direct
+			mob.control_object.set_dir(direct)
 		else
-			mob.control_object.forceMove(get_step(mob.control_object,direct))
+			mob.control_object.loc = get_step(mob.control_object,direct)
 	return
 
 
 /client/Move(n, direct)
-	if(!mob)
-		return // Moved here to avoid nullrefs below
 	if(world.time < move_delay) //do not move anything ahead of this check please
 		return FALSE
 	else
 		next_move_dir_add = 0
 		next_move_dir_sub = 0
-
-	if(mob.control_object)	Move_object(direct)
-
-	if(mob.incorporeal_move && isobserver(mob))
-		Process_Incorpmove(direct)
-		return
 
 	if(!mob?.loc)
 		return FALSE
@@ -254,108 +159,7 @@
 			direct = DIRFLIP(direct)
 			n = get_step(L.loc, direct)
 
-/*
 		L.last_move_intent = world.time + 10
-		switch(L.m_intent)
-			if(L.m_intent == "run")
-				move_delay = 2 + CONFIG_GET(RUN_SPEED)
-			if(L.m_intent == "walk")
-				move_delay = 7 + CONFIG_GET(WALK_SPEED)
-		move_delay += L.movement_delay(direct)
-		//We are now going to move
-		moving = TRUE
-		glide_size = 32 / max(move_delay, tick_lag) * tick_lag
-*/
-
-		if(L.confused)
-			step(L, pick(GLOB.cardinal))
-		else
-			. = ..()
-
-		moving = FALSE
-		if(double_delay)
-			move_delay = world.time + (move_delay * SQRTWO)
-		else
-			move_delay = world.time + move_delay
-		return .
-
-	if(world.time < move_delay)	return
-
-	if(locate(/obj/effect/stop/, mob.loc))
-		for(var/obj/effect/stop/S in mob.loc)
-			if(S.victim == mob)
-				return
-
-	if(mob.stat==DEAD && isliving(mob))
-		mob.ghostize()
-		return
-
-	// handle possible Eye movement
-	if(mob.eyeobj)
-		return mob.EyeMove(n,direct)
-
-	if(mob.transforming)	return//This is sota the goto stop mobs from moving var
-
-	if(Process_Grab())	return
-
-	if(!mob.canmove)
-		return
-
-	if(isliving(mob))
-		var/mob/living/F = mob
-		if(F.incorporeal_move)//Move though walls
-			Process_Incorpmove(direct)
-			return
-		if(mob.client)
-			if(mob.client.view != world.view) // If mob moves while zoomed in with device, unzoom them.
-				for(var/obj/item/item in mob.contents)
-					if(item.zoom)
-						item.zoom(mob)
-						break
-				if(locate(/obj/item/weapon/gun/energy/sniperrifle, mob.contents))		// If mob moves while zoomed in with sniper rifle, unzoom them.
-					var/obj/item/weapon/gun/energy/sniperrifle/s = locate() in mob
-					if(s.zoom)
-						s.zoom()
-				if(locate(/obj/item/device/binoculars, mob.contents))		// If mob moves while zoomed in with binoculars, unzoom them.
-					var/obj/item/device/binoculars/b = locate() in mob
-					if(b.zoom)
-						b.zoom()
-
-	if(Process_Grab())	return
-
-	if(!mob.canmove)
-		return
-
-	//if(istype(mob.loc, /turf/space) || (mob.flags & NOGRAV))
-	//	if(!mob.Process_Spacemove(0))	return 0
-
-	if(!mob.lastarea)
-		mob.lastarea = get_area(mob.loc)
-
-	if((istype(mob.loc, /turf/space)) || (mob.lastarea.has_gravity == 0))
-		if(!mob.Process_Spacemove(0))	return 0
-
-	if(isobj(mob.loc) || ismob(mob.loc))//Inside an object, tell it we moved
-		var/atom/O = mob.loc
-		return O.relaymove(mob, direct)
-
-	if(isturf(mob.loc))
-
-		if(mob.restrained())//Why being pulled while cuffed prevents you from moving
-			for(var/mob/M in range(mob, 1))
-				if(M.pulling == mob)
-					if(!M.restrained() && M.stat == 0 && M.canmove && mob.Adjacent(M))
-						to_chat(src, "<span class='notice'>You're restrained! You can't move!</span>")
-						return 0
-					else
-						M.stop_pulling()
-
-		if(mob.pinned.len)
-			to_chat(src, "<span class='notice'>You're pinned to a wall by [mob.pinned[1]]!</span>")
-			return 0
-
-		move_delay = world.time//set move delay
-
 		switch(mob.m_intent)
 			if("run")
 				if(mob.drowsyness > 0)
@@ -364,110 +168,31 @@
 			if("walk")
 				move_delay += 7+config.walk_speed
 		move_delay += mob.movement_delay()
-
-		if(istype(mob.buckled, /obj/vehicle))
-			//manually set move_delay for vehicles so we don't inherit any mob movement penalties
-			//specific vehicle move delays are set in code\modules\vehicles\vehicle.dm
-			move_delay = world.time
-			//drunk driving
-			if(mob.confused && prob(20)) //vehicles tend to keep moving in the same direction
-				direct = turn(direct, pick(90, -90))
-			return mob.buckled.relaymove(mob,direct)
-
-		if(istype(mob.machine, /obj/machinery))
-			if(mob.machine.relaymove(mob,direct))
-				return
-
-		if(mob.pulledby || mob.buckled) // Wheelchair driving!
-			if(istype(mob.loc, /turf/space))
-				return // No wheelchair driving in space
-			if(istype(mob.pulledby, /obj/structure/bed/chair/wheelchair))
-				return mob.pulledby.relaymove(mob, direct)
-			else if(istype(mob.buckled, /obj/structure/bed/chair/wheelchair))
-				if(ishuman(mob))
-					var/mob/living/carbon/human/driver = mob
-					var/obj/item/organ/external/l_hand = driver.get_organ(BP_L_HAND)
-					var/obj/item/organ/external/r_hand = driver.get_organ(BP_R_HAND)
-					if((!l_hand || l_hand.is_stump()) && (!r_hand || r_hand.is_stump()))
-						return // No hands to drive your chair? Tough luck!
-				//drunk wheelchair driving
-				else if(mob.confused)
-					switch(mob.m_intent)
-						if("run")
-							if(prob(50))	direct = turn(direct, pick(90, -90))
-						if("walk")
-							if(prob(25))	direct = turn(direct, pick(90, -90))
-				move_delay += 2
-				return mob.buckled.relaymove(mob,direct)
-
 		//We are now going to move
-		moving = 1
-		//Something with pulling things
-		if(locate(/obj/item/grab, mob))
-			for (var/obj/item/grab/G in mob)
-				move_delay = max(move_delay, world.time + G.grab_slowdown())
-				var/list/R = mob.ret_grab()
-				if(istype(R, /list))
-					if(R.len == 2)
-						R -= mob
-						var/mob/M = R[1]
-						if(M)
-							if ((get_dist(mob, M) <= 1 || M.loc == mob.loc))
-								var/turf/T = mob.loc
-								. = ..()
-								if (isturf(M.loc))
-									var/diag = get_dir(mob, M)
-									if ((diag - 1) & diag)
-									else
-										diag = null
-									if ((get_dist(mob, M) > 1 || diag))
-										step(M, get_dir(M.loc, T))
-					else
-						for(var/mob/M in R)
-							M.other_mobs = 1
-							if(mob != M)
-								M.animate_movement = 3
-						for(var/mob/M in R)
-							spawn( 0 )
-								step(M, direct)
-								return
-							spawn( 1 )
-								M.other_mobs = null
-								M.animate_movement = 2
-								return
-					G.adjust_position()
-		else
-			if(mob.confused)
-				switch(mob.m_intent)
-					if("run")
-						if(prob(70))
-							direct = turn(direct, pick(90, -90))
-							n = get_step(mob, direct)
-					if("walk")
-						if(prob(35))
-							direct = turn(direct, pick(90, -90))
-							n = get_step(mob, direct)
-			. = mob.SelfMove(n, direct)
-		for (var/obj/item/grab/G in mob)
-			if (G.assailant_reverse_facing())
-				mob.set_dir(GLOB.reverse_dir[direct])
-			G.assailant_moved()
-		for (var/obj/item/grab/G in mob.grabbed_by)
-			G.adjust_position()
+		moving = TRUE
+		glide_size = 32 / max(move_delay, tick_lag) * tick_lag
 
-		moving = 0
+		if(L.confused)
+			step(L, pick(GLOB.cardinal))
+		else
+			. = ..()
+
+		moving = FALSE
 
 		if(mob.pulling)
 			mob.dir = turn(mob.dir, 180)
 			mob.update_vision_cone()
 
-		return .
+		return
 
-	return
+		if(double_delay)
+			move_delay = world.time + (move_delay * SQRTWO)
+		else
+			move_delay = world.time + move_delay
+		return .
 
 /mob/proc/SelfMove(turf/n, direct)
 	return Move(n, direct)
-
 
 ///Process_Incorpmove
 ///Called by client/Move()

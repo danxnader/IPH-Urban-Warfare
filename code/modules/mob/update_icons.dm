@@ -4,6 +4,9 @@
 /mob/proc/regenerate_icons()		//TODO: phase this out completely if possible
 	return
 
+/mob/proc/update_transform() //handles transforms (humans going from standing to lying)
+	return
+
 /mob/proc/update_icons()
 	return
 

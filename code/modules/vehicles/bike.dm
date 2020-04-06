@@ -138,7 +138,7 @@
 	return Move(get_step(src, direction))
 
 /obj/vehicle/bike/Move(var/turf/destination)
-	if(kickstand || (world.time <= l_move_time + move_delay)) return
+	if(kickstand || (world.time <= last_move_time + move_delay)) return
 	//these things like space, not turf. Dragging shouldn't weigh you down.
 	if(!pulledby)
 		if(istype(destination,/turf/space) || pulledby)

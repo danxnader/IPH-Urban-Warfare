@@ -53,7 +53,7 @@
 		drop = 1
 	else if(standing)
 		use(servo_cost)
-		if(world.time - owner.l_move_time < 15) //so is
+		if(world.time - owner.last_move_time < 15) //so is
 			if(!use(servo_cost))
 				drop = 1
 	if(drop)
