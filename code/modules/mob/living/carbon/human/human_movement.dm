@@ -1,3 +1,13 @@
+/mob/living/carbon/human/Move(NewLoc, direct)
+	. = ..()
+	if(!.)
+		return
+	if(interactee)// moving stops any kind of interaction
+		unset_interaction()
+	if(shoes && !buckled)
+		var/obj/item/clothing/shoes/S = shoes
+		S.step_action()
+
 /mob/living/carbon/human/movement_delay()
 	var/tally = ..()
 
