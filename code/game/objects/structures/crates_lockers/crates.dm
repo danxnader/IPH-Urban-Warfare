@@ -341,3 +341,23 @@ obj/structure/closet/crate
 
 /obj/structure/closet/crate/uranium/WillContain()
 	return list(/obj/item/stack/material/uranium/ten = 5)
+
+/obj/structure/closet/crate/federalgrenades
+	name = "grenades crate"
+	desc = "A crate with a grenade sign on it."
+	icon_state = "federalcrate"
+	icon_opened = "federalcrateopen"
+	icon_closed = "federalcrate"
+
+/obj/structure/closet/crate/federalgrenades/WillContain()
+	return list(/obj/item/weapon/grenade/frag/federal = 5)
+
+/obj/structure/closet/crate/separatistgrenades
+	name = "grenades crate"
+	desc = "A crate with a grenade sign on it."
+	icon_state = "separatistcrate"
+	icon_opened = "separatistcrateopen"
+	icon_closed = "separatistcrate"
+
+/obj/structure/closet/crate/separatistgrenades/WillContain()
+	return list(/obj/item/weapon/grenade/frag/separatist = 5)
