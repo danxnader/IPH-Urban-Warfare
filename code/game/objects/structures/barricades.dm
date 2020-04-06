@@ -1,6 +1,6 @@
 /obj/structure/sandbag
 	name = "sandbag"
-	icon = 'icons/obj/sandbags.dmi'
+	icon = 'icons/obj/barricades.dmi'
 	icon_state = "sandbag"
 	anchored = 1
 	density = 1
@@ -18,11 +18,20 @@
 	else
 		layer = FLY_LAYER
 
-/obj/structure/sandbag/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(istype(mover, /obj/item/projectile))
-		return check_cover(mover, target)
-	if (get_dir(loc, target) == dir)
-		return !density
+/obj/structure/barricade/CanPass(atom/movable/mover, turf/target)
+
+	if(mover && mover.throwing)
+		if(iscarbon(mover)) //Leaping mob against barbed wire fails
+			if(get_dir(loc, target) & dir)
+				return 0
+		return 1
+
+	var/obj/structure/S = locate(/obj/structure) in get_turf(mover)
+	if(S && ATOM_FLAG_CLIMBABLE && !(S.atom_flags & ATOM_FLAG_CHECKS_BORDER) && isliving(mover)) //Climbable objects allow you to universally climb over others
+		return 1
+
+	if(get_dir(loc, target) & dir)
+		return 0
 	else
 		return 1
 
@@ -110,7 +119,7 @@
 
 /obj/structure/foxhole
 	name = "foxhole"
-	icon = 'icons/obj/sandbags.dmi'
+	icon = 'icons/obj/barricades.dmi'
 	icon_state = "foxhole"
 	anchored = 1
 	density = 1
@@ -123,7 +132,7 @@
 
 /obj/structure/foxhole/update_icon()
 	..()
-	overlays += image('icons/obj/sandbags.dmi', src, "foxhole-over", FLY_LAYER)
+	overlays += image('icons/obj/barricades.dmi', src, "foxhole-over", FLY_LAYER)
 
 /obj/structure/foxhole/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover, /obj/item/))
@@ -177,7 +186,7 @@
 /obj/structure/m_barricade
 	name = "metal barricade"
 	desc = "A solid barricade made of steel. Use a welding tool and/or steel to repair it if damaged."
-	icon = 'icons/obj/structures.dmi'
+	icon = 'icons/obj/barricades.dmi'
 	icon_state = "barricade"
 	density = 1
 	anchored = 1.0
@@ -271,7 +280,7 @@
 
 /obj/structure/concreteblock
 	name = "concrete block"
-	icon = 'icons/obj/sandbags.dmi'
+	icon = 'icons/obj/barricades.dmi'
 	icon_state = "block"
 	anchored = 1
 	density = 1
@@ -335,7 +344,7 @@
 /obj/structure/brustwehr
 	name = "brustwehr"
 	desc = "It could be worse..."
-	icon = 'icons/obj/sandbags.dmi'
+	icon = 'icons/obj/barricades.dmi'
 	icon_state = "brustwehr_0"
 	var/health = 200 //Actual health depends on snow layer
 	density = 1
@@ -435,4 +444,70 @@
 				junction |= get_dir(src,B)
 
 		icon_state = "brustwehr_[junction]"
+		return
+
+/obj/structure/barbedwire
+	name = "barbed wire"
+	desc = "Don't tread on me."
+	icon = 'icons/obj/barricades.dmi'
+	icon_state = "barbedwire"
+	var/health = 10000 //It's not easy to remove barbed wire with your damn firsts. Leave that to the sappers.
+	density = 1
+	anchored = 1
+	layer = 2.9
+	atom_flags = ATOM_FLAG_CLIMBABLE
+
+/obj/structure/barbedwire/hitby(atom/movable/AM)
+	if(AM.throwing)
+		if(iscarbon(AM))
+			var/mob/living/carbon/C = AM
+			C.visible_message("<span class='danger'>The barbed wire slices into [C]!</span>",
+			"<span class='danger'>The barbed wire slices into you! Ouch!</span>")
+			C.apply_damage(10)
+			C.Paralyse(2) //Leaping into barbed wire is VERY bad. Don't do it.
+	..()
+
+/obj/structure/barbedwire/CheckExit(atom/movable/O, turf/target)
+
+	if(O.throwing)
+		if(iscarbon(O)) //Leaping mob against barbed wire fails
+			if(get_dir(loc, target) & dir)
+				return 0
+		return 1
+
+	if(get_dir(loc, target) & dir)
+		return 0
+	else
+		return 1
+
+/obj/structure/barbedwire/CanPass(atom/movable/mover, turf/target)
+
+/*
+	if(mover && mover.throwing)
+		if(iscarbon(mover)) //Leaping mob against barbed wire fails
+			if(get_dir(loc, target) & dir)
+				return 0
+		return 1
+*/
+
+	var/obj/structure/S = locate(/obj/structure) in get_turf(mover)
+	if(S && ATOM_FLAG_CLIMBABLE && !(S.atom_flags & ATOM_FLAG_CHECKS_BORDER) && isliving(mover)) //Climbable objects allow you to universally climb over others
+		return 1
+
+	if(get_dir(loc, target) & dir)
+		return 0
+	else
+		return 1
+
+/obj/structure/barbedwire/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/weapon/wirecutters))
+		if(anchored)
+			user.visible_message("<span class='notice'>[user] begins removing the barbed wire.</span>",
+			"<span class='notice'>You begin removing the barbed wire.</span>")
+			if(do_after(user, 20, TRUE, 5))
+				playsound(src.loc, 'sound/items/Wirecutter.ogg', 25, 1)
+				user.visible_message("<span class='notice'>[user] removes the barbed wire.</span>",
+				"<span class='notice'>You remove the barbed wire.</span>")
+				health -= 10000
+				new/obj/item/stack/barbed_wire( src.loc )
 		return

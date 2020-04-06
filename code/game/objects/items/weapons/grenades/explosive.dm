@@ -93,3 +93,20 @@
 /obj/item/weapon/grenade/frag/high_yield/on_explosion(var/turf/O)
 	if(explosion_size)
 		explosion(O, -1, round(explosion_size/2), explosion_size, round(explosion_size/2), 0) //has a chance to blow a hole in the floor
+
+/obj/item/weapon/grenade/frag/federal
+	name = "f-2 grenade"
+	desc = "A grenade used by the federal forces."
+	icon = 'icons/obj/landmine.dmi'
+	icon_state = "grenade_upp"
+
+	num_fragments = 130 //op because I like death
+
+/obj/item/weapon/grenade/frag/separatist
+	name = "f-1.5 grenade"
+	desc = "A grenade used by the separatist forces. Not as good as the federal one."
+	icon = 'icons/obj/landmine.dmi'
+	icon_state = "grenade_stick"
+
+	num_fragments = 110 //still op because I like death
+
