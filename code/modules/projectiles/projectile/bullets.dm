@@ -204,9 +204,9 @@
 	damage = 30
 
 /obj/item/projectile/bullet/rifle/a762
-	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	fire_sound = 'sound/weapons/newrifle2.ogg'
 	damage = 35
-	armor_penetration = 30
+	armor_penetration = 40 //high one
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
