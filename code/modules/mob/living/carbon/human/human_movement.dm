@@ -3,10 +3,10 @@
 	if(!.)
 		return
 	if(interactee)// moving stops any kind of interaction
-		unset_interaction()
+		return UI_CLOSE
 	if(shoes && !buckled)
 		var/obj/item/clothing/shoes/S = shoes
-		S.step_action()
+		S.handle_movement()
 
 /mob/living/carbon/human/movement_delay()
 	var/tally = ..()
