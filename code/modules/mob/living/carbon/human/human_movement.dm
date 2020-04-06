@@ -142,6 +142,6 @@
 	return 0
 
 
-/mob/living/carbon/human/Moved(atom/oldloc, direction)
+///mob/living/carbon/human/Moved(atom/oldloc, direction)
 	//Process_Cloaking_Router(src)
-	return ..()
+	//return ..()
