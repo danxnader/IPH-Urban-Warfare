@@ -16,6 +16,10 @@
 /client/proc/set_macros()
 	set waitfor = FALSE
 
+	keys_held.Cut()
+	for(var/i in 1 to HELD_KEY_BUFFER_LENGTH)
+		keys_held += null
+
 	erase_all_macros()
 
 	var/list/macro_set = SSinput.macro_set
