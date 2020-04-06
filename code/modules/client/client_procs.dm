@@ -487,6 +487,13 @@ client/verb/character_setup()
 		pct += delta
 		winset(src, "mainwindow.mainvsplit", "splitter=[pct]")
 
+//Hijack for FC.
+	if(prefs.hotkeys)
+		winset(src, null, "input.focus=true")
+
+	return ..()
+
+
 /client/proc/update_movement_keys(datum/preferences/direct_prefs)
 	var/datum/preferences/D = prefs || direct_prefs
 	if(!D?.key_bindings)
@@ -503,9 +510,3 @@ client/verb/character_setup()
 					movement_keys[key] = WEST
 				if("South")
 					movement_keys[key] = SOUTH
-
-//Hijack for FC.
-	if(prefs.hotkeys)
-		winset(src, null, "input.focus=true")
-
-	return ..()
