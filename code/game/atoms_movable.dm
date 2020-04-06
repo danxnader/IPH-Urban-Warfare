@@ -278,16 +278,32 @@
 	return TRUE
 
 
+// Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
+// You probably want CanPass()
+/atom/movable/Cross(atom/movable/AM)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSS, AM)
+	return CanPass(AM, AM.loc, TRUE)
+
+
 //oldloc = old location on atom, inserted when forceMove is called and ONLY when forceMove is called!
 /atom/movable/Crossed(atom/movable/AM, oldloc)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSSED, AM)
 
 
+/atom/movable/Uncross(atom/movable/AM, atom/newloc)
+	. = ..()
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_UNCROSS, AM) & COMPONENT_MOVABLE_BLOCK_UNCROSS)
+		return FALSE
+	if(isturf(newloc) && !CheckExit(AM, newloc))
+		return FALSE
+
+
+/atom/movable/Uncrossed(atom/movable/AM)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_UNCROSSED, AM)
+
+
 /atom/movable/proc/Moved(atom/oldloc, direction, Forced = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, direction, Forced)
-	for(var/thing in light_sources) // Cycle through the light sources on this atom and tell them to update.
-		var/datum/light_source/L = thing
-		L.source_atom.update_light()
 	return TRUE
 
 
@@ -298,8 +314,10 @@
 	else
 		CRASH("No valid destination passed into forceMove")
 
+
 /atom/movable/proc/moveToNullspace()
 	return doMove(null)
+
 
 /atom/movable/proc/doMove(atom/destination)
 	. = FALSE
@@ -320,12 +338,12 @@
 					old_area.Exited(src, destination)
 			for(var/atom/movable/AM in oldloc)
 				AM.Uncrossed(src)
-			//var/turf/oldturf = get_turf(oldloc)
-			//var/turf/destturf = get_turf(destination)
-			//var/old_z = (oldturf ? oldturf.z : null)
-			//var/dest_z = (destturf ? destturf.z : null)
-			//if (old_z != dest_z)
-			//	onTransitZ(old_z, dest_z)
+			var/turf/oldturf = get_turf(oldloc)
+			var/turf/destturf = get_turf(destination)
+			var/old_z = (oldturf ? oldturf.z : null)
+			var/dest_z = (destturf ? destturf.z : null)
+			if(old_z != dest_z)
+				onTransitZ(old_z, dest_z)
 			destination.Entered(src, oldloc)
 			if(destarea && old_area != destarea)
 				destarea.Entered(src, oldloc)
