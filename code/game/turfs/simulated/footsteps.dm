@@ -43,7 +43,6 @@
 		'sound/effects/footstep/dirt1.ogg',
 		'sound/effects/footstep/dirt2.ogg',
 		'sound/effects/footstep/dirt3.ogg'),
-
 	FOOTSTEP_GRASS = list(
 		'sound/effects/footstep/grass1.ogg',
 		'sound/effects/footstep/grass2.ogg',
@@ -63,6 +62,8 @@
 /decl/flooring/carpet/footstep_type = FOOTSTEP_CARPET
 /decl/flooring/tiling/footstep_type = FOOTSTEP_TILES
 /decl/flooring/linoleum/footstep_type = FOOTSTEP_TILES
+/decl/flooring/dirt/footstep_type = FOOTSTEP_DIRT
+/decl/flooring/grass/footstep_type = FOOTSTEP_GRASS
 /decl/flooring/wood/footstep_type = FOOTSTEP_WOOD
 /decl/flooring/reinforced/footstep_type = FOOTSTEP_PLATING
 
@@ -80,10 +81,13 @@
 /turf/simulated/floor/exoplanet/get_footstep_sound()
 	return safepick(footstep_sounds[FOOTSTEP_CARPET])
 
-/turf/simulated/floor/exoplanet/grass/get_footstep_sound()
+/turf/simulated/floor/grass/get_footstep_sound()
 	return safepick(footstep_sounds[FOOTSTEP_GRASS])
 
-/turf/simulated/floor/exoplanet/water/shallow/get_footstep_sound()
+/turf/simulated/floor/dirty/get_footstep_sound()
+	return safepick(footstep_sounds[FOOTSTEP_DIRT])
+
+/turf/unsimulated/beach/seashallow/get_footstep_sound()
 	return safepick(footstep_sounds[FOOTSTEP_WATER])
 
 /turf/simulated/floor/fixed/get_footstep_sound()
