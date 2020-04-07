@@ -2,8 +2,8 @@
 //Works like a contemporary crew weapon mortar
 
 /obj/structure/mortar
-	name = "\improper M402 mortar"
-	desc = "A manual, crew-operated mortar system intended to rain down 80mm goodness on anything it's aimed at. Uses manual targetting dials. Insert round to fire."
+	name = "\improper 2B14 Podnos"
+	desc = "A manual, one-man operated mortar system intended to rain down 80mm goodness on anything it's aimed at. Uses manual targetting dials. Insert round to fire."
 	icon = 'icons/obj/mortar.dmi'
 	icon_state = "mortar_m402"
 	anchored = 1
