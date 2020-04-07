@@ -53,3 +53,5 @@
 /obj/item/clothing/gloves/thick/swat/combat
 	name = "combat gloves"
 	desc = "Thick black gloves that make you feel empowered."
+	icon_state = "combatglove"
+	item_state = "combatglove"
