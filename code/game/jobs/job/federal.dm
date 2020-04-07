@@ -1,4 +1,7 @@
-/datum/job/federalsoldier
+/datum/job/federal
+	faction = "station"
+
+/datum/job/federal/soldier
 	title = "Federal Soldier"
 	department = "Federation"
 	department_flag = FDR
@@ -14,7 +17,7 @@
 	ideal_character_age = 21
 	outfit_type = /decl/hierarchy/outfit/job/federal/soldier
 
-/datum/job/federalmedic
+/datum/job/federal/medic
 	title = "Federal Medic"
 	department = "Federation"
 	department_flag = FDR
@@ -30,7 +33,7 @@
 	ideal_character_age = 26
 	//outfit_type = /decl/hierarchy/outfit/job/federal/medic
 
-/datum/job/federalofficer
+/datum/job/federal/officer
 	title = "Federal Officer"
 	department = "Federation"
 	department_flag = COMFDR
@@ -44,7 +47,7 @@
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/federal/officer
 
-/datum/job/federalgeneral
+/datum/job/federal/general
 	title = "Federal General"
 	head_position = 1
 	req_admin_notify = 1
