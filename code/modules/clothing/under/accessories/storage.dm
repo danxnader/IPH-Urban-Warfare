@@ -57,6 +57,18 @@
 	icon_state = "webbing_large"
 	slots = 4
 
+/obj/item/clothing/accessory/storage/green_webbing
+	name = "green webbing"
+	desc = "A small green webbing."
+	icon_state = "green_webbing"
+	slots = 3
+
+/obj/item/clothing/accessory/storage/khaki_webbing
+	name = "khaki_webbing webbing"
+	desc = "A small khaki webbing."
+	icon_state = "green_webbing"
+	slots = 3
+
 /obj/item/clothing/accessory/storage/black_vest
 	name = "black webbing vest"
 	desc = "Robust black synthcotton vest with lots of pockets to hold whatever you need, but cannot hold in hands."

@@ -120,11 +120,25 @@
 	desc = "A handgun holster. Made of expensive leather."
 	icon_state = "holster"
 	overlay_state = "holster_low"
+/obj/item/clothing/accessory/holster/chest/get_mob_overlay()
+	if (!mob_overlay)
+		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
+		if (icon_override)
+			if ("[tmp_icon_state]_mob" in icon_states(icon_override))
+				tmp_icon_state = "[tmp_icon_state]_mob"
+			mob_overlay = image("icon" = icon_override, "icon_state" = "[tmp_icon_state]", layer = 4.1)
+	return mob_overlay
 
 /obj/item/clothing/accessory/holster/hip
 	name = "hip holster"
 	desc = "A handgun holster slung low on the hip, draw pardner!"
 	icon_state = "holster_hip"
+
+/obj/item/clothing/accessory/holster/chest
+	name = "chest holster"
+	desc = "A handgun holster with slung around the chest."
+	icon_state = "office_holster"
+	overlay_state = "office_holster"
 
 /obj/item/clothing/accessory/holster/thigh
 	name = "thigh holster"

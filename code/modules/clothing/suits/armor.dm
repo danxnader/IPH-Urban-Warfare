@@ -265,6 +265,14 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/suit/storage/vest/a6b44
+	name = "6B44 vest"
+	desc = "A bulletproof vest in a greenish color. Seems to be a level III vest."
+	icon_state = "a6b44"
+	item_state = "a6b44"
+	armor = list(melee = 30, bullet = 65, laser = 20, energy = 40, bomb = 40, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO //Needs a bit of testing but meh
+
 //Modular plate carriers
 /obj/item/clothing/suit/armor/pcarrier
 	name = "plate carrier"
