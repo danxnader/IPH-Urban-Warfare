@@ -207,3 +207,10 @@
 	icon_state = "federal"
 	item_state = "federal"
 	worn_state = "federal"
+
+/obj/item/clothing/under/uniform/m65
+	name = "M-65 Uniform"
+	desc = "A M-65 trouser and jacket. Usually worn by mercenaries."
+	icon_state = "m65"
+	item_state = "m65"
+	worn_state = "m65"
