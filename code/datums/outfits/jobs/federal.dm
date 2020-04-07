@@ -1,6 +1,6 @@
 /decl/hierarchy/outfit/job/federal
 	hierarchy_type = /decl/hierarchy/outfit/job/federal
-	id = /obj/item/device/radio/headset/headset_sec //radio revamp someday
+	id = /obj/item/device/radio/headset/federal //radio revamp someday
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(/obj/item/ammo_magazine/c762 = 2) //Yep. Everyone has mags for now.
