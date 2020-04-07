@@ -261,7 +261,7 @@ macro "macro"
 		command = "westface"
 	elem 
 		name = "West+REP"
-		command = ".moveleft"
+		command = ".fastWest"
 	elem 
 		name = "ALT+North"
 		command = "northfaceperm"
@@ -270,7 +270,7 @@ macro "macro"
 		command = "northface"
 	elem 
 		name = "North+REP"
-		command = ".moveup"
+		command = ".fastNorth"
 	elem 
 		name = "ALT+East"
 		command = "eastfaceperm"
@@ -279,7 +279,7 @@ macro "macro"
 		command = "eastface"
 	elem 
 		name = "East+REP"
-		command = ".moveright"
+		command = ".fastEast"
 	elem 
 		name = "ALT+South"
 		command = "southfaceperm"
@@ -288,7 +288,7 @@ macro "macro"
 		command = "southface"
 	elem 
 		name = "South+REP"
-		command = ".movedown"
+		command = ".fastSouth"
 	elem 
 		name = "Insert"
 		command = "a-intent right"
