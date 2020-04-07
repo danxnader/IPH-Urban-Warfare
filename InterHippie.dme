@@ -1202,6 +1202,7 @@
 #include "code\modules\alarm\fire_alarm.dm"
 #include "code\modules\alarm\motion_alarm.dm"
 #include "code\modules\alarm\power_alarm.dm"
+#include "code\modules\artillery\mortar.dm"
 #include "code\modules\artillery\piece.dm"
 #include "code\modules\artillery\shell.dm"
 #include "code\modules\assembly\assembly.dm"

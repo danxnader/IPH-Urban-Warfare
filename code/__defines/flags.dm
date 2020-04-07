@@ -36,3 +36,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define PASS_FLAG_TABLE  0x1
 #define PASS_FLAG_GLASS  0x2
 #define PASS_FLAG_GRILLE 0x4
+
+//for easier porting and useful things.
+#define DIRLOCK					16		// movable atom won't change direction when Moving()ing. Useful for items that have several dir states.
+#define RELAY_CLICK				32		//This is used for /obj/ that relay your clicks via handle_click(), mostly for MGs + Sentries ~Art

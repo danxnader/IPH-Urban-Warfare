@@ -223,3 +223,10 @@
 
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
 #define GRAYSCALE list(0.3,0.3,0.3,0,0.59,0.59,0.59,0,0.11,0.11,0.11,0,0,0,0,1,0,0,0,0)
+
+//ceiling types
+#define CEILING_NONE 0
+#define CEILING_GLASS 1
+#define CEILING_METAL 2
+#define CEILING_UNDERGROUND 3
+#define CEILING_UNDERGROUND_METAL 4

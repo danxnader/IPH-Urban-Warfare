@@ -195,6 +195,22 @@ var/const/enterloopsanity = 100
 				step(M, M.inertia_dir)
 	return
 
+/turf/proc/ceiling_debris_check(var/size = 1)
+	return
+
+/*
+/turf/proc/ceiling_debris(var/size = 1) //debris falling in response to airstrikes, etc
+	var/area/A = get_area(src)
+	if(!A.ceiling) return
+
+	var/amount = size
+	var/spread = round(sqrt(size)*1.5)
+
+	var/list/turfs = list()
+	//for(var/turf/open/floor/F in range(src,spread))
+		//turfs += F
+*/
+
 /turf/proc/levelupdate()
 	for(var/obj/O in src)
 		O.hide(O.hides_under_flooring() && !is_plating())
