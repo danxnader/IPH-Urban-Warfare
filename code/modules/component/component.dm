@@ -95,7 +95,7 @@
 			. += I
 
 /datum/proc/AddComponent(new_type, ...)
-	var/nt = new_type
+	var/new_type = raw_args[1]
 	args[1] = src
 	var/datum/component/C = new nt(arglist(args))
 	return C.gc_destroyed ? GetComponent(new_type) : C

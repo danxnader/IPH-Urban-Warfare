@@ -217,7 +217,7 @@ SUBSYSTEM_DEF(garbage)
 	var/list/dc = datum_components
 	for(var/I in dc)
 		var/datum/component/C = I
-		C._RemoveNoSignal()
+		C.UnregisterSignal()
 		qdel(C)
 	if(dc)
 		dc.Cut()
@@ -290,7 +290,7 @@ SUBSYSTEM_DEF(garbage)
 		var/start_time = world.time
 		var/start_tick = world.tick_usage
 		var/hint = D.Destroy(force) // Let our friend know they're about to get fucked up.
-		D.SendSignal(COMSIG_PARENT_QDELETED)
+		D._SendSignal(COMSIG_PARENT_QDELETED)
 		if(world.time != start_time)
 			I.slept_destroy++
 		else
