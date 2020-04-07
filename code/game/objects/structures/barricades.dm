@@ -449,65 +449,120 @@
 /obj/structure/barbedwire
 	name = "barbed wire"
 	desc = "Don't tread on me."
-	icon = 'icons/obj/barricades.dmi'
 	icon_state = "barbedwire"
 	var/health = 10000 //It's not easy to remove barbed wire with your damn firsts. Leave that to the sappers.
 	density = 1
-	anchored = 1
-	layer = 2.9
+	anchored = TRUE
+	var/capture = FALSE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 
-/obj/structure/barbedwire/hitby(atom/movable/AM)
-	if(AM.throwing)
-		if(iscarbon(AM))
-			var/mob/living/carbon/C = AM
-			C.visible_message("<span class='danger'>The barbed wire slices into [C]!</span>",
-			"<span class='danger'>The barbed wire slices into you! Ouch!</span>")
-			C.apply_damage(10)
-			C.Paralyse(2) //Leaping into barbed wire is VERY bad. Don't do it.
-	..()
+/obj/structure/barbedwire/ex_act(severity)
+	switch (severity)
+		if (3.0)
+			if (prob(50))
+				qdel(src)
+		else
+			qdel(src)
 
-/obj/structure/barbedwire/CheckExit(atom/movable/O, turf/target)
+/obj/structure/barbedwire/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	return TRUE
 
-	if(O.throwing)
-		if(iscarbon(O)) //Leaping mob against barbed wire fails
-			if(get_dir(loc, target) & dir)
-				return 0
-		return 1
+/obj/structure/barbedwire/proc/check_cover(obj/item/projectile/P, turf/from)
+	var/turf/cover = get_turf(src)
+	if (!cover)
+		return TRUE
+	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
+		return TRUE
 
-	if(get_dir(loc, target) & dir)
-		return 0
+	var/chance = 50 - (P.penetrating * 3)
+	if (prob(chance))
+		visible_message("<span class='warning'>[P] hits \the [src]!</span>")
+		return FALSE
 	else
-		return 1
+		return TRUE
 
-/obj/structure/barbedwire/CanPass(atom/movable/mover, turf/target)
+/obj/structure/barbedwire/Crossed(AM as mob|obj)
+	if (ismob(AM))
+		var/mob/M = AM
+		if (ishuman(M))
+			var/mob/living/carbon/human/H = M
+			if (prob (33))
+				playsound(loc, 'sound/effects/glass_step.ogg', 50, TRUE)
+				var/obj/item/organ/external/affecting = H.get_organ(pick("l_foot", "r_foot", "l_leg", "r_leg"))
+				if (affecting.status & ORGAN_ROBOT)
+					return
+				if (affecting.take_damage(3, FALSE))
+					H.UpdateDamageIcon()
+				H.updatehealth()
+				if (!(H.species && (H.species.species_flags)))
+					H.Weaken(1)
+				to_chat(M, "<span class = 'danger'><b>Your [affecting.name] gets slightly cut by \the [src]!</b></span>")
+			else if (prob (33))
+				playsound(loc, 'sound/effects/glass_step.ogg', 50, TRUE)
+				var/obj/item/organ/external/affecting = H.get_organ(pick("l_foot", "r_foot", "l_leg", "r_leg"))
+				if (affecting.status & ORGAN_ROBOT)
+					return
+				if (affecting.take_damage(8, FALSE))
+					H.UpdateDamageIcon()
+				H.updatehealth()
+				if (!(H.species && (H.species.species_flags)))
+					H.Weaken(2)
+				to_chat(M, "<span class = 'danger'><b>Your [affecting.name] gets cut by \the [src]!</b></span>")
+			else
+				playsound(loc, 'sound/effects/glass_step.ogg', 50, TRUE)
+				var/obj/item/organ/external/affecting = H.get_organ(pick("l_foot", "r_foot", "l_leg", "r_leg"))
+				if (affecting.status & ORGAN_ROBOT)
+					return
+				if (affecting.take_damage(13, FALSE))
+					H.UpdateDamageIcon()
+				H.updatehealth()
+				if (!(H.species && (H.species.species_flags)))
+					H.Weaken(3)
+				to_chat(M, "<span class = 'danger'><b>Your [affecting.name] gets deeply cut by \the [src]!</b></span>")
+			// stop crawling until we're up to prevent buggy crawling
+			H.scrambling = TRUE
+			spawn (35)
+				H.scrambling = FALSE
+	return ..()
 
-/*
-	if(mover && mover.throwing)
-		if(iscarbon(mover)) //Leaping mob against barbed wire fails
-			if(get_dir(loc, target) & dir)
-				return 0
-		return 1
-*/
+/obj/structure/barbedwire/attackby(obj/item/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/weapon/wirecutters))
+		if (anchored)
+			user.visible_message("<span class = 'notice'>\The [user] starts to cut through \the [src] with [W].</span>")
+			if (!do_after(user,60))
+				user.visible_message("<span class = 'notice'>\The [user] decides not to cut through the \the [src].</span>")
+				return
+			user.visible_message("<span class = 'notice'>\The [user] finishes cutting through \the [src]!</span>")
+			playsound(loc, 'sound/items/Wirecutter.ogg', 50, TRUE)
+			qdel(src)
+			return
 
-	var/obj/structure/S = locate(/obj/structure) in get_turf(mover)
-	if(S && ATOM_FLAG_CLIMBABLE && !(S.atom_flags & ATOM_FLAG_CHECKS_BORDER) && isliving(mover)) //Climbable objects allow you to universally climb over others
-		return 1
+	else if (istype(W, /obj/item/weapon/material/knife))
+		if (anchored)
+			user.visible_message("<span class = 'notice'>\The [user] starts to cut through \the [src] with [W].</span>")
+			if (!do_after(user,80))
+				user.visible_message("<span class = 'notice'>\The [user] decides not to cut through \the [src].</span>")
+				return
+			if (prob(40))
+				user.visible_message("<span class = 'notice'>\The [user] finishes cutting through \the [src]!</span>")
+				playsound(loc, 'sound/items/Wirecutter.ogg', 50, TRUE)
+				qdel(src)
+				return
+			else
+				if (ishuman(user))
+					var/mob/living/carbon/human/H = user
+					var/obj/item/organ/external/affecting = null
+					if (istype(H.l_hand, /obj/item/weapon/material/knife))
+						affecting = H.get_organ("l_hand")
+					else
+						affecting = H.get_organ("r_hand")
 
-	if(get_dir(loc, target) & dir)
-		return 0
-	else
-		return 1
-
-/obj/structure/barbedwire/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/weapon/wirecutters))
-		if(anchored)
-			user.visible_message("<span class='notice'>[user] begins removing the barbed wire.</span>",
-			"<span class='notice'>You begin removing the barbed wire.</span>")
-			if(do_after(user, 20, TRUE, 5))
-				playsound(src.loc, 'sound/items/Wirecutter.ogg', 25, 1)
-				user.visible_message("<span class='notice'>[user] removes the barbed wire.</span>",
-				"<span class='notice'>You remove the barbed wire.</span>")
-				health -= 10000
-				new/obj/item/stack/barbed_wire( src.loc )
-		return
+					to_chat(user, "<span class = 'danger'><b>Your hand slips, causing \the [src] to cut your [affecting.name] open!</b></span>")
+					playsound(loc, 'sound/effects/glass_step.ogg', 50, TRUE)
+					if (affecting.status & ORGAN_ROBOT)
+						return
+					if (affecting.take_damage(10, FALSE))
+						H.UpdateDamageIcon()
+					H.updatehealth()
+					if (!(H.species && (H.species.species_flags)))
+						H.Weaken(1)
