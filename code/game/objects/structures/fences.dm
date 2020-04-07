@@ -10,6 +10,7 @@
 	explosion_resistance = 1
 	var/health = 15
 	var/destroyed = 0
+	var/hitsound = 'sound/effects/grillehit.ogg'
 
 /obj/structure/fence/ex_act(severity)
 	qdel(src)
@@ -104,3 +105,16 @@
 				qdel(src)
 				return
 	return
+
+/obj/structure/fence/wooden
+	name = "fence"
+	desc = "An old wooden fence."
+	icon = 'icons/obj/fence.dmi'
+	icon_state = "1"
+	health = 16
+	hitsound = 'sound/effects/wooddoorhit.ogg'
+
+/obj/structure/grille/fence/New()
+	..()
+	icon_state = "[rand(1,3)]"
+	color = "#c8c8c8"

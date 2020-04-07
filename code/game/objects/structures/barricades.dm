@@ -449,6 +449,7 @@
 /obj/structure/barbedwire
 	name = "barbed wire"
 	desc = "Don't tread on me."
+	icon = 'icons/obj/barricades.dmi'
 	icon_state = "barbedwire"
 	var/health = 10000 //It's not easy to remove barbed wire with your damn firsts. Leave that to the sappers.
 	density = 1
@@ -566,3 +567,69 @@
 					H.updatehealth()
 					if (!(H.species && (H.species.species_flags)))
 						H.Weaken(1)
+
+/obj/structure/anti_tank
+	name = "anti-tank structure"
+	icon_state = "anti-tank"
+	bound_width = 32
+	bound_height = 32
+	density = TRUE
+	anchored = TRUE
+
+/obj/structure/anti_tank/attackby(obj/item/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/weapon/wrench))
+		if (anchored)
+			user.visible_message("<span class = 'notice'>\The [user] starts to disassemble \the [src] with [W].</span>")
+			if (!do_after(user,60))
+				user.visible_message("<span class = 'notice'>\The [user] decides not to disassemble \the [src].</span>")
+				return
+			user.visible_message("<span class = 'notice'>\The [user] finishes disassembling \the [src]!</span>")
+			playsound(loc, 'sound/items/Wirecutter.ogg', 50, TRUE)
+			qdel(src)
+			return
+
+/obj/structure/anti_tank/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if (istype(mover, /obj/item/projectile))
+		if (prob(20))
+			return TRUE
+		else
+			visible_message("<span class = 'warning'>The [mover.name] riochetes off of the [name]!</span>")
+			return FALSE
+	return FALSE
+
+/obj/structure/anti_tank/ex_act(severity)
+	switch(severity)
+		if (1.0)
+			qdel(src)
+			return
+		if (2.0)
+			if (prob(25))
+				qdel(src)
+				return
+		if (3.0)
+			return
+
+/obj/structure/campfire //i legit don't have anywhere else to put this
+	icon = 'icons/obj/campfire.dmi'
+	icon_state = "campfire20"
+	layer = MOB_LAYER - 0.01
+	density = FALSE
+	var/activeFire = FALSE
+	anchored = TRUE
+
+
+/obj/structure/campfire/attackby(obj/item/W as obj, mob/user as mob)
+	if (!activeFire)
+		if (istype(W, /obj/item/weapon/flame))
+			user.visible_message("<span class = 'notice'>\The [user] lights \the [src] with [W].</span>")
+			icon_state = "campfire21"
+			set_light(4)
+			activeFire = TRUE
+	if (activeFire)
+		if (istype(W, /obj/item/weapon/flame))
+			return
+		else
+			user.visible_message("<span class = 'notice'>\The [user] puts out \the [src] with [W].</span>")
+			icon_state = "campfire20"
+			set_light(0)
+			activeFire = FALSE
