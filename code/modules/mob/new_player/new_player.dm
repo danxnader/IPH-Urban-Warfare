@@ -6,6 +6,7 @@
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
 	var/datum/browser/panel
+	var/datum/job/delayed_spawning_as_job = null // job title. Self explanatory.
 	var/show_invalid_jobs = 0
 	universal_speak = 1
 
@@ -161,6 +162,7 @@
 			return
 		LateChoices() //show the latejoin job selection menu
 
+
 	if(href_list["manifest"])
 		ViewManifest()
 
@@ -180,7 +182,13 @@
 		if(client.prefs.real_name in GLOB.player_name_list)
 			to_chat(usr, "<span class='danger'>Our records show we already employ a [name].  Please change your name to join the crew.</span>")
 			return
-		
+
+		//if (actual_job.spawn_delay)
+
+			//if (delayed_spawning_as_job)
+				//delayed_spawning_as_job.total_positions += 1
+				//delayed_spawning_as_job = null
+
 		var/datum/species/S = all_species[client.prefs.species]
 		if(!check_species_allowed(S))
 			return 0
@@ -417,7 +425,7 @@
 	dat += "Choose from the following open/valid positions:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
 	dat += "<table>"
-	
+
 	for(var/datum/job/job in job_master.occupations)
 		//Suprisingly, get_announcement_frequency is perfect for getting the name from the depratment_flag var
 		if(department != get_department_names(job))

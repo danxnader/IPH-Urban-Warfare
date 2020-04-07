@@ -317,6 +317,9 @@ CHARACTER_SLOTS 10
 ## Expected round length in minutes
 EXPECTED_ROUND_LENGTH 180
 
+## Expected players. Yes.
+MAX_EXPECTED_PLAYERS 50
+
 ## The lower delay between events in minutes.
 ## Affect mundane, moderate, and major events respectively
 EVENT_DELAY_LOWER 10;30;50

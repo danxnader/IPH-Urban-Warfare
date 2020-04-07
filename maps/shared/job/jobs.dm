@@ -125,7 +125,7 @@
 
 /datum/map/example
 	allowed_jobs = list(
-						/datum/job/federalsoldier
+						/datum/job/federal/soldier
 						)
 
 /datum/job/assistant
@@ -298,8 +298,8 @@
 		..()
 		H.generate_stats(STAT_IQ)
 		H.generate_skills(list("medical","cleaning", "surgery"))
-	
-	
+
+
 /datum/job/hos
 	title = "Head of Security"
 	supervisors = "the Count"
@@ -694,7 +694,7 @@
 	equip(var/mob/living/carbon/human/H)
 		H.generate_stats(STAT_ST)
 		H.generate_skills("melee","ranged")
-		
+
 */
 /*
 //OFF STATION JOBS

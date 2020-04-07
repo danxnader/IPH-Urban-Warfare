@@ -68,18 +68,18 @@
 	return c
 
 /datum/fireteam/separatist_squad
-	required = list(/datum/job/separatistleader,
-					/datum/job/separatistofficer,
-					/datum/job/separatistmedic,
-					/datum/job/separatistgrunt,
-					/datum/job/separatistpartisan,
-					/datum/job/separatistpartisan,
-					/datum/job/separatistpartisan,
-					/datum/job/separatistgrunt,
-					/datum/job/separatistgrunt
+	required = list(/datum/job/separatist/leader,
+					/datum/job/separatist/officer,
+					/datum/job/separatist/medic,
+					/datum/job/separatist/grunt,
+					/datum/job/separatist/partisan,
+					/datum/job/separatist/partisan,
+					/datum/job/separatist/partisan,
+					/datum/job/separatist/grunt,
+					/datum/job/separatist/grunt
 					)
 
-	can_set_name = /datum/job/separatistleader
+	can_set_name = /datum/job/separatist/leader
 	squad_type = "squad"
 	side = "Separatists"
 	max_fireteams = 3
@@ -92,18 +92,18 @@
 		)
 
 /datum/fireteam/federal_squad
-	required = list(/datum/job/federalgeneral,
-					/datum/job/federalofficer,
-					/datum/job/federalmedic,
-					/datum/job/federalmedic,
-					/datum/job/federalsoldier,
-					/datum/job/federalsoldier,
-					/datum/job/federalsoldier,
-					/datum/job/federalsoldier,
+	required = list(/datum/job/federal/general,
+					/datum/job/federal/officer,
+					/datum/job/federal/medic,
+					/datum/job/federal/medic,
+					/datum/job/federal/soldier,
+					/datum/job/federal/soldier,
+					/datum/job/federal/soldier,
+					/datum/job/federal/soldier,
 
 					)
 
-	can_set_name = /datum/job/federalgeneral
+	can_set_name = /datum/job/federal/general
 	squad_type = "squad"
 	side = "Federals"
 	max_fireteams = 3

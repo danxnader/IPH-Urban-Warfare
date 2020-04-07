@@ -103,6 +103,18 @@
 	var/gen_record = ""
 	var/exploit_record = ""
 
+	var/list/all_factions = list()
+	var/datum/faction/base_faction = null
+	var/datum/faction/officer_faction = null
+	var/datum/faction/squad/squad_faction = null
+	var/datum/faction/spy_faction = null
+	var/faction_text = null
+
+	var/list/faction_images[100] // names are keys, values are images
+
+	var/is_spy = FALSE
+	var/is_jew = FALSE
+
 	var/datum/mil_branch/char_branch = null
 	var/datum/mil_rank/char_rank = null
 

@@ -268,3 +268,11 @@
 
 #define ui_tg_iarrowleft "SOUTH-1,11"
 #define ui_tg_iarrowright "SOUTH-1,13"
+
+// faction huds
+
+#define FACTION_TO_ENEMIES 11
+#define SPY_FACTION 12
+#define OFFICER_FACTION 13
+#define BASE_FACTION 14
+#define SQUAD_FACTION 15

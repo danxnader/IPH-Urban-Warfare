@@ -89,6 +89,7 @@ var/list/gamemode_cache = list()
 	var/allow_extra_antags = 0
 	var/guests_allowed = 1
 	var/debugparanoid = 0
+	var/max_expected_players = 50 // determines autobalance
 
 	var/serverurl
 	var/server
@@ -557,6 +558,9 @@ var/list/gamemode_cache = list()
 
 				if("tick_limit_mc_init")
 					tick_limit_mc_init = text2num(value)
+
+				if ("max_expected_players")
+					max_expected_players = text2num(value)
 
 				if("allow_antag_hud")
 					config.antag_hud_allowed = 1

@@ -1,5 +1,4 @@
 /datum/job/federal
-	faction = "station"
 
 /datum/job/federal/soldier
 	title = "Federal Soldier"
@@ -43,6 +42,7 @@
 	supervisors = "the commanding officer"
 	selection_color = "#00FF00"
 	economic_modifier = 9
+	is_officer = 1
 	//access = list(
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/federal/officer
@@ -59,6 +59,8 @@
 	supervisors = "High Military Command and your good will"
 	selection_color = "#32CD32"
 	economic_modifier = 11
+	is_officer = 1
+	is_commander = 1
 	//access = list(
 	//minimal_access = list(
 	//minimal_player_age = 7

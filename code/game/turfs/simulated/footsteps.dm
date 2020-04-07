@@ -3,7 +3,7 @@
 #define FOOTSTEP_PLATING 	"plating"
 #define FOOTSTEP_WOOD 		"wood"
 #define FOOTSTEP_ASTEROID 	"asteroid"
-#define FOOSTEP_DIRT		"dirt"
+#define FOOTSTEP_DIRT		"dirty"
 #define FOOTSTEP_GRASS 		"grass"
 #define FOOTSTEP_WATER		"water"
 #define FOOTSTEP_BLANK		"blank"
@@ -39,7 +39,7 @@
 		'sound/effects/footstep/asteroid3.ogg',
 		'sound/effects/footstep/asteroid4.ogg',
 		'sound/effects/footstep/asteroid5.ogg'),
-	FOOSTEP_DIRT = list(
+	FOOTSTEP_DIRT = list(
 		'sound/effects/footstep/dirt1.ogg',
 		'sound/effects/footstep/dirt2.ogg',
 		'sound/effects/footstep/dirt3.ogg'),
@@ -87,8 +87,8 @@
 /turf/simulated/floor/dirty/get_footstep_sound()
 	return safepick(footstep_sounds[FOOTSTEP_DIRT])
 
-/turf/unsimulated/beach/seashallow/get_footstep_sound()
-	return safepick(footstep_sounds[FOOTSTEP_WATER])
+///turf/unsimulated/beach/seashallow/get_footstep_sound()
+//	return safepick(footstep_sounds[FOOTSTEP_WATER])
 
 /turf/simulated/floor/fixed/get_footstep_sound()
 	return safepick(footstep_sounds[FOOTSTEP_PLATING])

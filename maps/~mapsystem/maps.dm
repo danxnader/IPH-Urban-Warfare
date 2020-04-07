@@ -105,6 +105,17 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/salary_modifier	= 1			//Multiplier to starting character money
 	var/station_departments = list()//Gets filled automatically depending on jobs allowed
 
+//war stuff
+	var/no_subfaction_chance = TRUE
+	var/subfaction_is_main_faction = FALSE
+	var/list/faction_organization = list()
+	var/list/initial_faction_organization = list()
+	var/list/faction_distribution_coeffs = list(INFINITY) // list(INFINITY) = no hard locks on factions
+	var/list/available_subfactions = list()
+	//var/list/roundend_condition_sides = list(
+		//list(GERMAN, ITALIAN, JAPAN, TEREK, CROATION) = /area/prishtina/german,
+		//list(SOVIET, USA) = /area/prishtina/soviet)
+
 	//Factions prefs stuff
 	var/list/citizenship_choices = list(
 		"Earth",

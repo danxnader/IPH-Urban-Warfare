@@ -1,5 +1,4 @@
 /datum/job/separatist
-	faction = "Station"
 
 /datum/job/separatist/grunt
 	title = "Separatist Grunt"
@@ -55,6 +54,7 @@
 	supervisors = "the separatist leader"
 	selection_color = "#800000"
 	economic_modifier = 8 //richer than usual
+	is_officer = 1
 	//access = list(
 	//minimal_access = list(
 	//minimal_player_age = 3
@@ -72,6 +72,8 @@
 	supervisors = "Leader of Postia and your good will"
 	selection_color = "#32CD32"
 	economic_modifier = 10 //barons at this point
+	is_commander = 1
+	is_officer = 1
 	//access = list(
 	//minimal_access = list(
 	//minimal_player_age = 7

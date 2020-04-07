@@ -753,10 +753,3 @@ proc/establish_old_db_connection()
 			text += " called as \"[ft.name]\"."
 		to_chat(world, "<font size=2>-[text]</font>")
 	return 1
-
-/proc/get_side_name(var/side)
-	if(side == "Federals")
-		return "Federal Army"
-	if(side == "Separatist")
-		return "Separatist Forces"
-	return null

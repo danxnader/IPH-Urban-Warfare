@@ -121,6 +121,11 @@
 	var/obj/item/weapon/storage/s_active = null//Carbon
 	var/obj/item/clothing/mask/wear_mask = null//Carbon
 
+	// Job information: this goes here because it copies the mind.assigned_job
+	// from a new_player mob
+	var/datum/job/original_job
+	var/original_job_title = "Soldier"
+	var/special_job_title = -1
 
 //	var/datum/hud/hud_used = null
 
