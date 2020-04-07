@@ -23,6 +23,9 @@
 	var/firing = 0 //Used for deconstruction and aiming sanity
 	var/fixed = 0 //If set to 1, can't unanchor and move the mortar, used for map spawns and WO
 
+/obj/structure/mortar/examine(mob/user) //give useful info
+	to_chat(user, "<span class='info'>It is set to fire at: \n X: [targ_x] With an offset of: [dial_x]. Total: [targ_x + dial_x] \n Y: [targ_y] With an offset of: [dial_y]. Total: [targ_y + dial_y] \n Estimated Tick Delay before shell landing: [travel_time]</span>")
+
 /obj/structure/mortar/attack_hand(mob/user as mob)
 	if(user.mind && user.skills && user.skills["engineering"] > 40)
 		user.visible_message("<span class='notice'>[user] fumbles around figuring out how to use [src].</span>",
