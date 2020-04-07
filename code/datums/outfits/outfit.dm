@@ -104,13 +104,13 @@ var/list/outfits_decls_by_type_
 /decl/hierarchy/outfit/proc/equip(mob/living/carbon/human/H, var/rank, var/assignment, var/equip_adjustments)
 	equip_base(H, equip_adjustments)
 
-	rank = id_pda_assignment || rank
-	assignment = id_pda_assignment || assignment || rank
-	var/obj/item/weapon/card/id/W = equip_id(H, rank, assignment, equip_adjustments)
-	if(W)
-		rank = W.rank
-		assignment = W.assignment
-	equip_pda(H, rank, assignment, equip_adjustments)
+	//rank = id_pda_assignment || rank
+	//assignment = id_pda_assignment || assignment || rank
+	//var/obj/item/weapon/card/id/W = equip_id(H, rank, assignment, equip_adjustments)
+	//if(W)
+		//rank = W.rank
+		//assignment = W.assignment
+	//equip_pda(H, rank, assignment, equip_adjustments)
 
 	for(var/path in backpack_contents)
 		var/number = backpack_contents[path]
@@ -120,8 +120,8 @@ var/list/outfits_decls_by_type_
 	if(!(OUTFIT_ADJUSTMENT_SKIP_POST_EQUIP & equip_adjustments))
 		post_equip(H)
 	H.regenerate_icons()
-	if(W) // We set ID info last to ensure the ID photo is as correct as possible.
-		H.set_id_info(W)
+	//if(W) // We set ID info last to ensure the ID photo is as correct as possible.
+		//H.set_id_info(W)
 	return 1
 
 /decl/hierarchy/outfit/proc/equip_base(mob/living/carbon/human/H, var/equip_adjustments)
