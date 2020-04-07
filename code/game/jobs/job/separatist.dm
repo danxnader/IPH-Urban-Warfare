@@ -1,4 +1,7 @@
-/datum/job/separatistgrunt
+/datum/job/separatist
+	faction = "Station"
+
+/datum/job/separatist/grunt
 	title = "Separatist Grunt"
 	department = "Separatists"
 	department_flag = SPR
@@ -14,7 +17,7 @@
 	//ideal_character_age = 21
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/grunt
 
-/datum/job/separatistmedic //this role, unlike the federal medic, will rely on brute surgery instead of expensive chemicals.
+/datum/job/separatist/medic //this role, unlike the federal medic, will rely on brute surgery instead of expensive chemicals.
 	title = "Separatist Medic"
 	department = "Separatists"
 	department_flag = SPR
@@ -28,7 +31,7 @@
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/medic
 
-/datum/job/separatistpartisan
+/datum/job/separatist/partisan
 	title = "Separatist Partisan" //unga bunga local populace who just got enlisted
 	department = "Separatists"
 	department_flag = SPR
@@ -42,7 +45,7 @@
 	//minimal_player_age = 7
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/partisan
 
-/datum/job/separatistofficer
+/datum/job/separatist/officer
 	title = "Separatist Officer"
 	department = "Separatists"
 	department_flag = COMSPR
@@ -57,7 +60,7 @@
 	//minimal_player_age = 3
 	//outfit_type = /decl/hierarchy/outfit/job/separatist/officer
 
-/datum/job/separatistleader
+/datum/job/separatist/leader
 	title = "Separatist Leader"
 	head_position = 1
 	req_admin_notify = 1
