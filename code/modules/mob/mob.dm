@@ -1024,6 +1024,10 @@ mob/proc/yank_out_object()
 /mob/proc/face_direction()
 	set_face_dir()
 
+/mob/proc/AutoMouseMove(location,control,params)
+	if(get_dist(usr, src) <= 2)
+		if(istype(usr,/mob/living/carbon/human/) && (!usr.resting || !usr:facing_dir)) return
+		usr.face_atom(src)
 
 /mob/proc/set_face_dir(var/newdir)
 	if(!isnull(facing_dir) && newdir == facing_dir)
