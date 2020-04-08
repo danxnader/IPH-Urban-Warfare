@@ -419,11 +419,6 @@ client/verb/character_setup()
 	winset(src, "mainwindow", "is-maximized=true")
 	fit_viewport()
 
-/client/proc/AutoMouseMove(location,control,params)
-	if(get_dist(usr, src) <= 2)
-		if(istype(usr,/mob/living/carbon/human/) && (!usr.resting || !usr:facing_dir)) return
-		usr.face_atom(src)
-
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
 	set category = "OOC"

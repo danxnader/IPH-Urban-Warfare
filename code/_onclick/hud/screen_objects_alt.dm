@@ -552,7 +552,7 @@
 			else
 				C.combat_mode = 1
 				C.combat_icon.icon_state = "combat1"
-				sound_to(C, sound(song, repeat = 1, wait = 0, volume = 50, channel = 1))		
+				sound_to(C, sound(song, repeat = 1, wait = 0, volume = 50, channel = 1))
 
 		if("dodge intent")
 			if(ishuman(usr))
@@ -565,6 +565,7 @@
 					E.dodge_intent_icon.icon_state = "parry"
 		if("fixeye")
 			usr.face_direction()
+			usr.AutoMouseMove()
 			if(usr.facing_dir)
 				usr.fixeye.icon_state = "fixeye_on"
 			else

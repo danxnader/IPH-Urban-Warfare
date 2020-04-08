@@ -197,15 +197,6 @@ var/list/_client_preferences_by_type
 	if(preference_mob.client)
 		preference_mob.client.toggle_fullscreen(new_value == GLOB.PREF_YES)
 
-/datum/client_preference/autofacedirection
-	description = "Automatical Face Direction"
-	key = "AUTOFACEDIRECTION"
-	default_value = GLOB.PREF_NO
-
-/datum/client_preference/autofacedirection/changed(mob/preference_mob, new_value)
-	if(preference_mob.client)
-		preference_mob.client.AutoMouseMove(new_value == GLOB.PREF_YES)
-
 /datum/client_preference/autohiss
 	description = "Autohiss"
 	key = "AUTOHISS"
