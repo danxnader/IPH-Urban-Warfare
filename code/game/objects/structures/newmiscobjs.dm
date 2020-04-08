@@ -6,7 +6,7 @@
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	density = 0
-	opacity = 1
+	anchored = 1
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/structure/body1/New()
@@ -24,7 +24,7 @@
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	density = 0
-	opacity = 1
+	anchored = 1
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/structure/body2/New()
@@ -42,7 +42,7 @@
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
 	density = 0
-	opacity = 1
+	anchored = 1
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/structure/body3/New()
@@ -59,13 +59,14 @@
 	icon_state = "wooden_tv_unpowered"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/woodentv/on
 	icon_state = "wooden_tv"
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
+	anchored = 1
 
 /obj/structure/woodentv/attack_hand(mob/user)
 	playsound(get_turf(loc), "button2", 15, 1, -5)
@@ -73,7 +74,7 @@
 	..()
 
 /obj/structure/woodentv/proc/toggle()
-	if(toggle())
+	if(attack_hand())
 		icon_state = "wooden_tv"
 		plane = ABOVE_HUMAN_PLANE
 		layer = ABOVE_WINDOW_LAYER
@@ -89,7 +90,6 @@
 	icon_state = "microscope1"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
 
 /obj/structure/fishwall
@@ -100,7 +100,6 @@
 	pixel_y = 32
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 0
 
 /obj/structure/hospitaltech1
@@ -110,8 +109,8 @@
 	icon_state = "a3"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/hospitaltech2
 	name = "some hospital device"
@@ -120,8 +119,8 @@
 	icon_state = "a5"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/hospitaltech3
 	name = "some hospital device"
@@ -130,8 +129,8 @@
 	icon_state = "a9"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/hospitaltech4
 	name = "some hospital device"
@@ -140,8 +139,8 @@
 	icon_state = "a10"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/hospitaltech5
 	name = "some hospital device"
@@ -150,8 +149,8 @@
 	icon_state = "a11"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/hospitaltech6
 	name = "some hospital device"
@@ -160,8 +159,8 @@
 	icon_state = "a13"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/woodenclock
 	name = "some hospital device"
@@ -170,15 +169,12 @@
 	icon_state = "pclock"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 
 /obj/structure/woodenclock/New()
-	ticktock()
 	..()
-
-/obj/structure/woodenclock/proc/ticktock()
-	playsound(get_turf(src), "clock_ticking", 35, 1, -5)
+	playsound('sound/machines/clock_ticking.ogg', repeat = 1, wait = 0, volume = 70)
 
 /obj/structure/nuclearwaste
 	name = "big nuclear waste canister"
@@ -187,8 +183,8 @@
 	icon_state = "a8"
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
-	opacity = 1
 	density = 1
+	anchored = 1
 	var/radioactivity = 1
 
 /obj/structure/nuclearwaste/New()
