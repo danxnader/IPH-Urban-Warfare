@@ -158,7 +158,7 @@
 	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 20
 
-/*
+
 /obj/item/projectile/bullet/rifle/a65x50
 	damage = 1
 	armor_penetration = 10
@@ -188,117 +188,104 @@
 	armor_penetration = 9
 
 /obj/item/projectile/bullet/pistol/a32
-	damage = 1
+	damage = 8
 	armor_penetration = 1
 
 /obj/item/projectile/bullet/pistol/a32acp
-	damage = 1
+	damage = 9
 	armor_penetration = 1
 
 /obj/item/projectile/bullet/pistol/webly445
-	damage = 1
+	damage = 12
 	armor_penetration = 3
 
 /obj/item/projectile/bullet/pistol/a38
-	damage = 1
+	damage = 11
 	armor_penetration = 2
 
 /obj/item/projectile/bullet/pistol/a41
-	damage = 1
+	damage = 14
 	armor_penetration = 8
 
 /obj/item/projectile/bullet/pistol/a45
-	damage = 1
+	damage = 25
 	armor_penetration = 9
 
 /obj/item/projectile/bullet/pistol/a455
-	damage = 1
+	damage = 12
 	armor_penetration = 13
 
 /obj/item/projectile/bullet/rifle/a44
-	damage = 1
+	damage = 22
 	armor_penetration = 6
 
 /obj/item/projectile/bullet/rifle/a44magnum
-	damage = 1
+	damage = 48
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a4570
-	damage = 1
+	damage = 54
 	armor_penetration = 20
 
 /obj/item/projectile/bullet/rifle/a792x57
-	damage = 1
+	damage = 73
 	armor_penetration = 17
 
 /obj/item/projectile/bullet/rifle/a765x53
-	damage = 1
+	damage = 63
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a765x25
-	damage = 1
+	damage = 58
 	armor_penetration = 12
 
 /obj/item/projectile/bullet/rifle/a7x57
-	damage = 1
+	damage = 54
 	armor_penetration = 10
 
 /obj/item/projectile/bullet/rifle/a77x58
-	damage = 1
+	damage = 70
 	armor_penetration = 17
 
-/obj/item/projectile/bullet/rifle/a577
-	damage = 1
-	armor_penetration = 26
-
 /obj/item/projectile/bullet/rifle/a303
-	damage = 1
+	damage = 50
 	armor_penetration = 13
 
 /obj/item/projectile/bullet/rifle/a3006
-	damage = 1
+	damage = 46
 	armor_penetration = 13
 
 /obj/item/projectile/bullet/mg/a127x108
-	damage = 1
+	damage = 125
 	armor_penetration = 45
 
 /obj/item/projectile/bullet/pistol/c8mm
-	damage = 1
+	damage = 8
 	armor_penetration = 8
 
 /obj/item/projectile/bullet/pistol/a792x33
-	damage = 1
+	damage = 36
 	armor_penetration = 12
 
 /obj/item/projectile/bullet/rifle/a762x39
-	damage = 1
+	damage = 64
 	armor_penetration = 11
 
 obj/item/projectile/bullet/rifle/a545x39
-	damage = 1
-	armor_penetration = 10
+	damage = 67
+	armor_penetration = 12
 
 /obj/item/projectile/bullet/rifle/a762x51
-	damage = 1
+	damage = 74
 	armor_penetration = 20
 
 obj/item/projectile/bullet/rifle/a556x45
-	damage = 1
-	armor_penetration = 12
+	damage = 60
+	armor_penetration = 13
 
 /obj/item/projectile/bullet/pistol/a765x25
-	damage = 1
-	armor_penetration = 12
-
-/obj/item/projectile/bullet/pistol/a762x25
-	damage = 1
-	armor_penetration = 11
-
-/obj/item/projectile/bullet/pistol/a57x28
-	damage = 1
-	armor_penetration = 11
-*/
+	damage = 25
+	armor_penetration = 6
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
