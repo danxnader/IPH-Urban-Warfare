@@ -173,6 +173,25 @@
 		icon_state = "wt550"
 	return
 
+/obj/item/weapon/gun/projectile/automatic/m16a2
+	name = "M16A2"
+	desc = "The M16A2 is an american assault rifle. Chambered in (5.56)."
+	icon_state = "m16a2"
+	item_state = "m16a2"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	caliber = "a556"
+	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
+	ammo_type = /obj/item/ammo_casing/a762
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c556
+	allowed_magazines = /obj/item/ammo_magazine/c556
+	one_hand_penalty = 3
+	burst_delay = 2
+	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'
+
 /obj/item/weapon/gun/projectile/automatic/z8
 	name = "bullpup assault rifle"
 	desc = "The Z8 Bulldog is an older model bullpup carbine, made by the now defunct Zendai Foundries. Uses armor piercing 7.62mm rounds. Makes you feel like a space marine when you hold it."

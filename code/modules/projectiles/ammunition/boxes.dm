@@ -258,12 +258,12 @@
 
 /obj/item/ammo_magazine/c556
 	name = "magazine (5.56mm)"
-	icon_state = "c762"
+	icon_state = "m16"
 	mag_type = MAGAZINE
 	caliber = "a556"
 	matter = list(DEFAULT_WALL_MATERIAL = 1800)
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 20
+	max_ammo = 30
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/c762
