@@ -495,3 +495,32 @@
 	for(var/source in stasis_sources)
 		stasis_value += stasis_sources[source]
 	stasis_sources.Cut()
+
+/mob/living/carbon/human/swap_hand()
+	..()
+	update_aim_icon()
+
+/mob/proc/update_aim_icon()
+	if(!client)
+		return
+	if(istype(get_active_hand(),/obj/item/gun))
+		if(dispersion_mouse_display_number > 0 && dispersion_mouse_display_number < 0.2)
+			client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'
+		else if(dispersion_mouse_display_number >= 0.2 && dispersion_mouse_display_number < 0.4)
+			client.mouse_pointer_icon = 'icons/effects/standard/standard3.dmi'
+		else if(dispersion_mouse_display_number >= 0.4 && dispersion_mouse_display_number < 0.6)
+			client.mouse_pointer_icon = 'icons/effects/standard/standard4.dmi'
+		else if(dispersion_mouse_display_number >= 0.6 && dispersion_mouse_display_number < 1)
+			client.mouse_pointer_icon = 'icons/effects/standard/standard5.dmi'
+		else if(dispersion_mouse_display_number >= 1)
+			client.mouse_pointer_icon = 'icons/effects/standard/standard6.dmi'
+		else
+			client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
+		if(dispersion_mouse_display_number > 2)
+			dispersion_mouse_display_number = 2
+		if(dispersion_mouse_display_number <= 0)
+			dispersion_mouse_display_number = 0
+		dispersion_mouse_display_number -= 1
+	else
+		if(client)
+			client.mouse_pointer_icon = null

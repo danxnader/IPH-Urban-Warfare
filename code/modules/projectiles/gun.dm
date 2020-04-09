@@ -52,15 +52,18 @@
 	drawsound = 'sound/items/unholster.ogg'
 
 	var/burst = 1
+	var/automatic = 0  //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again
-	var/burst_delay = 2	//delay between shots, if firing in bursts
+	var/next_fire_time
 	var/move_delay = 1
+	var/burst_delay = 2	//delay between shots, if firing in bursts
 	var/fire_sound = 'sound/weapons/gunshot/gunshot.ogg'
 	var/fire_sound_text = "gunshot"
 	var/fire_anim = null
 	var/screen_shake = 0 //shouldn't be greater than 2 unless zoomed
 	var/silenced = 0
 	var/accuracy = 0   //accuracy is measured in tiles. +1 accuracy means that everything is effectively one tile closer for the purpose of miss chance, -1 means the opposite. launchers are not supported, at the moment.
+	var/accuracy_power = 5  //increase of to-hit chance per 1 point of accuracy
 	var/scoped_accuracy = null
 	var/list/burst_accuracy = list(0) //allows for different accuracies for each shot in a burst. Applied on top of accuracy
 	var/list/dispersion = list(0)
@@ -72,8 +75,6 @@
 	var/jam_chance = 0  //Chance it jams on fire
 	var/safety = 1		//Whether or not the safety is on. BLESS YOU MATT
 
-	var/next_fire_time = 0
-
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
 	var/selector_sound = 'sound/weapons/guns/selector.ogg'
@@ -81,6 +82,9 @@
 	var/atom/movable/vis_obj/effect/muzzle_flash/muzzle_flash
 	var/muzzleflash_iconstate
 	var/muzzle_flash_lum = 3 //muzzle flash brightness
+
+	var/bulk = 0			//how unwieldy this weapon for its size, affects accuracy when fired without aiming
+	var/last_handled		//time when hand gun's in became active, for purposes of aiming bonuses
 
 	//aiming system stuff
 	var/keep_aim = 1 	//1 for keep shooting until aim is lowered
@@ -271,6 +275,10 @@
 	user.setMoveCooldown(move_delay)
 	muzzle_flash(user)
 	next_fire_time = world.time + fire_delay
+	var/delay = max(burst_delay+1, fire_delay)//, DEFAULT_QUICK_COOLDOWN)
+	if(delay)
+		user.setClickCooldown(delay)
+	next_fire_time = world.time + delay
 
 //obtains the next projectile to fire
 /obj/item/weapon/gun/proc/consume_next_projectile()
@@ -363,6 +371,13 @@
 				max_mult = G.point_blank_mult()
 	P.damage *= max_mult
 
+/obj/item/weapon/gun/proc/play_fire_sound(var/mob/user, var/obj/item/projectile/P)
+	var/shot_sound = (istype(P) && P.fire_sound)? P.fire_sound : fire_sound
+	if(silenced)
+		playsound(user, shot_sound, 10, 1)
+	else
+		playsound(user, shot_sound, 50, 1)
+
 /obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/user, atom/target, var/burst, var/held_twohanded)
 	var/obj/item/projectile/P = projectile
 	if(!istype(P))
@@ -370,6 +385,18 @@
 
 	var/acc_mod = burst_accuracy[min(burst, burst_accuracy.len)]
 	var/disp_mod = dispersion[min(burst, dispersion.len)]
+	var/stood_still = last_handled
+
+	if(user.skillcheck(user.skills["ranged"], 55))
+		stood_still = min(user.l_move_time, last_handled)
+	else
+		stood_still = max(user.l_move_time, last_handled)
+
+	stood_still = max(0,round((world.time - stood_still)/10) - 1)
+	if(stood_still)
+		acc_mod += min(max(3, accuracy), stood_still)
+	else
+		acc_mod -= w_class - ITEM_SIZE_NORMAL
 
 	if(one_hand_penalty)
 		if(!held_twohanded)
@@ -388,6 +415,26 @@
 		P.accuracy += 2
 	if(!user.skillcheck(user.skills["ranged"], 55, "How the heck do you aim this thing?!", "ranged") || !user.combat_mode)//Being unskilled at guns decreased accuracy.
 		P.accuracy -= 2
+		acc_mod += 2
+	acc_mod += accuracy
+	P.hitchance_mod = accuracy_power*acc_mod
+	P.dispersion = disp_mod + dispersion_modifyer
+
+	user.dispersion_mouse_display_number = P.dispersion
+	//to_chat(world, "[P.dispersion]") //Debug.
+	//Boy this sure looks ugly, but unlike Eris' method for updating the mouse icon, this does not cause severe mouse flickering.
+	if(user.dispersion_mouse_display_number > 0 && user.dispersion_mouse_display_number < 0.2)//These numbers can be tweaked
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'
+	else if(user.dispersion_mouse_display_number >= 0.2 && user.dispersion_mouse_display_number < 0.4)//But in general with the current dispersion system, anything above 1 is really innacurate.
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard3.dmi'
+	else if(user.dispersion_mouse_display_number >= 0.4 && user.dispersion_mouse_display_number < 0.6)//So we give 1 the largest reticule, and then de-increment along there.
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard4.dmi'
+	else if(user.dispersion_mouse_display_number >= 0.6 && user.dispersion_mouse_display_number < 1)
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard5.dmi'
+	else if(user.dispersion_mouse_display_number >= 1)
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard6.dmi'
+	else
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
 
 //does the actual launching of the projectile
 /obj/item/weapon/gun/proc/process_projectile(obj/projectile, mob/user, atom/target, var/target_zone, var/params=null)
@@ -426,14 +473,6 @@
 		playsound(src.loc, 'sound/effects/unjam.ogg', 50, 1)
 		has_jammed = TRUE
 		return
-
-
-/obj/item/weapon/gun/proc/play_fire_sound(var/mob/user, var/obj/item/projectile/P)
-	var/shot_sound = (istype(P) && P.fire_sound)? P.fire_sound : fire_sound
-	if(silenced)
-		playsound(user, shot_sound, 10, 1)
-	else
-		playsound(user, shot_sound, 50, 1)
 
 //Suicide handling.
 /obj/item/weapon/gun/var/mouthshoot = 0 //To stop people from suiciding twice... >.>
@@ -541,12 +580,6 @@
 		else
 			user.client.mouse_pointer_icon = initial(user.client.mouse_pointer_icon)
 
-//Gun pointer
-/obj/item/weapon/gun/pickup(mob/user)
-	..()
-	if(!safety)
-		user.client.mouse_pointer_icon = file("icons/misc/pointer.dmi")
-
 /obj/item/weapon/gun/equipped(mob/user, var/slot)
 	..()
 	if(!safety && (slot == slot_l_hand || slot == slot_r_hand))
@@ -645,3 +678,73 @@
 	if(!QDELETED(flash_loc))
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
+
+//A cool pointer for your gun.
+/obj/item/weapon/gun/pickup(mob/user)
+	if(!safety)
+		user.client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
+	update_icon()
+	..()
+
+/obj/item/gun/dropped(mob/user)
+	..()
+	if(user.client)
+		user.client.mouse_pointer_icon = null
+	update_icon()
+
+/obj/item/weapon/gun/equipped(mob/user)
+	..()
+	if(user.client)
+		user.client.mouse_pointer_icon = null
+	update_icon()
+	last_handled = world.time
+
+var/dispersion_modifyer = 0 //while(automatic) dispersion_mod++; dispersion = 0.1 + dispersion_mod;
+
+/mob
+	var/dispersion_mouse_display_number = 0
+
+/client
+	var/list/selected_target[2]
+
+/client/MouseDown(object, location, control, params)
+	var/delay = mob.CanMobAutoclick(object, location, params)
+	if(delay)
+		selected_target[1] = object
+		selected_target[2] = params
+		while(selected_target[1])
+			dispersion_modifyer += 0.04
+			Click(selected_target[1], location, control, selected_target[2])
+			sleep(delay)
+		dispersion_modifyer = 0
+		usr.dispersion_mouse_display_number = 0
+
+/client/MouseUp(object, location, control, params)
+	selected_target[1] = null
+
+/client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
+	if(selected_target[1] && over_object.IsAutoclickable())
+		selected_target[1] = over_object
+		selected_target[2] = params
+
+/mob/proc/CanMobAutoclick(object, location, params)
+	return
+
+/mob/living/carbon/CanMobAutoclick(atom/object, location, params)
+	if(!object.IsAutoclickable())
+		return
+	var/obj/item/h = get_active_hand()
+	if(h)
+		. = h.CanItemAutoclick(object, location, params)
+
+/obj/item/proc/CanItemAutoclick(object, location, params)
+	return
+
+/obj/item/weapon/gun/CanItemAutoclick(object, location, params)
+	. = automatic
+
+/atom/proc/IsAutoclickable()
+	. = 1
+
+/obj/screen/IsAutoclickable()
+	. = 0

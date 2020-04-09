@@ -1676,6 +1676,17 @@
 	else
 		return H.pulse
 
+/*
+/mob/living/carbon/human/melee_accuracy_mods()
+	. = ..()
+	if(get_shock() > 50)
+		. += 15
+	if(shock_stage > 10)
+		. += 15
+	if(shock_stage > 30)
+		. += 15
+*/
+
 /mob/living/carbon/human/can_devour(atom/movable/victim)
 	if(!src.species.gluttonous)
 		return FALSE

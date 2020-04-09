@@ -81,6 +81,7 @@
 		handle_medical_side_effects()
 
 		handle_blood_pools()
+		update_aim_icon()
 
 		if(!client && !mind)
 			species.handle_npc(src)

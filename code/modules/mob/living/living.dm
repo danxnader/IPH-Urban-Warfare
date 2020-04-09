@@ -283,7 +283,7 @@ default behaviour is:
 
 /mob/living/proc/adjustHalLoss(var/amount)
 	adjustBruteLoss(amount * 0.5)
-		
+
 
 /mob/living/proc/setHalLoss(var/amount)
 	adjustBruteLoss((amount * 0.5)-getBruteLoss())
@@ -642,12 +642,12 @@ default behaviour is:
 			adjustStaminaLoss(-5)
 		else
 			adjustStaminaLoss(-1)
-	
+
 	if(m_intent == "run" && staminaloss < 50)
 		adjustStaminaLoss(1)
 	else
 		adjustStaminaLoss(-2)
-	
+
 	if(staminaloss >= STAMINA_EXHAUST && !stat)//Oh shit we've lost too much stamina and now we're tired!
 		Exhaust()
 		return
@@ -725,6 +725,19 @@ default behaviour is:
 
 	if(loc != H)
 		qdel(H)
+
+/mob/living/proc/ranged_accuracy_mods()
+	. = 0
+	if(jitteriness)
+		. -= 2
+	if(confused)
+		. -= 2
+	if(eye_blind)
+		. -= 5
+	if(eye_blurry)
+		. -= 1
+	if(CLUMSY in mutations)
+		. -= 3
 
 /mob/living/proc/escape_buckle()
 	if(buckled)

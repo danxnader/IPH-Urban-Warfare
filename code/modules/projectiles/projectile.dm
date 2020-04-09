@@ -36,6 +36,7 @@
 
 	var/accuracy = 0
 	var/dispersion = 0.0
+	var/can_autofire
 
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, PAIN are the only things that should be in here
@@ -55,13 +56,14 @@
 	var/agony = 0
 	var/embed = 0 // whether or not the projectile can embed itself in the mob
 	var/penetration_modifier = 0.2 //How much internal damage this projectile can deal, as a multiplier.
+	var/hitchance_mod = 0
 
 	var/bonus_projectiles_type 					// Type path of the extra projectiles
 	var/bonus_projectiles_amount 	= 0 		// How many extra projectiles it shoots out. Works kind of like firing on burst, but all of the projectiles travel together
 	var/bonus_projectiles_scatter	= 8			// Degrees scattered per two projectiles, each in a different direction.
 
 	var/hitscan = 0		// whether the projectile should be hitscan
-	var/step_delay = 1	// the delay between iterations if not a hitscan projectile
+	var/step_delay = 0.3// the delay between iterations if not a hitscan projectile
 
 	var/shell_speed 				= 2 		// How fast the projectile moves
 
@@ -983,4 +985,37 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 	if(proj.projectile_hit(picked_mob))
 		picked_mob.bullet_act(proj)
 	return TRUE
+*/
+
+/*
+/obj/item/projectile/after_wounding(obj/item/organ/external/organ, datum/wound/wound)
+	//Check if we even broke skin in first place
+	if(!wound || !(wound.damage_type == CUT || wound.damage_type == PIERCE))
+		return
+	//Check if we can do nasty stuff inside
+	if(!can_embed() || (organ.species.species_flags & SPECIES_FLAG_NO_EMBED))
+		return
+	//Embed or sever artery
+	var/damage_prob = 0.5 * wound.damage * penetration_modifier
+	if(prob(damage_prob))
+		var/obj/item/shrapnel = get_shrapnel()
+		if(shrapnel)
+			shrapnel.forceMove(organ)
+			organ.embed(shrapnel)
+	else if(prob(2 * damage_prob))
+		organ.sever_artery()
+
+	organ.owner.projectile_hit_bloody(src, wound.damage*5, null, organ)
+*/
+
+/obj/item/projectile/proc/get_shrapnel()
+	if(shrapnel_type)
+		var/obj/item/SP = new shrapnel_type()
+		SP.SetName((name != "shrapnel")? "[name] shrapnel" : "shrapnel")
+		SP.desc += " It looks like it was fired from [shot_from]."
+		return SP
+
+/*
+/obj/item/projectile/get_autopsy_descriptors()
+	return list(name)
 */
