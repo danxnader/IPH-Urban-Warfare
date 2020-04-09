@@ -25,7 +25,7 @@ macro "borghotkeymode"
 		command = "westfaceperm"
 	elem 
 		name = "CTRL+West"
-		command = "westface"
+		command = ".fastWest"
 	elem 
 		name = "West+REP"
 		command = ".moveleft"
@@ -37,7 +37,7 @@ macro "borghotkeymode"
 		command = "northface"
 	elem 
 		name = "North+REP"
-		command = ".moveup"
+		command = ".fastNorth"
 	elem 
 		name = "ALT+East"
 		command = "eastfaceperm"
@@ -46,7 +46,7 @@ macro "borghotkeymode"
 		command = "eastface"
 	elem 
 		name = "East+REP"
-		command = ".moveright"
+		command = ".fastEast"
 	elem 
 		name = "ALT+South"
 		command = "southfaceperm"
@@ -55,7 +55,7 @@ macro "borghotkeymode"
 		command = "southface"
 	elem 
 		name = "South+REP"
-		command = ".movedown"
+		command = ".fastSouth"
 	elem 
 		name = "Insert"
 		command = "a-intent right"
@@ -440,7 +440,7 @@ macro "hotkeymode"
 		command = "westface"
 	elem 
 		name = "West+REP"
-		command = ".moveleft"
+		command = ".fastWest"
 	elem 
 		name = "ALT+North"
 		command = "northfaceperm"
@@ -449,7 +449,7 @@ macro "hotkeymode"
 		command = "northface"
 	elem 
 		name = "North+REP"
-		command = ".moveup"
+		command = ".fastNorth"
 	elem 
 		name = "ALT+East"
 		command = "eastfaceperm"
@@ -458,7 +458,7 @@ macro "hotkeymode"
 		command = "eastface"
 	elem 
 		name = "East+REP"
-		command = ".moveright"
+		command = ".fastEast"
 	elem 
 		name = "ALT+South"
 		command = "southfaceperm"
@@ -467,7 +467,7 @@ macro "hotkeymode"
 		command = "southface"
 	elem 
 		name = "South+REP"
-		command = ".movedown"
+		command = ".fastSouth"
 	elem 
 		name = "Insert"
 		command = "a-intent right"
