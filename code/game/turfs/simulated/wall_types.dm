@@ -113,3 +113,7 @@
 	icon_state = null
 	color = null
 	..(newloc, "concrete", "steel")
+
+/turf/simulated/wall/fogwall
+	icon = 'icons/turf/fog.dmi'
+	icon_state = "fogwall"
