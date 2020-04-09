@@ -105,3 +105,6 @@ var/list/restricted_camera_networks = list(NETWORK_ERT,NETWORK_MERCENARY,"Secret
 #define SUPERMATTER_DANGER 4		// Integrity < 50%
 #define SUPERMATTER_EMERGENCY 5		// Integrity < 25%
 #define SUPERMATTER_DELAMINATING 6	// Pretty obvious.
+
+#define ISDIAGONALDIR(d) (d&(d-1))
+#define NSCOMPONENT(d)   (d&(NORTH|SOUTH))

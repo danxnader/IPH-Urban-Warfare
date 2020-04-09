@@ -88,6 +88,7 @@
 #define SS_INIT_OPEN_SPACE       5
 #define SS_INIT_CIRCUIT          4
 #define SS_INIT_ATOMS            3
+#define SS_INIT_PROJECTILES      5
 #define SS_INIT_ICON_UPDATE      2
 #define SS_INIT_MACHINES         1
 #define SS_INIT_DEFAULT          0

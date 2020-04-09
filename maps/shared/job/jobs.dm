@@ -299,12 +299,11 @@
 		H.generate_stats(STAT_IQ)
 		H.generate_skills(list("medical","cleaning", "surgery"))
 
-
 /datum/job/hos
 	title = "Head of Security"
 	supervisors = "the Count"
 	department_flag = SEC
-	total_positions = 1
+	//total_positions = 1
 	spawn_positions = 1
 	selection_color = "#601c1c"
 	economic_modifier = 5
@@ -334,7 +333,7 @@
 	title = "Security Officer"
 	department = "Security"
 	department_flag = SEC
-	total_positions = 4
+	//total_positions = 4
 	spawn_positions = 4
 	economic_modifier = 3
 	sex_lock = MALE
@@ -354,7 +353,7 @@
 	title = "Detective"
 	department = "Security"
 	department_flag = SEC
-	total_positions = 1
+	//total_positions = 1
 	spawn_positions = 1
 	economic_modifier = 3
 	sex_lock = MALE
@@ -368,7 +367,6 @@
 		//H.add_stats(rand(11,16), rand(10,14), rand(7,10))
 		H.generate_stats(STAT_ST)
 		H.generate_skills(list("melee","ranged"))
-
 
 /datum/job/qm
 	selection_color = "#3d3315"

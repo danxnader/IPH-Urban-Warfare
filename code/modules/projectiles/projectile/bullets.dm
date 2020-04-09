@@ -158,6 +158,7 @@
 	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 20
 
+/*
 /obj/item/projectile/bullet/rifle/a65x50
 	damage = 1
 	armor_penetration = 10
@@ -297,6 +298,7 @@ obj/item/projectile/bullet/rifle/a556x45
 /obj/item/projectile/bullet/pistol/a57x28
 	damage = 1
 	armor_penetration = 11
+*/
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
