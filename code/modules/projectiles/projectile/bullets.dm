@@ -158,6 +158,146 @@
 	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 20
 
+/obj/item/projectile/bullet/rifle/a65x50
+	damage =
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/rifle/a65x52
+	damage =
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/rifle/a8x53
+	damage =
+	armor_penetration = 14
+
+/obj/item/projectile/bullet/rifle/a8x50
+	damage =
+	armor_penetration = 12
+
+/obj/item/projectile/bullet/rifle/a762x54
+	damage =
+	armor_penetration = 24
+
+/obj/item/projectile/bullet/pistol/a762x38
+	damage =
+	armor_penetration = 8
+
+/obj/item/projectile/bullet/pistol/a8x27
+	damage =
+	armor_penetration = 9
+
+/obj/item/projectile/bullet/pistol/a32
+	damage =
+	armor_penetration = 1
+
+/obj/item/projectile/bullet/pistol/a32acp
+	damage =
+	armor_penetration = 1
+
+/obj/item/projectile/bullet/pistol/webly445
+	damage =
+	armor_penetration = 3
+
+/obj/item/projectile/bullet/pistol/a38
+	damage =
+	armor_penetration = 2
+
+/obj/item/projectile/bullet/pistol/a41
+	damage =
+	armor_penetration = 8
+
+/obj/item/projectile/bullet/pistol/a45
+	damage =
+	armor_penetration = 9
+
+/obj/item/projectile/bullet/pistol/a455
+	damage =
+	armor_penetration = 13
+
+/obj/item/projectile/bullet/rifle/a44
+	damage =
+	armor_penetration = 6
+
+/obj/item/projectile/bullet/rifle/a44magnum
+	damage =
+	armor_penetration = 15
+
+/obj/item/projectile/bullet/rifle/a4570
+	damage =
+	armor_penetration = 20
+
+/obj/item/projectile/bullet/rifle/a792x57
+	damage =
+	armor_penetration = 17
+
+/obj/item/projectile/bullet/rifle/a765x53
+	damage =
+	armor_penetration = 15
+
+/obj/item/projectile/bullet/rifle/a765x25
+	damage =
+	armor_penetration = 12
+
+/obj/item/projectile/bullet/rifle/a7x57
+	damage =
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/rifle/a77x58
+	damage =
+	armor_penetration = 17
+
+/obj/item/projectile/bullet/rifle/a577
+	damage =
+	armor_penetration = 26
+
+/obj/item/projectile/bullet/rifle/a303
+	damage =
+	armor_penetration = 13
+
+/obj/item/projectile/bullet/rifle/a3006
+	damage =
+	armor_penetration = 13
+
+/obj/item/projectile/bullet/mg/a127x108
+	damage =
+	armor_penetration = 45
+
+/obj/item/projectile/bullet/pistol/c8mm
+	damage =
+	armor_penetration = 8
+
+/obj/item/projectile/bullet/pistol/a792x33
+	damage =
+	armor_penetration = 12
+
+/obj/item/projectile/bullet/rifle/a762x39
+	damage =
+	armor_penetration = 11
+
+obj/item/projectile/bullet/rifle/a545x39
+	damage =
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/rifle/a762x51
+	damage =
+	armor_penetration = 20
+
+obj/item/projectile/bullet/rifle/a556x45
+	damage =
+	armor_penetration = 12
+
+/obj/item/projectile/bullet/pistol/a765x25
+	damage =
+	armor_penetration = 12
+
+/obj/item/projectile/bullet/pistol/a762x25
+	damage =
+	armor_penetration = 11
+
+/obj/item/projectile/bullet/pistol/a57x28
+	damage =
+	armor_penetration = 11
+
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
 	check_armour = "melee"
