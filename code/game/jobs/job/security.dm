@@ -1,10 +1,11 @@
+
 /datum/job/hos
 	title = "Head of Security"
 	head_position = 1
 	department = "Security"
 	department_flag = SEC|COM
 
-	total_positions = 1
+	//total_positions = 1
 	spawn_positions = 1
 	supervisors = "the captain"
 	selection_color = "#8e2929"
@@ -31,8 +32,8 @@
 	department = "Security"
 	department_flag = SEC
 
+	//spawn_positions = 1
 	total_positions = 1
-	spawn_positions = 1
 	supervisors = "the head of security"
 	selection_color = "#601c1c"
 	economic_modifier = 5
@@ -45,8 +46,7 @@
 	title = "Detective"
 	department = "Security"
 	department_flag = SEC
-
-	total_positions = 2
+	//total_positions = 2
 	spawn_positions = 2
 	supervisors = "the head of security"
 	selection_color = "#601c1c"
@@ -62,7 +62,7 @@
 	department = "Security"
 	department_flag = SEC
 
-	total_positions = 4
+	//total_positions = 4
 	spawn_positions = 4
 	supervisors = "the head of security"
 	selection_color = "#601c1c"

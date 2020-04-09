@@ -19,6 +19,11 @@
 #define T20C 293.15 //   20.0 degrees celcius
 #define TCMB 2.7    // -270.3 degrees celcius
 
+#define CEILING(x, y) ( -round(-(x) / (y)) * (y) )
+
+// round() acts like floor(x, 1) by default but can't handle other values
+#define FLOOR(x, y) ( round((x) / (y)) * (y) )
+
 #define CLAMP01(x) max(0, min(1, x))
 #define ATMOS_PRECISION 0.0001
 #define QUANTIZE(variable) (round(variable, ATMOS_PRECISION))
@@ -30,3 +35,27 @@
 
 #define SIMPLE_SIGN(X) ((X) < 0 ? -1 : 1)
 #define SIGN(X)        ((X) ? SIMPLE_SIGN(X) : 0)
+
+// Similar to clamp but the bottom rolls around to the top and vice versa. min is inclusive, max is exclusive
+#define WRAP(val, min, max) ( min == max ? min : (val) - (round(((val) - (min))/((max) - (min))) * ((max) - (min))) )
+
+// Real modulus that handles decimals
+#define MODULUS(x, y) ( (x) - (y) * round((x) / (y)) )
+
+// Tangent
+#if DM_VERSION < 513
+#define TAN(x) (sin(x) / cos(x))
+#else
+#define TAN(x) tan(x)
+#endif
+
+// Cotangent
+#define COT(x) (1 / TAN(x))
+
+// Secant
+#define SEC(x) (1 / cos(x))
+
+// Cosecant
+#define CSC(x) (1 / sin(x))
+
+#define ATAN2(x, y) ( !(x) && !(y) ? 0 : (y) >= 0 ? arccos((x) / sqrt((x)*(x) + (y)*(y))) : -arccos((x) / sqrt((x)*(x) + (y)*(y))) )
