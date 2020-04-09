@@ -46,6 +46,32 @@
 	armor = list(melee = 70, bullet = 70, laser = 70, energy = 35, bomb = 30, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 
+/obj/item/clothing/head/helmet/coldwar/ssh68
+	name = "SSh-68 helmet"
+	desc = "A cheap steel helmet used by the Soviet Army."
+	icon_state = "ssh68"
+	armor = list(melee = 40, bullet = 46, laser = 10, energy = 10, bomb = 70, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/head/ushanka/soviet/officer
+	name = "ushanka"
+	desc = "There is an insignia attached to it, and this one seems to be even a little comfier that the soldier variant."
+	icon_state = "sa_ush_officer"
+
+/obj/item/clothing/head/helmet/coldwar/pasgt
+	name = "PASGT M81 helmet"
+	desc = "An experimental tactical kevlar helmet used by U.S. army."
+	icon_state = "pasgt-green"
+	armor = list(melee = 30, bullet = 53, laser = 10, energy = 10, bomb = 60, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/head/helmet/coldwar/pasgt/woodland
+	name = "PASGT M81 helmet"
+	desc = "An experimental tactical kevlar helmet used by U.S. army."
+	icon_state = "pasgt-woodland"
+	armor = list(melee = 30, bullet = 53, laser = 10, energy = 10, bomb = 60, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
 	desc = "It's a helmet specifically designed to protect against close range attacks."

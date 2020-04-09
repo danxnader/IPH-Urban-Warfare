@@ -35,6 +35,9 @@
 "I" = (/obj/effect/landmark/test/safe_turf,/turf/simulated/floor/tiled,/area/constructionsite)
 "J" = (/obj/effect/landmark/test/space_turf,/turf/space,/area/space)
 "K" = (/obj/structure/artillery/base,/turf/simulated/floor/tiled,/area/constructionsite)
+"L" = (/obj/structure/table/steel,/obj/item/clothing/head/helmet/coldwar/pasgt,/obj/item/clothing/head/helmet/coldwar/pasgt/woodland,/obj/item/clothing/head/helmet/coldwar/ssh68,/turf/simulated/floor/tiled,/area/constructionsite)
+"M" = (/obj/structure/table/steel,/obj/item/clothing/suit/armor/a6b5,/obj/item/clothing/suit/storage/vest/a6b44,/turf/simulated/floor/tiled,/area/constructionsite)
+"N" = (/obj/structure/table/steel,/obj/item/clothing/under/rebel,/turf/simulated/floor/tiled,/area/constructionsite)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -58,7 +61,7 @@ aaaaaaaaaaaazBzbbbccccIcccccpoqbaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaDCEGFHccccccccccrccbaaaaaaaaaaaaaaaa
 aaaaaaaaaaaayyybbbectttcccccccfbaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabhctttccccccccbaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabictttccccccccbaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabictttcLMNccccbaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabjcckccccckcccbaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

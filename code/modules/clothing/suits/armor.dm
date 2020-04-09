@@ -356,6 +356,17 @@
 /obj/item/clothing/suit/armor/bulletproof/vest //because apparently some map uses this somewhere and I'm too lazy to go looking for and replacing it.
 	starting_accessories = null
 
+/obj/item/clothing/suit/armor/a6b5
+	name = "6B5 vest"
+	desc = "The 6B5 is ballistic by having inner slabs/plates made from titanium, and carbon boride."
+	item_icons = "a6b5"
+	icon_state = "a6b5"
+	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L)
+	restricted_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	armor = list(melee = 42, bullet = 68, laser = 42, energy = 10, bomb = 25, bio = 0, rad = 0)
+	siemens_coefficient = 0.7
+
 /obj/item/clothing/suit/armor/laserproof
 	name = "ablative vest"
 	desc = "An armored vest with advanced shielding to protect against energy weapons."

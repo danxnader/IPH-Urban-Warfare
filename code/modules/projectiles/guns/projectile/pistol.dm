@@ -139,6 +139,21 @@
 	name = "holdout signal pistol"
 	magazine_type = /obj/item/ammo_magazine/mc9mm/flash
 
+/obj/item/weapon/gun/projectile/maka
+	name = "black makarov"
+	desc = "A tactical makarov, mostly used by officers."
+	icon_state = "maka_special"
+	item_state = "pistol"
+	w_class = ITEM_SIZE_SMALL
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/makaspecial
+	allowed_magazines = /obj/item/ammo_magazine/makaspecial
+	jam_chance = 5
+
 /obj/item/weapon/gun/projectile/pistol/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		if(silenced)

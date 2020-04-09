@@ -137,6 +137,13 @@
 	worn_state = "johnny"
 	item_state = "johnny"
 
+/obj/item/clothing/under/rebel
+	name = "sweater uniform"
+	desc = "A outfit composed of a sweater and beige cargo pants."
+	icon_state = "rebel"
+	worn_state = "rebel"
+	item_state = "rebel"
+
 /obj/item/clothing/under/color/rainbow
 	name = "rainbow"
 	icon_state = "rainbow"
