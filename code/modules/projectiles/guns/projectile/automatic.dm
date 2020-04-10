@@ -370,8 +370,8 @@
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
-		list(mode_name="automatic",      burst=1, fire_delay=0, one_hand_penalty=7, burst_accuracy=null, dispersion=list(0.0, 0.8, 1.5), burst_delay = 0, automatic = 1),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=6, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0), burst_delay = 2),
+		list(mode_name="automatic",      burst=1, fire_delay=null, one_hand_penalty=7, burst_accuracy=null, dispersion=list(0.0, 0.8, 1.5), burst_delay = 0, automatic = 1),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=6, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0), burst_delay = 0),
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ak74/update_icon()
@@ -379,7 +379,7 @@
 	wielded_item_state = (ammo_magazine)? "ak74-wielded" : "ak74-wielded-empty"
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/ak74/makeshift
+/obj/item/weapon/gun/projectile/automatic/makeshiftak
 	name = "makeshift ak-74 rifle"
 	desc = "A poorly manufacted makeshift AK-74 rifle. Jams a lot and might not be as powerful as the original AK-74."
 	icon_state = "makeshiftak"
@@ -398,7 +398,14 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	fire_sound = list('sound/weapons/newrifle.ogg','sound/weapons/newrifle2.ogg','sound/weapons/newrifle3.ogg')
 
-/obj/item/weapon/gun/projectile/automatic/ak74/makeshift/update_icon()
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
+		list(mode_name="automatic",      burst=1, fire_delay=null, one_hand_penalty=7, burst_accuracy=null, dispersion=list(0.0, 0.8, 1.5), burst_delay = 0, automatic = 1),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=6, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0), burst_delay = 0),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/makeshiftak/update_icon()
 	icon_state = (ammo_magazine)? "makeshiftak" : "makeshiftak-empty"
 	wielded_item_state = (ammo_magazine)? "ak74-wielded" : "ak74-wielded-empty"
 	..()
