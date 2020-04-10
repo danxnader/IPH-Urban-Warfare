@@ -705,6 +705,7 @@
 #include "code\game\machinery\kitchen\cooking_machines\fryer.dm"
 #include "code\game\machinery\kitchen\cooking_machines\grill.dm"
 #include "code\game\machinery\kitchen\cooking_machines\oven.dm"
+#include "code\game\machinery\machining\metal_mill.dm"
 #include "code\game\machinery\machining\metal_press.dm"
 #include "code\game\machinery\pipe\construction.dm"
 #include "code\game\machinery\pipe\pipe_dispenser.dm"
