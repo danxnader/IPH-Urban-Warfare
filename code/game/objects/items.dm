@@ -143,6 +143,7 @@
 	if(user)
 		user.update_inv_r_hand()
 		user.update_inv_l_hand()
+	qdel(src)
 
 	user.visible_message("<span class='warning'>[user] let's go of their other hand.")
 	if(unwieldsound)
@@ -189,6 +190,8 @@
 /obj/item/proc/update_unwield_icon()//That way it doesn't interupt any other special icon_states.
 	if(wielded && wielded_icon)
 		item_state = "[initial(item_state)]"
+	if(!wielded && wielded_icon)
+		qdel(src)
 
 //For general weapons.
 /obj/item/proc/attempt_wield(mob/user)
