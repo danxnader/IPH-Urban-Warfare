@@ -247,6 +247,7 @@
 		return -1
 
 
+
 /client/proc/log_client_to_db()
 
 	if ( IsGuestKey(src.key) )

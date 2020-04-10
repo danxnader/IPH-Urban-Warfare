@@ -9,6 +9,11 @@
 // BEGIN_PREFERENCES
 #define DEBUG
 // END_PREFERENCES
+
+// BEGIN STUFF THAT MUST COMPILE FIRST
+#include "code\__defines\chromies.dm"
+// END STUFF THAT MUST COMPILE FIRST
+
 // BEGIN_INCLUDE
 #include "code\_macros.dm"
 #include "code\client_macros.dm"
@@ -29,6 +34,7 @@
 #include "code\__defines\atmospherics.dm"
 #include "code\__defines\callback.dm"
 #include "code\__defines\chemistry.dm"
+#include "code\__defines\chromies.dm"
 #include "code\__defines\client.dm"
 #include "code\__defines\colors.dm"
 #include "code\__defines\coordinates.dm"
@@ -1276,6 +1282,7 @@
 #include "code\modules\awaymissions\trigger.dm"
 #include "code\modules\awaymissions\zlevel.dm"
 #include "code\modules\blob\blob.dm"
+#include "code\modules\chromosomes\chromies.dm"
 #include "code\modules\client\asset_cache.dm"
 #include "code\modules\client\client_defines.dm"
 #include "code\modules\client\client_helpers.dm"

@@ -68,6 +68,7 @@ var/list/gamemode_cache = list()
 	var/load_jobs_from_txt = 0
 	var/jobs_have_minimal_access = 0	//determines whether jobs use minimal access or expanded access.
 	var/use_cortical_stacks = 0
+	var/config_entry_value
 
 	var/cult_ghostwriter = 1               //Allows ghosts to write in blood in cult rounds...
 	var/cult_ghostwriter_req_cultists = 10 //...so long as this many cultists are active.
@@ -86,6 +87,7 @@ var/list/gamemode_cache = list()
 	var/usealienwhitelistSQL = 0;
 	var/limitalienplayers = 0
 	var/alien_to_human_ratio = 0.5
+	var/abstract_type = /datum/configuration	//do not instantiate if type matches this
 	var/allow_extra_antags = 0
 	var/guests_allowed = 1
 	var/debugparanoid = 0
@@ -189,6 +191,9 @@ var/list/gamemode_cache = list()
 	var/dooc_allowed = 1
 	var/dsay_allowed = 1
 	var/aooc_allowed = 1
+
+	var/list/entries
+	var/list/entries_by_type
 
 	var/starlight = 0	// Whether space turfs have ambient light or not
 
@@ -853,8 +858,21 @@ var/list/gamemode_cache = list()
 			runnable_modes |= M
 	return runnable_modes
 
+/datum/configuration/proc/Get(entry_type)
+	var/datum/configuration/E = entry_type
+	var/entry_is_abstract = initial(E.abstract_type) == entry_type
+	if(entry_is_abstract)
+		CRASH("Tried to retrieve an abstract config_entry: [entry_type]")
+	E = entries_by_type[entry_type]
+	if(!E)
+		CRASH("Missing config entry for [entry_type]!")
+		return
+	return E.config_entry_value
+
 /datum/configuration/proc/load_event(filename)
 	var/event_info = file2text(filename)
 
 	if (event_info)
 		custom_event_msg = event_info
+
+/datum/configuration/string/feedback_tableprefix

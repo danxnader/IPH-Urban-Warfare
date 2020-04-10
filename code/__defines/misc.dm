@@ -255,3 +255,15 @@
 #define CEILING_UNDERGROUND_METAL 4
 #define CEILING_DEEP_UNDERGROUND 5
 #define CEILING_DEEP_UNDERGROUND_METAL 5
+
+//config files
+#define CONFIG_GET(X) config.Get(/datum/configuration/##X)
+#define CONFIG_SET(X, Y) config.Set(/datum/configuration/##X, ##Y)
+
+#define CONFIG_MAPS_FILE "maps.txt"
+
+//flags
+#define CONFIG_ENTRY_LOCKED 1	//can't edit
+#define CONFIG_ENTRY_HIDDEN 2	//can't see value
+
+#define CHROMOSOMES "Chromosome Count"
