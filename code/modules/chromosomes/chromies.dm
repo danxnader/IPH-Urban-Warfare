@@ -26,7 +26,7 @@
 	query.Execute()
 	qdel(query)
 	if(ann)
-		to_chat(src, "[chr_count] chromosomes have been transferred to your account.")
+		to_chat(src, "[chr_count] chromosomes have been transferred to your account. This shouldn't have happened.")
 
 //query_get_chromie
 //query_set_chromie
