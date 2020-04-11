@@ -15,7 +15,10 @@
 	query.Execute()
 	qdel(query)
 	if(ann)
-		to_chat(src, "Your new chromosome count is [chr_count].")
+		if(chr_count >= 0)
+			to_chat(src, "<span class='info'>You gain [chr_count] chromosomes.</span>")
+		else
+			to_chat(src, "<span class='danger'>You lose [chr_count] chromosomes.</span>")
 
 /client/proc/inc_chromie_count(chr_count, ann=TRUE)
 	establish_db_connection()
