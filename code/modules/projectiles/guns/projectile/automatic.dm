@@ -409,3 +409,37 @@
 	icon_state = (ammo_magazine)? "makeshiftak" : "makeshiftak-empty"
 	wielded_item_state = (ammo_magazine)? "ak74-wielded" : "ak74-wielded-empty"
 	..()
+
+/obj/item/weapon/gun/projectile/automatic/rpk //rpd's weren't actually used back then, but this is a game
+	name = "RPK"
+	desc = "A rather well-manufactured RPK with a Tula Arms plant sign near the handle. Heavy." //probably should refluff this
+	icon_state = "rpd"
+	item_state = "rpk"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = 0
+	max_shells = 50
+	caliber = "a556"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 2)
+	slot_flags = 0 //need sprites for SLOT_BACK
+	ammo_type = /obj/item/ammo_casing/a556
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/box/a556
+	allowed_magazines = list(/obj/item/ammo_magazine/box/a556, /obj/item/ammo_magazine/c556)
+	one_hand_penalty = 6
+	wielded_item_state = "gun_wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'
+
+	//LMG, better sustained fire accuracy than assault rifles (comparable to SMG), higer move delay and one-handing penalty
+	//No single-shot or 3-round-burst modes since using this weapon should come at a cost to flexibility.
+	firemodes = list(
+		list(mode_name="short bursts",	burst=5, fire_delay=5, one_hand_penalty=8, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2), burst_delay = 2),
+		list(mode_name="long bursts",	burst=8, fire_delay=5, one_hand_penalty=12, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2), burst_delay = 2),
+		list(mode_name="automatic",		burst=1, fire_delay=1, one_hand_penalty=12, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2), automatic = 1),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/rpd/update_icon()
+	icon_state = (ammo_magazine)? "rpk" : "rpk-empty"
+	wielded_item_state = (ammo_magazine)? "rpk-wielded" : "rpk-wielded-empty"
+	..()

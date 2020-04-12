@@ -665,7 +665,7 @@
 		var/mob/M = AM
 		if(ishuman(M))
 			playsound(loc, 'sound/weapons/mine_onstep.ogg', 50, TRUE) //Sorry, Matt. I had to do it to 'em.
-			to_chat(M, "<span class = 'danger'>\You step on \the [src]! Pray to God you'll survive!</span>")
+			to_chat(M, "<span class = 'danger'>You step on \the [src]! Pray to God you'll survive!</span>")
 			explosion(src.loc, 0, 1, 2, 3, 0)
 			qdel(src)
 	return ..()
@@ -701,5 +701,5 @@
 		var/mob/M = AM
 		if(ishuman(M))
 			playsound(loc, 'sound/weapons/mine_onstep.ogg', 50, TRUE) //Sorry, Matt. I had to do it to 'em.
-			to_chat(M, "<span class = 'danger'>\You step on \the [src]! Pray to God you'll survive...or don't?</span>")
+			to_chat(M, "<span class = 'danger'>You step on \the [src]! Pray to God you'll survive...or don't?</span>")
 	return ..()

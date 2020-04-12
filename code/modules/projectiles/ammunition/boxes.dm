@@ -267,6 +267,16 @@
 	max_ammo = 50
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/box/a556
+	name = "rpk magazine box (5.56mm)"
+	icon_state = "rpk"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "a556"
+	matter = list(DEFAULT_WALL_MATERIAL = 4500)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 75
+
 /obj/item/ammo_magazine/box/a556/empty
 	initial_ammo = 0
 
