@@ -154,6 +154,28 @@
 	allowed_magazines = /obj/item/ammo_magazine/makaspecial
 	jam_chance = 5
 
+/obj/item/weapon/gun/projectile/glock17
+	name = "Glock-17"
+	desc = "The Glock 17 is manufactured by Austria and is a common pistol everywhere. Chambered in (.9x19mm)."
+	icon_state = "glock17"
+	item_state = "pistol"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/glock17
+	allowed_magazines = /obj/item/ammo_magazine/glock17
+	jam_chance = 2
+
+/obj/item/weapon/gun/projectile/glock17/update_icon()
+	..()
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		icon_state = "glock17"
+	else
+		icon_state = "glock17_empty"
+
 /obj/item/weapon/gun/projectile/pistol/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		if(silenced)
