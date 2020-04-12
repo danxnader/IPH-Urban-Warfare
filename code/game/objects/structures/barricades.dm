@@ -451,7 +451,7 @@
 	desc = "Don't tread on me."
 	icon = 'icons/obj/barricades.dmi'
 	icon_state = "barbedwire"
-	var/health = 10000 //It's not easy to remove barbed wire with your damn firsts. Leave that to the sappers.
+	var/health = 10000 //It's not easy to remove barbed wire with your damn fists. Leave that to the sappers.
 	density = 1
 	anchored = TRUE
 	var/capture = FALSE
@@ -633,3 +633,73 @@
 			icon_state = "campfire20"
 			set_light(0)
 			activeFire = FALSE
+
+/obj/structure/minestructure
+	name = "HE mine"
+	desc = "Don't tread on me, but this time do it for sure."
+	//icon = 'icons/obj/miscobjs.dmi'
+	//icon_state = "mineobject"
+	var/health = 10000
+	density = 1
+	anchored = TRUE
+	var/capture = FALSE
+	atom_flags = ATOM_FLAG_CLIMBABLE
+
+/obj/structure/minestructure/attackby(obj/item/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/weapon/wrench))
+		if (anchored)
+			user.visible_message("<span class = 'notice'>\The [user] starts to deactivate \the [src] with [W].</span>")
+			if (!do_after(user,60))
+				user.visible_message("<span class = 'notice'>\The [user] decides not to deactivate \the [src].</span>")
+				return
+			user.visible_message("<span class = 'notice'>\The [user] finishes deactivating \the [src]!</span>")
+			playsound(loc, 'sound/items/Wirecutter.ogg', 50, TRUE)
+			qdel()
+			return
+
+/obj/structure/minestructure/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	return TRUE
+
+/obj/structure/minestructure/Crossed(AM as mob|obj)
+	if (ismob(AM))
+		var/mob/M = AM
+		if(ishuman(M))
+			playsound(loc, 'sound/weapons/mine_onstep.ogg', 50, TRUE) //Sorry, Matt. I had to do it to 'em.
+			to_chat(M, "<span class = 'danger'>\You step on \the [src]! Pray to God you'll survive!</span>")
+			explosion(src.loc, 0, 1, 2, 3, 0)
+			qdel(src)
+	return ..()
+
+/obj/structure/minestructuredummy
+	name = "HE mine"
+	desc = "Don't tread on me, but this time do it for sure."
+	//icon = 'icons/obj/miscobjs.dmi'
+	//icon_state = "mineobject"
+	var/health = 10000
+	density = 1
+	anchored = TRUE
+	var/capture = FALSE
+	atom_flags = ATOM_FLAG_CLIMBABLE
+
+/obj/structure/minestructuredummy/attackby(obj/item/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/weapon/wrench))
+		if (anchored)
+			user.visible_message("<span class = 'notice'>\The [user] starts to deactivate \the [src] with [W].</span>")
+			if (!do_after(user,60))
+				user.visible_message("<span class = 'notice'>\The [user] decides not to deactivate \the [src].</span>")
+				return
+			user.visible_message("<span class = 'notice'>\The [user] finishes deactivating \the [src]!</span>")
+			playsound(loc, 'sound/items/Wirecutter.ogg', 50, TRUE)
+			qdel()
+			return
+
+/obj/structure/minestructuredummy/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	return TRUE
+
+/obj/structure/minestructuredummy/Crossed(AM as mob|obj)
+	if (ismob(AM))
+		var/mob/M = AM
+		if(ishuman(M))
+			playsound(loc, 'sound/weapons/mine_onstep.ogg', 50, TRUE) //Sorry, Matt. I had to do it to 'em.
+			to_chat(M, "<span class = 'danger'>\You step on \the [src]! Pray to God you'll survive...or don't?</span>")
+	return ..()
