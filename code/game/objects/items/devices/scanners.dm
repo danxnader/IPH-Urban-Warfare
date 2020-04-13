@@ -10,10 +10,10 @@ REAGENT SCANNER
 
 
 /obj/item/device/healthanalyzer
-	name = "health analyzer"
-	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
+	name = "medical book"
+	desc = "A common medical book to determine damages to the victim."
 	icon_state = "health"
-	item_state = "analyzer"
+	item_state = "book"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 3
