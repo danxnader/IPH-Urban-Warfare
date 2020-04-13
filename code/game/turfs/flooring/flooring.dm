@@ -564,6 +564,39 @@ var/list/flooring_types
 	build_type = /obj/item/stack/tile/wood
 	flags = TURF_CAN_BREAK | TURF_IS_FRAGILE | TURF_REMOVE_SCREWDRIVER
 
+/decl/flooring/fancywood
+	name = "fancy wooden floor"
+	desc = "Polished fancy wooden planks."
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_base = "fancywood"
+	has_damage_range = 6
+	damage_temperature = T0C+200
+	descriptor = "planks"
+	build_type = /obj/item/stack/tile/wood
+	flags = TURF_CAN_BREAK | TURF_IS_FRAGILE | TURF_REMOVE_SCREWDRIVER
+
+/decl/flooring/thatch1
+	name = "thatch floor"
+	desc = "Some wooden planks."
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_base = "thatch1"
+	has_damage_range = 6
+	damage_temperature = T0C+200
+	descriptor = "planks"
+	build_type = /obj/item/stack/tile/wood
+	flags = TURF_CAN_BREAK | TURF_IS_FRAGILE | TURF_REMOVE_SCREWDRIVER
+
+/decl/flooring/thatch2
+	name = "fancy wooden floor"
+	desc = "Some wooden planks."
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_base = "thatch2"
+	has_damage_range = 6
+	damage_temperature = T0C+200
+	descriptor = "planks"
+	build_type = /obj/item/stack/tile/wood
+	flags = TURF_CAN_BREAK | TURF_IS_FRAGILE | TURF_REMOVE_SCREWDRIVER
+
 /decl/flooring/reinforced
 	name = "reinforced floor"
 	desc = "Heavily reinforced with steel plating."

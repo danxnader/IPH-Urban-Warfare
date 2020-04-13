@@ -152,6 +152,84 @@
 	icon_state = "medicalred_on"
 	light_color = "#da0205" //red
 
+/obj/structure/sign/stop
+	name = "\improper STOP sign"
+	desc = "A warning sign which reads 'STOP'."
+	icon_state = "stop"
+
+/obj/structure/sign/donotenter
+	name = "\improper warning sign"
+	desc = "A warning sign which means do not entering this area."
+	icon_state = "donotenter"
+
+/obj/structure/sign/zebracrossing
+	name = "\improper zebra crossing sign"
+	desc = "That's a zebra crossing sign."
+	icon_state = "zebracrossing"
+
+/obj/structure/sign/parking
+	name = "\improper parking sign"
+	desc = "That's a parking sign."
+	icon_state = "parking"
+
+/obj/structure/sign/clock
+	name = "clock"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "clocks"
+	desc = "This one looks like it doesn't work."
+
+/obj/structure/sign/rubin714
+	name = "TV"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "rubin714"
+	desc = "That's a Rubin-714, a Soviet-made TV. It doesn't seem to be working."
+
+/obj/structure/sign/rubin102
+	name = "TV"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "rubin102"
+	desc = "That's a Rubin-102, a Soviet-made TV. It doesn't seem to be working, unfortunately."
+
+/obj/structure/sign/rassvet307
+	name = "TV"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "rassvet307"
+	desc = "That's a Rassvet-307, a Soviet-made TV. It doesn't seem to be working, unfortunately."
+
+/obj/structure/sign/nes
+	name = "NES"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "nes"
+	desc = "That's the Nintendo Entertainment System."
+	anchored = 0
+
+/obj/structure/sign/vhs
+	name = "VHS player"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "vhsplayer"
+	desc = "Does not have any cassette in it. Seems broken."
+	anchored = 0
+
+/obj/structure/sign/trash
+	name = "trash bags"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "trash"
+	desc = "Nasty."
+	anchored = 0
+
+/obj/structure/sign/carpetleft
+	name = "carpet"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "carpet1"
+	desc = "That's a carpet."
+
+/obj/structure/sign/carpetright
+	name = "carpet"
+	icon = 'icons/obj/decorations.dmi'
+	icon_state = "carpet2"
+	desc = "That's a carpet."
+
+
 /*|	                                             */
 /*| Double Signs
    ----------------------------------------------*/

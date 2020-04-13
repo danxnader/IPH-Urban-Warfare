@@ -44,6 +44,24 @@
 	icon_state = "wood"
 	initial_flooring = /decl/flooring/wood
 
+/turf/simulated/floor/fancywooden
+	name = "wooden floor"
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_state = "fancywood"
+	initial_flooring = /decl/flooring/fancywood
+
+/turf/simulated/floor/thatch
+	name = "wooden floor"
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_state = "thatch1"
+	initial_flooring = /decl/flooring/thatch1
+
+/turf/simulated/floor/thatch2
+	name = "wooden floor"
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_state = "thatch2"
+	initial_flooring = /decl/flooring/thatch2
+
 /turf/simulated/floor/grass
 	name = "grass patch"
 	icon = 'icons/turf/flooring/grass.dmi'
