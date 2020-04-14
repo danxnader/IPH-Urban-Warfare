@@ -244,6 +244,7 @@ proc/conToToxinModifier(var/constitution, var/w_class)
 			message += "I am <b>[skillnumtodesc(skills[skill])]</b> at [skill].\n"
 	to_chat(src, message)
 
+/*
 /mob/living/carbon/human/verb/reset_stats_skills()
 	for(var/stats in stats)
 		if(stats[stat] > 20)
@@ -251,6 +252,7 @@ proc/conToToxinModifier(var/constitution, var/w_class)
 	for(var/skill in skills)
 		if(stats[stat] > 100)
 			stats[stat] = 100
+*/ // Why was this even a thing?
 
 /* LEGACY STAT CODE
 /mob/proc/statcheck(var/stat, var/requirement, var/show_message, var/message = "I have failed to do this.")//Requirement needs to be 1 through 20
