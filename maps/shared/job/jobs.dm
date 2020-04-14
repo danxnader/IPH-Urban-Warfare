@@ -125,7 +125,9 @@
 
 /datum/map/example
 	allowed_jobs = list(
-						/datum/job/federal/soldier
+						/datum/job/federal/soldier,
+						/datum/job/federal/medic,
+						/datum/job/separatist/grunt
 						)
 
 /datum/job/assistant

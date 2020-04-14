@@ -30,7 +30,7 @@
 	//alt_titles = list("Xenoarcheologist", "Anomalist", "Phoron Researcher")
 	//minimal_player_age = 7
 	ideal_character_age = 26
-	//outfit_type = /decl/hierarchy/outfit/job/federal/medic
+	outfit_type = /decl/hierarchy/outfit/job/federal/medic
 
 /datum/job/federal/officer
 	title = "Federal Officer"

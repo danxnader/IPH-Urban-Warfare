@@ -436,7 +436,7 @@
 	firemodes = list(
 		list(mode_name="short bursts",	burst=5, fire_delay=5, one_hand_penalty=8, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2), burst_delay = 2),
 		list(mode_name="long bursts",	burst=8, fire_delay=5, one_hand_penalty=12, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2), burst_delay = 2),
-		list(mode_name="automatic",		burst=1, fire_delay=1, one_hand_penalty=12, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2), automatic = 1),
+		list(mode_name="automatic",		burst=1, fire_delay=5, one_hand_penalty=12, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2), automatic = 1, burst_delay = 1),
 		)
 
 /obj/item/weapon/gun/projectile/automatic/rpd/update_icon()

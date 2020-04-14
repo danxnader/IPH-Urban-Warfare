@@ -31,9 +31,3 @@
 //query_get_chromie
 //query_set_chromie
 //query_inc_chromie
-
-/mob/living/carbon/human/Stat(client/C)
-	var/chr_count = C.get_chromie_count()
-	. = ..()
-	if(statpanel("Status"))
-		stat(uppertext(CHROMOSOMES), "[round(chr_count)]")

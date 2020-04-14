@@ -14,7 +14,7 @@
 	//minimal_access = list(
 	//minimal_player_age = 14
 	//ideal_character_age = 21
-	//outfit_type = /decl/hierarchy/outfit/job/separatist/grunt
+	outfit_type = /decl/hierarchy/outfit/job/separatist/grunt
 
 /datum/job/separatist/medic //this role, unlike the federal medic, will rely on brute surgery instead of expensive chemicals.
 	title = "Separatist Medic"
