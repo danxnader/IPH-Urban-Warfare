@@ -145,7 +145,7 @@ for reference:
 	if(istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
 		return 0
 	else
-		return 1
+		return 0
 
 //Actual Deployable machinery stuff
 /obj/machinery/deployable
