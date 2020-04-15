@@ -1,4 +1,4 @@
-h/obj/structure/sandbag
+/obj/structure/sandbag
 	name = "sandbag"
 	icon = 'icons/obj/barricades.dmi'
 	icon_state = "sandbag"
