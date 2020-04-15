@@ -143,9 +143,9 @@ for reference:
 	if(air_group || (height==0))
 		return 1
 	if(istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
-		return 1
-	else
 		return 0
+	else
+		return 1
 
 //Actual Deployable machinery stuff
 /obj/machinery/deployable
