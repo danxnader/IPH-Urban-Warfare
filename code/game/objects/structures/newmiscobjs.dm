@@ -172,8 +172,15 @@
 	density = 1
 	anchored = 1
 
-/obj/structure/woodenclock/New()
+/obj/structure/woodenclock/Initialize()
+	START_PROCESSING(SSprocessing, src)
 	..()
+
+/obj/structure/woodenclock/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/structure/woodenclock/Process()
 	playsound('sound/machines/clock_ticking.ogg', repeat = 1, wait = 0, volume = 70)
 
 /obj/structure/nuclearwaste
