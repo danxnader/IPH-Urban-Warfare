@@ -371,7 +371,7 @@
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null, automatic = 0),
-		list(mode_name="automatic",      burst=1, fire_delay=null, one_hand_penalty=7, burst_accuracy=null, dispersion=list(0.0, 0.8, 1.5), burst_delay = 1, automatic = 1),
+		list(mode_name="automatic",      burst=1, fire_delay=null, one_hand_penalty=7, burst_accuracy=null, dispersion=list(0.0, 0.8, 1.5), burst_delay = 3, automatic = 1),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=6, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0), burst_delay = 2, automatic = 0),
 		)
 
