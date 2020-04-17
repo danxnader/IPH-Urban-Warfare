@@ -1937,6 +1937,45 @@
 		reagents.add_reagent(/datum/reagent/water, 5)
 		bitesize = 4
 
+/obj/item/weapon/reagent_containers/food/snacks/cannedkidney
+	name = "canned kidney beans"
+	desc = "Jacko's kidney beans! for that extra taste."
+	icon_state = "canned_kidneybeans"
+	trash = "canned_kidneybeans_empty"
+	center_of_mass = "x=16;y=7"
+	nutriment_desc = list("hot" = 10)
+	nutriment_amt = 10
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/water, 4)
+		bitesize = 4
+
+/obj/item/weapon/reagent_containers/food/snacks/cannedbakedbeans
+	name = "canned baked beans"
+	desc = "Jacko's baked beans! for that extra taste."
+	icon_state = "canned_bakedbeans"
+	trash = "canned_bakedbeans_empty"
+	center_of_mass = "x=16;y=7"
+	nutriment_desc = list("sweet" = 10)
+	nutriment_amt = 10
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/water, 7)
+		bitesize = 4
+
+/obj/item/weapon/reagent_containers/food/snacks/cannedsoup
+	name = "canned soup"
+	desc = "Helikanz tomato soup. We live by good tomatos."
+	icon_state = "canned_tomatsoup"
+	trash = "canned_tomatsoup_empty"
+	center_of_mass = "x=16;y=7"
+	nutriment_desc = list("tomatos" = 10)
+	nutriment_amt = 10
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/water, 4)
+		bitesize = 4
+
 /obj/item/weapon/reagent_containers/food/snacks/stewedsoymeat
 	name = "Stewed Soy Meat"
 	desc = "Even non-vegetarians will LOVE this!"
