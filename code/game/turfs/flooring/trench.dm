@@ -4,6 +4,7 @@ var/list/global/floor_cache = list()
 	name = "trench"
 	icon = 'icons/turf/trench.dmi'
 	icon_state = "trench"
+	base_icon_state = "trench"
 	//var/image/over_OS_darkness = null
 	plane = ABOVE_OBJ_PLANE
 	initial_flooring = /decl/flooring/trench
