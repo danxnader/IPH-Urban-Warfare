@@ -617,7 +617,6 @@
 	var/activeFire = FALSE
 	anchored = TRUE
 
-
 /obj/structure/campfire/attackby(obj/item/W as obj, mob/user as mob)
 	if (!activeFire)
 		if (istype(W, /obj/item/weapon/flame))
@@ -628,6 +627,10 @@
 	if (activeFire)
 		if (istype(W, /obj/item/weapon/flame))
 			return
+	for(var/mob/living/carbon/C in view(1))
+		if(istype(C, /mob/living/carbon))
+			if(C.happiness == 0)
+				C.add_event("warmth", /datum/happiness_event/warmth/campfire)
 		else
 			user.visible_message("<span class = 'notice'>\The [user] puts out \the [src] with [W].</span>")
 			icon_state = "campfire20"
