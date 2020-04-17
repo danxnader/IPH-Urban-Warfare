@@ -24,6 +24,7 @@
 	var/fixed = 0 //If set to 1, can't unanchor and move the mortar, used for map spawns and WO
 
 /obj/structure/mortar/examine(mob/user) //give useful info
+	to_chat(user, "<span class='danger'>A manual, one-man operated mortar system intended to rain down 80mm goodness on anything it's aimed at. Uses manual targetting dials. Insert round to fire.</span>")
 	to_chat(user, "<span class='info'>It is set to fire at: \n X: [targ_x] With an offset of: [dial_x]. Total: [targ_x + dial_x] \n Y: [targ_y] With an offset of: [dial_y]. Total: [targ_y + dial_y] \n Estimated Tick Delay before shell landing: [travel_time]</span>")
 
 /obj/structure/mortar/attack_hand(mob/user as mob)
