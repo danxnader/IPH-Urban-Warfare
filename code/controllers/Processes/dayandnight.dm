@@ -1,4 +1,6 @@
 /datum/controller/process/fancydaynight
+	name = "day night cycler"
+	schedule_interval = 20 //short time for testing purposes
 	var/stateofday = "day" //starts off on day
 	var/turf/dayturf = /turf/simulated/floor/grass //Wanna make day time turn the world to lava? Adminbus makes it possible.
 	var/turf/nightturf = /turf/simulated/floor/grass
@@ -7,8 +9,6 @@
 	var/intx = 0
 
 /datum/controller/process/fancydaynight/setup()
-	name = "day night cycler"
-	schedule_interval = 1200 //short time for testing purposes
 	nighttoday() //game starts off dark; make it daytime
 
 /datum/controller/process/fancydaynight/doWork()
