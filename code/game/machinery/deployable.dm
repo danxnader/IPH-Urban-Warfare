@@ -61,11 +61,11 @@ for reference:
 	icon_state = "barricade"
 	anchored = 1.0
 	density = 1
+
 	var/health = 100
 	var/maxhealth = 100
 	var/material_name = "wood"
 	var/material/material
-	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/structure/barricade/steel
 	name = "steel barricade"
@@ -86,6 +86,7 @@ for reference:
 	color = material.icon_colour
 	maxhealth = material.integrity
 	health = maxhealth
+	density = 1
 
 /obj/structure/barricade/get_material()
 	return material
@@ -143,7 +144,7 @@ for reference:
 	if(air_group || (height==0))
 		return 1
 	if(istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
-		return 0
+		return 1
 	else
 		return 0
 
