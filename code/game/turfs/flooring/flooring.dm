@@ -81,6 +81,14 @@ var/list/flooring_types
 	damage_temperature = T0C+80
 	can_engrave = FALSE
 
+/decl/flooring/trench
+	name = "trench"
+	desc = "Hole in the ground."
+	icon = 'icons/turf/trench.dmi'
+	icon_base = "trench"
+	flags = TURF_HAS_EDGES
+	can_engrave = FALSE
+
 /decl/flooring/asphalt
 	name = "asphalt road"
 	desc = "Time to hit the road."
