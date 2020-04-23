@@ -2,8 +2,8 @@
 
 	#include "../shared/exodus_torch/_include.dm"
 
-	#include "hospital_announcements.dm"
-	#include "hospital_areas.dm"
+	#include "polyana_announcements.dm"
+	#include "polyana_areas.dm"
 
 
 	//CONTENT
@@ -11,12 +11,11 @@
 	#include "../shared/datums/uniforms.dm"
 	#include "../shared/items/cards_ids.dm"
 	#include "../shared/items/clothing.dm"
-	#include "hospital_gamemodes.dm"
-	#include "hospital_presets.dm"
-	#include "hospital_shuttles.dm"
-	#include "hospital_elevator.dm"
+	#include "polyana_gamemodes.dm"
+	#include "polyana_presets.dm"
+	#include "polyana_shuttles.dm"
 
-	#include "hospital-1.dmm"
+	#include "polyana.dmm"
 
 
 	#include "../shared/exodus_torch/_include.dm"
@@ -33,5 +32,5 @@
 
 #elif !defined(MAP_OVERRIDE)
 
-	#warn A map has already been included, ignoring hospital
+	#warn A map has already been included, ignoring polyana
 #endif
