@@ -1,5 +1,5 @@
 
-/datum/map/example
+/datum/map/polyana
 	name = "Polyana"
 	full_name = "Dudayevskaya Polyana"
 	path = "polyana"

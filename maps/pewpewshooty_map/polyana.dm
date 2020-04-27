@@ -1,9 +1,9 @@
 #if !defined(using_map_DATUM)
 
-	#include "../shared/exodus_torch/_include.dm"
-
 	#include "polyana_announcements.dm"
 	#include "polyana_areas.dm"
+	#include "polyana_define.dm"
+	#include "polyana_unit_testing.dm"
 
 
 	//CONTENT
@@ -12,11 +12,10 @@
 	#include "../shared/items/cards_ids.dm"
 	#include "../shared/items/clothing.dm"
 	#include "polyana_gamemodes.dm"
-	#include "polyana_presets.dm"
 	#include "polyana_shuttles.dm"
 
-	#include "polyana.dmm"
-
+	#include "polyana-1.dmm"
+	#include "polyana-2.dmm"
 
 	#include "../shared/exodus_torch/_include.dm"
 
@@ -28,7 +27,7 @@
 	#include "../../code/modules/lobby_music/generic_songs.dm"
 	#include "../../code/modules/lobby_music/docking.dm"
 
-	#define using_map_DATUM /datum/map/hospital
+	#define using_map_DATUM /datum/map/polyana
 
 #elif !defined(MAP_OVERRIDE)
 
