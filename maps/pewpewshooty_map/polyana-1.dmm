@@ -1,343 +1,343 @@
-"aa" = (/turf/simulated/wall/fogwall,/area/space)
-"ab" = (/obj/structure/flora/tree/small,/turf/simulated/floor/exoplanet/grass,/area/space)
-"ac" = (/obj/structure/flora/tree,/turf/simulated/floor/exoplanet/grass,/area/space)
-"ad" = (/obj/structure/flora/ausbushes/busha,/turf/simulated/floor/exoplanet/grass,/area/space)
-"ae" = (/obj/structure/concreteblock,/turf/simulated/floor/exoplanet/grass,/area/space)
-"af" = (/obj/structure/closet/crate/trashcart,/obj/item/trash/semki,/turf/simulated/floor/exoplanet/grass,/area/space)
-"ag" = (/turf/simulated/floor/dirty,/area/space)
-"ah" = (/turf/simulated/wall/concrete,/area/space)
-"ai" = (/obj/structure/window_frame,/obj/item/weapon/material/shard,/turf/simulated/floor/dirty,/area/space)
-"aj" = (/obj/structure/table/woodentable,/turf/simulated/floor/dirty,/area/space)
-"ak" = (/obj/item/weapon/gun/projectile/revolver,/obj/item/ammo_casing/a357,/obj/item/ammo_casing/a357,/obj/item/ammo_casing/a357,/turf/simulated/floor/thatch,/area/space)
-"al" = (/obj/structure/body2,/obj/effect/decal/cleanable/blood,/obj/item/weapon/storage/pill_bottle/happy,/obj/structure/fishwall,/turf/simulated/floor/thatch,/area/space)
-"am" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/turf/simulated/floor/thatch,/area/space)
-"an" = (/obj/item/ammo_casing/a357,/turf/simulated/floor/thatch,/area/space)
-"ao" = (/obj/item/weapon/material/kitchen/utensil/knife/boot,/turf/simulated/floor/thatch,/area/space)
-"ap" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/briefcase,/turf/simulated/floor/dirty,/area/space)
-"aq" = (/turf/simulated/floor/thatch,/area/space)
-"ar" = (/obj/structure/barricade,/turf/simulated/floor/exoplanet/grass,/area/space)
-"as" = (/obj/structure/bookcase,/turf/simulated/floor/dirty,/area/space)
-"at" = (/obj/item/weapon/storage/box/mre_federal,/turf/simulated/floor/thatch,/area/space)
-"au" = (/obj/structure/largecrate,/turf/simulated/floor/thatch,/area/space)
-"av" = (/obj/effect/decal/cleanable/blood,/obj/random/toolbox,/turf/simulated/floor/thatch,/area/space)
-"aw" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/thatch,/area/space)
-"ax" = (/obj/structure/brustwehr,/turf/simulated/floor/dirty,/area/space)
-"ay" = (/obj/structure/fence/wooden{dir = 4},/turf/simulated/floor/exoplanet/grass,/area/space)
-"az" = (/obj/structure/fence/wooden,/turf/simulated/floor/exoplanet/grass,/area/space)
-"aA" = (/obj/item/weapon/material/shard,/turf/simulated/floor/exoplanet/grass,/area/space)
-"aB" = (/obj/item/ammo_casing/shotgun,/turf/simulated/floor/exoplanet/grass,/area/space)
-"aC" = (/turf/simulated/wall/wood,/area/space)
-"aD" = (/obj/structure/window_frame,/obj/item/weapon/material/shard,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"aE" = (/obj/structure/sign/flag/chechen,/turf/simulated/wall/wood,/area/space)
-"aF" = (/obj/structure/body1,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aG" = (/obj/item/weapon/broken_bottle,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/mucus,/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aH" = (/obj/structure/bookcase,/turf/simulated/floor/fancywooden,/area/space)
-"aI" = (/obj/structure/bookcase,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/fancywooden,/area/space)
-"aJ" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aK" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aL" = (/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aM" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aN" = (/obj/structure/window/classic,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"aO" = (/obj/structure/sign/carpetleft,/turf/simulated/floor/fancywooden,/area/space)
-"aP" = (/obj/structure/sign/carpetright,/turf/simulated/floor/fancywooden,/area/space)
-"aQ" = (/turf/simulated/floor/fancywooden,/area/space)
-"aR" = (/obj/structure/bed/chair/wood{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aS" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aT" = (/obj/effect/spider/spiderling/mundane,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aU" = (/obj/effect/decal/cleanable/blood/drip,/obj/item/weapon/c_tube,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aV" = (/obj/structure/closet/cabinet,/obj/structure/bedsheetbin,/obj/item/weapon/book/manual/chef_recipes,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aW" = (/obj/item/ammo_casing,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aX" = (/obj/structure/bed/padded,/obj/item/weapon/bedsheet/red,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aY" = (/obj/item/ammo_casing,/obj/item/ammo_casing,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"aZ" = (/obj/structure/coatrack,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"ba" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"bb" = (/obj/structure/safe,/turf/simulated/floor/fancywooden,/area/space)
-"bc" = (/obj/structure/concreteblock{dir = 1},/turf/simulated/floor/exoplanet/grass,/area/space)
-"bd" = (/obj/structure/concreteblock{dir = 8},/turf/simulated/floor/exoplanet/grass,/area/space)
-"be" = (/obj/structure/concreteblock{dir = 4},/turf/simulated/floor/exoplanet/grass,/area/space)
-"bf" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bg" = (/obj/structure/bed/chair/bench{icon_state = "pillar"; dir = 4},/turf/simulated/floor/exoplanet/grass,/area/space)
-"bh" = (/obj/structure/flora/ausbushes/leafybush,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bi" = (/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bj" = (/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bk" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bl" = (/turf/simulated/wall/brick,/area/space)
-"bm" = (/obj/item/stack/material/wood,/obj/item/weapon/wirecutters,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bn" = (/obj/structure/mirror/raider,/turf/simulated/wall/brick,/area/space)
-"bo" = (/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"bp" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/window_frame,/turf/simulated/floor/fancywooden,/area/space)
-"bq" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/space)
-"br" = (/obj/structure/window_frame,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bs" = (/obj/structure/sink{dir = 1; icon_state = "sink"; pixel_y = 16},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/space)
-"bt" = (/obj/structure/table/standard,/obj/item/trash/plate,/turf/simulated/floor/thatch,/area/space)
-"bu" = (/obj/structure/table/standard,/obj/item/weapon/material/kitchen/utensil/knife,/obj/item/weapon/material/kitchen/utensil/fork,/turf/simulated/floor/thatch,/area/space)
-"bv" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/thatch,/area/space)
-"bw" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/fancywooden,/area/space)
-"bx" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/woodentable,/turf/simulated/floor/fancywooden,/area/space)
-"by" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/space)
-"bz" = (/obj/item/weapon/stool,/turf/simulated/floor/thatch,/area/space)
-"bA" = (/obj/structure/table/woodentable,/obj/random/action_figure,/obj/item/weapon/book,/turf/simulated/floor/carpet,/area/space)
-"bB" = (/obj/structure/sign/rassvet307,/obj/structure/table/woodentable,/turf/simulated/floor/carpet,/area/space)
-"bC" = (/obj/structure/sign/vhs,/obj/structure/table/woodentable,/turf/simulated/floor/carpet,/area/space)
-"bD" = (/obj/structure/flora/ausbushes/fullgrass,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bE" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair/wood{dir = 4},/turf/simulated/floor/fancywooden,/area/space)
-"bF" = (/obj/structure/table/woodentable,/obj/structure/woodentv,/turf/simulated/floor/fancywooden,/area/space)
-"bG" = (/turf/simulated/floor/carpet,/area/space)
-"bH" = (/obj/structure/pit/closed/grave,/obj/structure/gravemarker,/obj/effect/decal/cleanable/urine,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bI" = (/obj/item/stack/material/wood,/turf/simulated/floor/exoplanet/grass,/area/space)
-"bJ" = (/obj/structure/table/woodentable,/turf/simulated/floor/fancywooden,/area/space)
-"bK" = (/obj/item/weapon/material/shard,/turf/simulated/floor/thatch,/area/space)
-"bL" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/thatch,/area/space)
-"bM" = (/obj/item/stack/material/leather,/turf/simulated/floor/fancywooden,/area/space)
-"bN" = (/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bO" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/thatch,/area/space)
-"bQ" = (/obj/structure/sofa/brown/left{dir = 1},/turf/simulated/floor/carpet,/area/space)
-"bR" = (/obj/structure/sofa/brown{dir = 1},/obj/effect/decal/cleanable/cum,/turf/simulated/floor/carpet,/area/space)
-"bS" = (/obj/structure/sofa/brown/right{dir = 1},/turf/simulated/floor/carpet,/area/space)
-"bT" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bU" = (/obj/machinery/disposal/toilet,/obj/effect/decal/cleanable/poo,/obj/effect/decal/cleanable/vomit,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bV" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor/thatch,/area/space)
-"bW" = (/obj/structure/bed/chair/wood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/space)
-"bX" = (/obj/structure/noticeboard{dir = 8},/turf/simulated/wall/brick,/area/space)
-"bY" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack/shelf,/obj/item/weapon/material/hatchet,/obj/item/weapon/material/scythe,/obj/item/weapon/mop,/obj/item/weapon/screwdriver,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"bZ" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ca" = (/obj/structure/largecrate,/obj/item/stack/material/diamond,/obj/item/stack/material/diamond,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cb" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cc" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/thatch,/area/space)
-"cd" = (/obj/structure/table/woodentable,/obj/item/weapon/paper/crumpled,/obj/item/weapon/paper/crumpled,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/space)
-"ce" = (/obj/structure/table/woodentable,/obj/item/weapon/paper,/obj/item/weapon/pen/blue,/turf/simulated/floor/thatch,/area/space)
-"cf" = (/obj/structure/table/woodentable,/obj/item/clothing/head/collectable/paper,/turf/simulated/floor/thatch,/area/space)
-"cg" = (/obj/structure/woodenclock,/turf/simulated/floor/fancywooden,/area/space)
-"ch" = (/obj/structure/undies_wardrobe,/turf/simulated/floor/fancywooden,/area/space)
-"ci" = (/obj/structure/table/woodentable,/obj/item/device/flashlight/lamp/green,/turf/simulated/floor/fancywooden,/area/space)
-"cj" = (/obj/machinery/door/unpowered/simple/wood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ck" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cl" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/cooker/oven,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cm" = (/obj/structure/fence/wooden{dir = 1},/turf/simulated/floor/exoplanet/grass,/area/space)
-"cn" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/fancywooden,/area/space)
-"co" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/turf/simulated/floor/fancywooden,/area/space)
-"cp" = (/obj/structure/undies_wardrobe,/obj/item/weapon/storage/bible,/obj/item/weapon/storage/box,/obj/item/clothing/accessory/medal/gold,/turf/simulated/floor/fancywooden,/area/space)
-"cq" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cr" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack/shelf,/obj/item/clothing/shoes/jackboots,/obj/item/clothing/shoes/leather,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cs" = (/turf/simulated/floor/exoplanet/desert,/area/space)
-"ct" = (/obj/structure/table/rack/shelf,/obj/random/cash,/turf/simulated/floor/fancywooden,/area/space)
-"cu" = (/obj/structure/closet/cabinet,/obj/random/drinkbottle,/obj/random/handgun,/obj/random/smokes,/obj/item/device/cassete,/obj/item/device/cassete,/turf/simulated/floor/fancywooden,/area/space)
-"cv" = (/obj/structure/table/woodentable,/obj/random/accessory,/turf/simulated/floor/fancywooden,/area/space)
-"cw" = (/obj/structure/table/woodentable,/obj/item/clothing/under/rebel,/turf/simulated/floor/fancywooden,/area/space)
-"cx" = (/obj/structure/table/woodentable,/obj/item/clothing/shoes/leather,/turf/simulated/floor/fancywooden,/area/space)
-"cy" = (/obj/machinery/beehive,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cz" = (/obj/structure/sign/double/city/defense/left,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cA" = (/obj/item/honey_frame/filled,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cB" = (/obj/effect/decal/cleanable/urine,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cC" = (/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cD" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/fancywooden,/area/space)
-"cE" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/fancywooden,/area/space)
-"cF" = (/obj/structure/table/woodentable,/obj/item/clothing/under/soviet,/turf/simulated/floor/fancywooden,/area/space)
-"cG" = (/obj/structure/sign/trash,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cH" = (/obj/structure/flora/grass/grassb,/turf/simulated/wall/fogwall,/area/space)
-"cI" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cJ" = (/obj/structure/table/rack,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cK" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/urine,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cL" = (/obj/item/clothing/head/hijab,/obj/item/clothing/head/kippa,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cM" = (/turf/simulated/floor/light,/area/space)
-"cN" = (/obj/item/stack/material/cardboard,/turf/simulated/floor/light,/area/space)
-"cO" = (/obj/item/ammo_magazine/mc9mm,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cP" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cQ" = (/obj/structure/campfire,/turf/simulated/floor/light,/area/space)
-"cR" = (/obj/item/stack/material/cardboard,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cS" = (/obj/item/device/flashlight/lantern,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cT" = (/obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cU" = (/obj/item/weapon/zipgunframe,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"cV" = (/obj/structure/bed/chair/wood{dir = 8},/turf/simulated/floor/exoplanet/grass,/area/space)
-"cW" = (/obj/structure/table/rack/shelf,/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,/obj/item/weapon/crowbar,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cX" = (/obj/structure/table/rack/shelf,/obj/item/weapon/folder,/obj/item/weapon/handcuffs/cable,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cY" = (/obj/structure/window_frame,/turf/simulated/floor/exoplanet/grass,/area/space)
-"cZ" = (/obj/structure/concreteblock,/obj/structure/concreteblock{dir = 8},/turf/simulated/floor/exoplanet/grass,/area/space)
-"da" = (/obj/structure/anti_tank,/turf/simulated/floor/exoplanet/grass,/area/space)
-"db" = (/obj/structure/concreteblock{dir = 1},/obj/structure/concreteblock{dir = 4},/turf/simulated/floor/exoplanet/grass,/area/space)
-"dc" = (/obj/structure/mortar/fixed,/turf/simulated/floor/exoplanet/grass,/area/space)
-"dd" = (/obj/structure/table/standard,/obj/item/weapon/paper,/obj/item/weapon/pen,/turf/simulated/floor/exoplanet/grass,/area/space)
-"de" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"df" = (/obj/item/weapon/storage/fancy/cigarettes/carcinomas,/obj/structure/table/standard,/obj/item/weapon/flame/lighter,/turf/simulated/floor/exoplanet/grass,/area/space)
-"dg" = (/obj/structure/table/woodentable,/obj/item/device/radio,/obj/item/device/radio,/obj/item/device/radio,/obj/item/weapon/contraband/poster,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dh" = (/obj/structure/table/woodentable,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"di" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dj" = (/obj/structure/table/woodentable,/obj/item/weapon/coilgun_assembly,/obj/item/weapon/screwdriver,/obj/item/weapon/tape_roll,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dk" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/pistol/makarov,/obj/item/weapon/gun/projectile/pistol/makarov,/obj/item/weapon/gun/projectile/pistol/makarov,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dl" = (/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dm" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/box/c45,/obj/item/ammo_magazine/box/c45,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dn" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"do" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dp" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/box/matches,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dq" = (/obj/structure/curtain,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dr" = (/obj/structure/bed,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ds" = (/obj/item/weapon/stool,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dt" = (/obj/effect/decal/cleanable/blood,/obj/structure/bed,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"du" = (/obj/structure/table/standard,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dv" = (/obj/item/trash/semki,/obj/item/weapon/stool,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dw" = (/obj/item/weapon/crowbar,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dx" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dy" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/food/snacks/cannedsoup,/obj/item/weapon/reagent_containers/food/snacks/cannedsoup,/obj/item/weapon/reagent_containers/food/snacks/cannedsoup,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dz" = (/obj/structure/table/standard,/obj/item/weapon/material/kitchen/utensil/knife,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dA" = (/obj/structure/table/standard,/obj/item/trash/plate,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dB" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/food/snacks/candy,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dC" = (/obj/structure/closet/crate,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dD" = (/obj/structure/largecrate,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dE" = (/obj/structure/largecrate,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dF" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dG" = (/obj/item/explosive/mine,/obj/item/explosive/mine,/obj/item/explosive/mine,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dH" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dI" = (/obj/structure/bed,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dJ" = (/obj/structure/table/standard,/obj/item/clothing/head/surgery,/obj/item/clothing/gloves/latex/nitrile,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dK" = (/obj/item/weapon/paper/crumpled,/turf/simulated/floor/exoplanet/grass,/area/space)
-"dL" = (/obj/item/weapon/shovel,/turf/simulated/floor/exoplanet/grass,/area/space)
-"dM" = (/obj/structure/largecrate,/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dN" = (/obj/structure/largecrate,/obj/item/weapon/storage/toolbox/mechanical,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dO" = (/obj/structure/largecrate,/obj/item/weapon/stamp,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/red,/obj/item/weapon/pen/blue,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/reagent/sleepy,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dP" = (/obj/structure/largecrate,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dQ" = (/obj/structure/largecrate,/obj/structure/largecrate,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dR" = (/obj/structure/table/woodentable,/obj/item/weapon/grenade/frag/separatist,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dS" = (/obj/item/weapon/towel,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dT" = (/obj/structure/largecrate,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dU" = (/obj/structure/largecrate,/obj/item/clothing/suit/fire/firefighter,/obj/item/clothing/suit/fire/firefighter,/obj/item/clothing/suit/fire/firefighter,/obj/item/clothing/suit/fire/firefighter,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dV" = (/obj/machinery/gibber,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dW" = (/obj/machinery/floodlight,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dX" = (/obj/structure/closet/crate,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dY" = (/obj/structure/closet/crate,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"dZ" = (/obj/structure/closet/crate/freezer,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_bakedbeans,/obj/item/weapon/reagent_containers/food/drinks/cans/can_bakedbeans,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ea" = (/obj/item/trash/candle,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eb" = (/obj/structure/closet/crate,/obj/item/weapon/book/manual/barman_recipes,/obj/item/weapon/book/manual/chef_recipes,/obj/item/weapon/book,/obj/item/weapon/book,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ec" = (/obj/structure/closet/crate,/obj/item/weapon/storage/wallet/leather,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ed" = (/obj/structure/closet/crate,/obj/item/weapon/tray,/obj/item/weapon/tray,/obj/item/weapon/tray,/obj/item/weapon/tray,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ee" = (/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/food/snacks/chocolatebar,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ef" = (/obj/structure/largecrate,/obj/item/weapon/storage/box/rxglasses,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eg" = (/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/weapon/reagent_containers/spray/pepper,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eh" = (/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ei" = (/obj/structure/table/woodentable,/obj/item/weapon/melee/nailstick,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ej" = (/obj/structure/table/woodentable,/obj/item/weapon/zipgunframe,/obj/item/stock,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ek" = (/obj/structure/closet/crate/separatistgrenades,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"el" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"em" = (/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/structure/closet/crate,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"en" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eo" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ep" = (/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/structure/closet/crate/freezer,/obj/item/weapon/reagent_containers/food/snacks/egg,/obj/item/weapon/reagent_containers/food/snacks/egg,/obj/item/weapon/reagent_containers/food/snacks/egg,/obj/effect/decal/cleanable/flour,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eq" = (/obj/structure/table/woodentable,/obj/item/stack/barbed_wire,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"er" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"es" = (/obj/structure/pit/closed/grave,/turf/simulated/floor/exoplanet/grass,/area/space)
-"et" = (/obj/effect/landmark{name = "tdome1"},/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eu" = (/obj/structure/closet/crate/federalgrenades,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ev" = (/obj/structure/closet/crate,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ew" = (/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/structure/closet/crate,/obj/item/weapon/gun/projectile/automatic/ak74,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ex" = (/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/obj/structure/closet/crate/medical,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"ey" = (/turf/simulated/floor/exoplanet/grass,/area/space)
-"ez" = (/obj/item/trash/semki,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eA" = (/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eB" = (/obj/effect/landmark/start{name = "Federal Soldier"},/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eC" = (/obj/item/weapon/stool,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eD" = (/obj/structure/table/woodentable,/obj/item/weapon/reagent_containers/food/snacks/sausage,/obj/item/weapon/reagent_containers/food/snacks/tomatosoup,/obj/item/trash/plate,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eE" = (/obj/structure/table/woodentable,/obj/item/weapon/coin/silver,/obj/item/weapon/shiv,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/exoplanet/concrete,/area/space)
-"eF" = (/obj/structure/flora/grass/grassb,/turf/simulated/floor/exoplanet/grass,/area/space)
+"aa" = (/turf/simulated/wall/fogwall,/area/exoplanet/grass)
+"ab" = (/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ac" = (/obj/structure/flora/grass/grassb,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ad" = (/obj/structure/flora/tree/small,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ae" = (/obj/structure/flora/tree,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"af" = (/turf/simulated/wall/concrete,/area/exoplanet/grass)
+"ag" = (/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ah" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ai" = (/obj/structure/table/woodentable,/obj/item/weapon/grenade/frag/separatist,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aj" = (/obj/structure/table/woodentable,/obj/item/weapon/flame/candle,/obj/item/weapon/storage/box/matches,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ak" = (/obj/item/trash/candle,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"al" = (/obj/structure/largecrate,/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"am" = (/obj/structure/largecrate,/obj/item/weapon/storage/toolbox/mechanical,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"an" = (/obj/structure/largecrate,/obj/item/weapon/stamp,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/red,/obj/item/weapon/pen/blue,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/reagent/sleepy,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ao" = (/obj/structure/largecrate,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ap" = (/obj/structure/largecrate,/obj/structure/largecrate,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aq" = (/obj/structure/largecrate,/obj/item/weapon/storage/box/rxglasses,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ar" = (/obj/structure/flora/ausbushes/busha,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"as" = (/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"at" = (/obj/item/weapon/towel,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"au" = (/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"av" = (/obj/structure/largecrate,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aw" = (/obj/structure/largecrate,/obj/item/clothing/suit/fire/firefighter,/obj/item/clothing/suit/fire/firefighter,/obj/item/clothing/suit/fire/firefighter,/obj/item/clothing/suit/fire/firefighter,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ax" = (/obj/machinery/gibber,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ay" = (/obj/machinery/floodlight,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"az" = (/obj/structure/concreteblock,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"aA" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aB" = (/obj/structure/closet/crate,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aC" = (/obj/structure/closet/crate,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aD" = (/obj/structure/closet/crate/freezer,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_tomsoup,/obj/item/weapon/reagent_containers/food/drinks/cans/can_bakedbeans,/obj/item/weapon/reagent_containers/food/drinks/cans/can_bakedbeans,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aE" = (/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/item/weapon/reagent_containers/food/snacks/candy,/obj/structure/closet/crate/freezer,/obj/item/weapon/reagent_containers/food/snacks/egg,/obj/item/weapon/reagent_containers/food/snacks/egg,/obj/item/weapon/reagent_containers/food/snacks/egg,/obj/effect/decal/cleanable/flour,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aF" = (/obj/structure/closet/crate,/obj/item/weapon/book/manual/barman_recipes,/obj/item/weapon/book/manual/chef_recipes,/obj/item/weapon/book,/obj/item/weapon/book,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aG" = (/obj/structure/closet/crate,/obj/item/weapon/storage/wallet/leather,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aH" = (/turf/simulated/floor/dirty,/area/exoplanet/grass)
+"aI" = (/obj/effect/landmark{name = "tdome1"},/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aJ" = (/obj/structure/window_frame,/obj/item/weapon/material/shard,/turf/simulated/floor/dirty,/area/exoplanet/grass)
+"aK" = (/obj/structure/closet/crate,/obj/item/weapon/tray,/obj/item/weapon/tray,/obj/item/weapon/tray,/obj/item/weapon/tray,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aL" = (/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/food/snacks/chocolatebar,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aM" = (/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/obj/structure/closet/crate/medical,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aN" = (/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/weapon/reagent_containers/spray/pepper,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aO" = (/obj/structure/table/woodentable,/turf/simulated/floor/dirty,/area/exoplanet/grass)
+"aP" = (/obj/item/weapon/gun/projectile/revolver,/obj/item/ammo_casing/a357,/obj/item/ammo_casing/a357,/obj/item/ammo_casing/a357,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"aQ" = (/obj/structure/body2,/obj/effect/decal/cleanable/blood,/obj/item/weapon/storage/pill_bottle/happy,/obj/structure/fishwall,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"aR" = (/obj/item/trash/semki,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aS" = (/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aT" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"aU" = (/obj/item/ammo_casing/a357,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"aV" = (/obj/item/weapon/material/kitchen/utensil/knife/boot,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"aW" = (/obj/structure/closet/crate/trashcart,/obj/item/trash/semki,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"aX" = (/obj/structure/table/woodentable,/obj/item/weapon/melee/nailstick,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"aY" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/briefcase,/turf/simulated/floor/dirty,/area/exoplanet/grass)
+"aZ" = (/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"ba" = (/obj/structure/barricade,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bb" = (/obj/item/weapon/stool,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bc" = (/obj/structure/table/woodentable,/obj/item/weapon/zipgunframe,/obj/item/stock,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bd" = (/obj/structure/bookcase,/turf/simulated/floor/dirty,/area/exoplanet/grass)
+"be" = (/obj/item/weapon/storage/box/mre_federal,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"bf" = (/obj/structure/closet/crate/separatistgrenades,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bg" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bh" = (/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/structure/closet/crate,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bi" = (/obj/structure/table/woodentable,/obj/item/weapon/reagent_containers/food/snacks/sausage,/obj/item/weapon/reagent_containers/food/snacks/tomatosoup,/obj/item/trash/plate,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bj" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/obj/item/weapon/gun/projectile/shotgun/pump/boltaction/sks,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bk" = (/obj/structure/table/woodentable,/obj/item/weapon/coin/silver,/obj/item/weapon/shiv,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bl" = (/obj/structure/table/woodentable,/obj/item/stack/barbed_wire,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bm" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bn" = (/obj/structure/largecrate,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"bo" = (/obj/effect/decal/cleanable/blood,/obj/random/toolbox,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"bp" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"bq" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"br" = (/obj/structure/brustwehr,/turf/simulated/floor/dirty,/area/exoplanet/grass)
+"bs" = (/obj/structure/fence/wooden{dir = 4},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bt" = (/obj/structure/fence/wooden,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bu" = (/obj/item/weapon/material/shard,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bv" = (/obj/item/ammo_casing/shotgun,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bw" = (/obj/structure/concreteblock{dir = 1},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bx" = (/turf/simulated/wall/wood,/area/exoplanet/grass)
+"by" = (/obj/structure/window_frame,/obj/item/weapon/material/shard,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bz" = (/obj/structure/sign/flag/chechen,/turf/simulated/wall/wood,/area/exoplanet/grass)
+"bA" = (/obj/structure/concreteblock{dir = 8},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bB" = (/obj/structure/body1,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bC" = (/obj/item/weapon/broken_bottle,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/mucus,/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bD" = (/obj/structure/bookcase,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bE" = (/obj/structure/bookcase,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bF" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bG" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bH" = (/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bI" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bJ" = (/obj/structure/window/classic,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"bK" = (/obj/structure/sign/carpetleft,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bL" = (/obj/structure/sign/carpetright,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bM" = (/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bN" = (/obj/structure/bed/chair/wood{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bO" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bP" = (/obj/effect/spider/spiderling/mundane,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bQ" = (/obj/structure/concreteblock{dir = 4},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"bR" = (/obj/effect/decal/cleanable/blood/drip,/obj/item/weapon/c_tube,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bS" = (/obj/structure/closet/cabinet,/obj/structure/bedsheetbin,/obj/item/weapon/book/manual/chef_recipes,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bT" = (/obj/item/ammo_casing,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bU" = (/obj/structure/bed/padded,/obj/item/weapon/bedsheet/red,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bV" = (/obj/item/ammo_casing,/obj/item/ammo_casing,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bW" = (/obj/structure/coatrack,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bX" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bY" = (/obj/structure/safe,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"bZ" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ca" = (/obj/structure/bed/chair/bench{icon_state = "pillar"; dir = 4},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cb" = (/obj/structure/flora/ausbushes/leafybush,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cc" = (/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cd" = (/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ce" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cf" = (/obj/structure/flora/ausbushes/fullgrass,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cg" = (/obj/structure/pit/closed/grave,/obj/structure/gravemarker,/obj/effect/decal/cleanable/urine,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ch" = (/obj/item/stack/material/wood,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"ci" = (/turf/simulated/wall/brick,/area/exoplanet/grass)
+"cj" = (/obj/item/stack/material/wood,/obj/item/weapon/wirecutters,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ck" = (/obj/structure/mirror/raider,/turf/simulated/wall/brick,/area/exoplanet/grass)
+"cl" = (/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cm" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/window_frame,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cn" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"co" = (/obj/structure/window_frame,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cp" = (/obj/structure/sink{dir = 1; icon_state = "sink"; pixel_y = 16},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cq" = (/obj/structure/table/standard,/obj/item/trash/plate,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cr" = (/obj/structure/table/standard,/obj/item/weapon/material/kitchen/utensil/knife,/obj/item/weapon/material/kitchen/utensil/fork,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cs" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"ct" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cu" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/woodentable,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cv" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cw" = (/obj/item/weapon/stool,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cx" = (/obj/structure/table/woodentable,/obj/random/action_figure,/obj/item/weapon/book,/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cy" = (/obj/structure/sign/rassvet307,/obj/structure/table/woodentable,/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cz" = (/obj/structure/sign/vhs,/obj/structure/table/woodentable,/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cA" = (/obj/structure/fence/wooden{dir = 1},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cB" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair/wood{dir = 4},/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cC" = (/obj/structure/table/woodentable,/obj/structure/woodentv,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cD" = (/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cE" = (/obj/machinery/beehive,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cF" = (/obj/structure/sign/double/city/defense/left,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cG" = (/obj/structure/table/woodentable,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cH" = (/obj/item/weapon/material/shard,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cI" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cJ" = (/obj/item/stack/material/leather,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"cK" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cL" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cM" = (/obj/structure/sofa/brown/left{dir = 1},/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cN" = (/obj/structure/sofa/brown{dir = 1},/obj/effect/decal/cleanable/cum,/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cO" = (/obj/structure/sofa/brown/right{dir = 1},/turf/simulated/floor/carpet,/area/exoplanet/grass)
+"cP" = (/obj/machinery/disposal/toilet,/obj/effect/decal/cleanable/poo,/obj/effect/decal/cleanable/vomit,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cQ" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cR" = (/obj/structure/bed/chair/wood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cS" = (/obj/structure/noticeboard{dir = 8},/turf/simulated/wall/brick,/area/exoplanet/grass)
+"cT" = (/obj/item/honey_frame/filled,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"cU" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack/shelf,/obj/item/weapon/material/hatchet,/obj/item/weapon/material/scythe,/obj/item/weapon/mop,/obj/item/weapon/screwdriver,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cV" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cW" = (/obj/structure/largecrate,/obj/item/stack/material/diamond,/obj/item/stack/material/diamond,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cX" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"cY" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"cZ" = (/obj/structure/table/woodentable,/obj/item/weapon/paper/crumpled,/obj/item/weapon/paper/crumpled,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"da" = (/obj/structure/table/woodentable,/obj/item/weapon/paper,/obj/item/weapon/pen/blue,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"db" = (/obj/structure/table/woodentable,/obj/item/clothing/head/collectable/paper,/turf/simulated/floor/thatch,/area/exoplanet/grass)
+"dc" = (/obj/structure/woodenclock,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dd" = (/obj/structure/undies_wardrobe,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"de" = (/obj/structure/table/woodentable,/obj/item/device/flashlight/lamp/green,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"df" = (/obj/machinery/door/unpowered/simple/wood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dg" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/cooker/oven,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"di" = (/obj/effect/decal/cleanable/urine,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dj" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dk" = (/obj/structure/table/woodentable,/obj/structure/table/woodentable,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dl" = (/obj/structure/undies_wardrobe,/obj/item/weapon/storage/bible,/obj/item/weapon/storage/box,/obj/item/clothing/accessory/medal/gold,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dm" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dn" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack/shelf,/obj/item/clothing/shoes/jackboots,/obj/item/clothing/shoes/leather,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"do" = (/turf/simulated/floor/exoplanet/desert,/area/exoplanet/grass)
+"dp" = (/obj/structure/table/rack/shelf,/obj/random/cash,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dq" = (/obj/structure/closet/cabinet,/obj/random/drinkbottle,/obj/random/handgun,/obj/random/smokes,/obj/item/device/cassete,/obj/item/device/cassete,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dr" = (/obj/structure/table/woodentable,/obj/random/accessory,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"ds" = (/obj/structure/table/woodentable,/obj/item/clothing/under/rebel,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dt" = (/obj/structure/table/woodentable,/obj/item/clothing/shoes/leather,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"du" = (/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dv" = (/obj/structure/bed/chair/wood{dir = 8},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dw" = (/obj/structure/table/rack/shelf,/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka,/obj/item/weapon/crowbar,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dx" = (/obj/structure/table/rack/shelf,/obj/item/weapon/folder,/obj/item/weapon/handcuffs/cable,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dy" = (/obj/structure/window_frame,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dz" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dA" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dB" = (/obj/structure/table/woodentable,/obj/item/clothing/under/soviet,/turf/simulated/floor/fancywooden,/area/exoplanet/grass)
+"dC" = (/obj/structure/sign/trash,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dD" = (/obj/structure/flora/grass/grassb,/turf/simulated/wall/fogwall,/area/exoplanet/grass)
+"dE" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dF" = (/obj/structure/table/rack,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dG" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/urine,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dH" = (/obj/item/clothing/head/hijab,/obj/item/clothing/head/kippa,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dI" = (/turf/simulated/floor/light,/area/exoplanet/grass)
+"dJ" = (/obj/item/stack/material/cardboard,/turf/simulated/floor/light,/area/exoplanet/grass)
+"dK" = (/obj/item/ammo_magazine/mc9mm,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dL" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dM" = (/obj/structure/campfire,/turf/simulated/floor/light,/area/exoplanet/grass)
+"dN" = (/obj/item/stack/material/cardboard,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dO" = (/obj/item/device/flashlight/lantern,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dP" = (/obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dQ" = (/obj/item/weapon/zipgunframe,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dR" = (/obj/structure/concreteblock,/obj/structure/concreteblock{dir = 8},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dS" = (/obj/structure/anti_tank,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dT" = (/obj/structure/concreteblock{dir = 1},/obj/structure/concreteblock{dir = 4},/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dU" = (/obj/structure/mortar/fixed,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dV" = (/obj/structure/table/standard,/obj/item/weapon/paper,/obj/item/weapon/pen,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dW" = (/obj/item/weapon/storage/fancy/cigarettes/carcinomas,/obj/structure/table/standard,/obj/item/weapon/flame/lighter,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dX" = (/obj/item/weapon/paper/crumpled,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"dY" = (/obj/structure/table/woodentable,/obj/item/device/radio,/obj/item/device/radio,/obj/item/device/radio,/obj/item/weapon/contraband/poster,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"dZ" = (/obj/structure/table/woodentable,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ea" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eb" = (/obj/structure/table/woodentable,/obj/item/weapon/coilgun_assembly,/obj/item/weapon/screwdriver,/obj/item/weapon/tape_roll,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ec" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/pistol/makarov,/obj/item/weapon/gun/projectile/pistol/makarov,/obj/item/weapon/gun/projectile/pistol/makarov,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ed" = (/obj/structure/closet/crate/federalgrenades,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ee" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/box/c45,/obj/item/ammo_magazine/box/c45,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ef" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/obj/item/ammo_magazine/c762,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eg" = (/obj/structure/closet/crate,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/obj/item/ammo_magazine/a762,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eh" = (/obj/structure/closet/crate,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/obj/item/mortal_shell/he,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ei" = (/obj/structure/curtain,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ej" = (/obj/structure/bed,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ek" = (/obj/item/weapon/stool,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"el" = (/obj/effect/decal/cleanable/blood,/obj/structure/bed,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"em" = (/obj/effect/landmark/start{name = "Federal Soldier"},/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"en" = (/obj/structure/table/standard,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eo" = (/obj/item/trash/semki,/obj/item/weapon/stool,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ep" = (/obj/item/weapon/crowbar,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eq" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"er" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/food/snacks/cannedsoup,/obj/item/weapon/reagent_containers/food/snacks/cannedsoup,/obj/item/weapon/reagent_containers/food/snacks/cannedsoup,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"es" = (/obj/structure/table/standard,/obj/item/weapon/material/kitchen/utensil/knife,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"et" = (/obj/structure/table/standard,/obj/item/trash/plate,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eu" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/food/snacks/candy,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ev" = (/obj/structure/closet/crate,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ew" = (/obj/structure/largecrate,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/obj/item/weapon/storage/box/mre_federal,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ex" = (/obj/structure/largecrate,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ey" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"ez" = (/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/item/weapon/gun/projectile/automatic/ak74,/obj/structure/closet/crate,/obj/item/weapon/gun/projectile/automatic/ak74,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eA" = (/obj/item/explosive/mine,/obj/item/explosive/mine,/obj/item/explosive/mine,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eB" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eC" = (/obj/structure/bed,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eD" = (/obj/structure/table/standard,/obj/item/clothing/head/surgery,/obj/item/clothing/gloves/latex/nitrile,/turf/simulated/floor/exoplanet/concrete,/area/exoplanet/grass)
+"eE" = (/obj/item/weapon/shovel,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
+"eF" = (/obj/structure/pit/closed/grave,/turf/simulated/floor/exoplanet/grass,/area/exoplanet/grass)
 
 (1,1,1) = {"
-aaeyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeFeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahahahahahahahahahahahahaheyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahdldedRdpeadMdNdOdPdQefaheyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahbNbNbNbNbNbNbNbNbNbNbNaheyeyeyaa
-aaeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahbNdSbNdSbNehdTdUdVdWdWaheyeyeyaa
-aaeyeyeyeyeyeFeyeyeyeyeFeyeyeyeyeyaceyeyeyaeaeaeaeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybNbNbNbNbNbNbNbNbNbNenbNaheyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybNeadSbNdSbNdXdYdZepebecaheyeyeyaa
-aaeyeyeyeyeyageyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahbNbNetbNetbNbNbNbNbNbNaheyeyeyaa
-aaeyeyeyagagagahagahaiahaheyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybNbNbNetbNetedeeexdYegexaheyeyeyaa
-aaeFeyeyeyahagagagajakalaheyeFeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeybNbNbNetbNetbNbNbNezbNeAaheyeyeyaa
-aaeFeyeyagagagagagamanaoaheyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyafahbNbNetbNetbNbNbNbNbNeiaheyeyeyaa
-aaeyeyeyeyagagagagapaqaqareyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeFeFeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahbNbNetbNetbNbNbNbNeCejaheyeFeyaa
-aaeyeyeyeyahagagagasaqatareyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahekelbNbNbNemeDeoeEeqeraheyeFeyaa
-aaeyaceyeyagagaqaqauavawaheyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyahahahbTahahahahahahahahaheyeyeyaa
-aaeyeyeyagahaxahahahaharaheyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeFeFeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyayayayayeyaceyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeFeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeFeyeyeyeyeyeyaceyeyeyeyazeyeyaAaBeyaBeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeybcbcbcbcbcbceyeyeyeFeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCaCaDaEaCaCeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeFeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCaFaGaHaIaCeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyazeyaCaJaKaLaMaNeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyazeyaCaKaOaPaQaCeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyazeyaCaRaSaSaTaCeyeybeeyeyeyeyeyeFeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyazeyaCaSaSaUaVaCeyeybeeyeyeyeyeyeFeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCaKaMaWaXaCeyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyazeyaCaYaZbabbaCeyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCbfaCaCaCaCeyeybeeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeybgbgeyeyeyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybhbieybjeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeFeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybkbieyeyeybjeyeybieyeyeyeyeyaeaeaeaeaeaeaeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeFeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybheyeybjeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyadeyaceyeyeyaa
-aaeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybieybDeyeybibjeybDeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybjeyeyeyeybheyeybjeyeybieyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeFeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeybjeyeybjeyeyeyeybheyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeybdeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybieyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeybHeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeybieyeybjeyeyeyeyeyeyeyeyeyeyeyeyeybIaAeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyaceyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyblblbmblbnbleyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyblaSbobpbqbleyaceyeyeyadeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyblblaNblblblblblblbrblblblblbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyaceyeyeyblaSbabaaSbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyblbsbtbubvblaHaQaQaQaQbwaHaHbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyayayayayayayayayayayayayayeyeyeyeyeyeyblaQaSaSbxbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyblbyaqbzaqblaQaQbAbBbCaQaQaQbleyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabcmeyeyeyeyeyeyeyeyeyeyeyeyeyazeyeyeyeyeFblbEaQaSbFbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyblaqaqaqaqblaQaQbGbGbGaQaSaQbleyeybeeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeycmeycyeyeycyeyeycyeyeycyeyeyazeyeyczeyeyblaQaQaQbJbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyblaqbKaqaqbLaQaSbGbGbGaQaQaSbleyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmeyeyeyeyeyeyeyeyeyeyeyeyeyazeyeyeyeyeyblbMaQaQaQbleybNbNbOeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyaCaCaCeyeyeyaDbPbyaqaqblaQaQbQbRbSaQaQaSaNeyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmeycyeyeycyeyeycyeyeycyeyeyazeyeyeyeyeyaNaSaQaQaSblblblbTblbleyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyaCbUaCeyeyeyblbVaqbWaqbXaQaQaSaQaQaQaSbwbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmeyeyeyeyeyeyeyeyeyeycAeyeyazeyeyeyeyeyblaQaQaQbaaQblbYbZcableyeyeFeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCcbaCeyabeyblcccdcecfblcgaQaQaQaQaQbwchbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmeycyeyeycyeyeycyeyeycyeyeyazeyeyeyeyeyblciaSbaaSaScjckckclbleyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyaCbfaCcBeyeyblblaDblblblblblblcnblblblblbleyeyeFeyeyabeyeyeyeyeyeyeFeyeyabeyeyeycmeyeyeyeyeyeyeyeyeyeyeyeyeyazeyeyeyeyeyblbJcobxaScpblcqckcrbleyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycscscseyeyeyeyaAeyeyeyblctbwaQaQaQcuaQcvbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmeFeyeyeyeyeyeyeyeyeyeyeyeyazeyeyeyeyeyblblblblaNblblblblblbleyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycscseyeyeyeyeyeyeyeyblaQaSaQaQaQaQaScwbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmeyeyeyeyeyeyeyeyeyeyeyeyacazeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycscscseyeyeyeyeyeyeyblaQaQaQaSbwaQaQcxbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycmcCeyeyeyeyeyeyeycVcWcXcYeyazeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycscscscscseyeyaceyblaQaQcDaScEaQaQcFbleyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyayayayayeyeyeyeyayayayayayeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyaceyeyeyeyeyeyeyeFeyeyeyeyabeycscscscscscscseyblblblblbTblblblblbleyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybgbgeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeycscscscscscseycGbNbNbNbNeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycscscseyeybNbNbNeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybcbcbcbcbcbcbcbcbceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-cHeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyaa
-aaeyeyeyeyeyabeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybcbcbcbcbcbcbceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeFeyeyeyeyeyeyeyeyeyeFeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeFeyeyeyaa
-aaeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyabeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaeaeaeaeaeeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyaCcIcIaCaCaCcIcIaCeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyaCcIbNbNbNcJbNbNcKeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCcIbNcLbNbNcMbNaCeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyaa
-aaaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycIcIbNbNcNcObNbNcIeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCcPbNcNcQcRbNcIcIeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCbNbNbNcRcSbNcTaCeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycIcIcIcIbNcIcUcIaCeyeyeFeyeyeyeyeyeyeyeyeyeyeyabeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeycZaeaeaeaeaeaeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaCaCaCcIaCcIaCaCaCeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeFeyeyeyeyeyeyeyeyabeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyaa
-aaeyeyeydaeyeydaeyeydaeyeydaeyeydaeyeydaeyeydaeyeydaeyeydaeyeydaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaabeyeybcbcbcbcbcbcbcbcbceyeyeybcbcbcbcbcbcbcbcbcbceyeyeydbeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeydceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeydcbeeydaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyaceyeyeyeyeyeyeyaceyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybeeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeydddfeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeybdeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeydKblblblblblblbleyeyeyblblblblblblbleyeyeyblblblblblbeeydaeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyaa
-aaeyeyeybldgdhdidjdkblbNbNbNbleudmdndoevbleyeyeydqbNbNdrblbeeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeybNbNbNdsbNblbNbNbNblbNbNbNbNbNeyeyeyeyblbNbNdtblbeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeBeBeBeBeBbNbNbNbNbNeBeBeBeBeBeyeyeyeyblbNbNdublbeeydaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeydsdsdsdvbNbNbNbNbNbNdwbNbNbNbNeyeyeyeyblcPbNdxblbeeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyaa
-aaeyeyeybldydzdAdBdCblbNbNbNbldDdEdFewdGbleyeyeybldHdIdJblbeeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyabeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyaa
-aaeyeyeyblblblblblblblblblblblblblblblblbleyeyeyblblblblblbeeydaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeFeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeybeeyeyeyeydLeseyeseyeseyeseyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyadeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaceyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
-aaeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyeyaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaabacababababababababababababababababababababababababababababababababababababababababacababacababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaabababacabababababacabababababababababababababadabababababababababababababababababababababababababababababababababababababaeababababababababababababababababababababafafafafafafafafafafafafafabababaa
+aaabababababababababababababacabababababababababababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababafagahaiajakalamanaoapaqafabababaa
+aaabababababababababababababababababababababababababababababababababababaeababababababababababababababababababababarabababababababababababababababababababababababababafasasasasasasasasasasasafabababaa
+aaacababababababababababababababababababababababababababababababababababababababababababababababababadababababababababababababababababababababababababababababababababafasatasatasauavawaxayayafabababaa
+aaabababababacababababacabababababaeabababazazazazabababababababababababababababacababababababababababababababababababababababadabababababababababababababababababababasasasasasasasasasasaAasafabababaa
+aaabababababababababababababababababababababababababababacababababababababababababababababababababababababarabababababababababababababababababababababababababababababasakatasatasaBaCaDaEaFaGafabababaa
+aaabababababaHabababababababababababababababababababababababababababababacababababababababacabababababababababababababababababababababababababababababababababababababafasasaIasaIasasasasasasafabababaa
+aaabababaHaHaHafaHafaJafafabababababababababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababababababasasasaIasaIaKaLaMaCaNaMafabababaa
+aaacabababafaHaHaHaOaPaQafabacabababababadababababababababababababababababababababababababababababababababababababababababababababababababababaeabababababababababababasasasaIasaIasasasaRasaSafabababaa
+aaacababaHaHaHaHaHaTaUaVafabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababarabababababaWafasasaIasaIasasasasasaXafabababaa
+aaababababaHaHaHaHaYaZaZbaabababababababababababababababababaeababababababacacabababababacababababababababababababababababababababababababababababababababababababababafasasaIasaIasasasasbbbcafabacabaa
+aaababababafaHaHaHbdaZbebaabababababababababababababacabababaeababababababababababababababababababababababababababababababababababababababababababababababababababababafbfbgasasasbhbibjbkblbmafabacabaa
+aaabaeababaHaHaZaZbnbobpafabababababababababababababababababababababababababababababababababababababababababababababababababababacababababababababababababababababababafafafbqafafafafafafafafafabababaa
+aaabababaHafbrafafafafbaafababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababadababacababababababababababababababaeababababababababababababababababababababababacababadababababababababababababababababababaa
+aaababababababababacacacabababababababababababababababababababababababababababababababababababababbsbsbsbsabaeabababababababababababacabababababababababababababababababababacacabababababababababababaa
+aaababababababababababababababababababababababababababababababababacababacababababababaeababababbtababbubvabbvabababababababababababababaeababababababababababababababababababababababababababababababaa
+aaababababababbwbwbwbwbwbwabababacabababaeabababababababababababababababababababababababababababababbxbxbybzbxbxabababababababababababababababababababababababababababababacababababababacababababababaa
+aaababababababababababababababababababababababababababababaeababababbAabababababababababababababababbxbBbCbDbEbxabababababababababababababababababababababababababababababababababababababababababababaa
+aaababaeababababababababababababababababababababababababababababababbAabababababababababababababbtabbxbFbGbHbIbJabababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababbAabababababababababababababbtabbxbGbKbLbMbxabababababababababababababababababababaeabababababababababababababababababababababababaa
+aaababacababababababababababababababababababababababababababababababbAabababababababababababababbtabbxbNbObObPbxababbQabababababacacababababababababababababababababababababaeababababababababababababaa
+aaabababababababababababababababababababababababababababababababababbAabababababababababababababbtabbxbObObRbSbxababbQabababababacabababacababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababbAabababababababababababababababbxbGbIbTbUbxababbQabababababababababababababababababababadababababababababababababababababababababaa
+aaabababababababababaeabababababababababababababababababababababababbAabababababababababababababbtabbxbVbWbXbYbxababbQababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababbxbZbxbxbxbxababbQabababababacababababababababababababababababababababaeabababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababaeababababababcacaababababbQababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcbccabcdabababababaeabababababababababababababababababababababababababababababaa
+aaababababababababababababacacabababababababababababababababababababababababababababarabababababababababababababababceccabababcdababccabababababazazazazazazazababababababababababababababababababababaa
+aaabacababababababbAabababababababababababababababababababababaeababababababababababababababababababababababababababababababababcbababcdababababababababababababababacababababababababababarabaeabababaa
+aaababababababababbAabababababababababababaeababababababababababababababababababababababababababababababababababababccabcfababcccdabcfababababababababababababababababababababababababababababababababaa
+aaababababababababbAababababababababababababababababababababababababababababababababababababababababababababababcdababababcbababcdababccabababababababababababababababababababababababababababababababaa
+aaababacabababababbAabababababababababababababababababababababababababababababababababababababababababacabababababababcdababcdababababcbabababababababababababababababababababababababababababababababaa
+aaababababababababbAabababababacababababababababababababababababababababababababababababababababababababababababababababababababccababababababababababarabababababababababababababababababababababababaa
+aaababababababababbAababababababababababababababababababababaeababcgabababababababababababababababababababababababababacababccababcdabababababababababababababchbuababababababababababababababababababaa
+aaababababaeabababababadababababababababababababababababababababababababababababababaeababababababababababababababababababababababababababababababababababcicicjcickciabababababababababababababadababaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcibOclcmcnciabaeabababarababababababababababaa
+aaababacabababababababababababababababababacabcicibJcicicicicicicociciciciciababababababababababababababababababababababababababababaeababababababaeabababcibObXbXbOciababababababababababababababababaa
+aaababababababababababababababababacabababababcicpcqcrcscibDbMbMbMbMctbDbDciababababababababababababababababababababbsbsbsbsbsbsbsbsbsbsbsbsbsababababababcibMbObOcuciababababababababababababababababaa
+aaababababababababababababababababababababababcicvaZcwaZcibMbMcxcyczbMbMbMciababbQabababababababababababababababadcAabababababababababababababbtababababaccicBbMbOcCciababababababababababababababababaa
+aaababababababababababababacabababababababababciaZaZaZaZcibMbMcDcDcDbMbObMciababbQababababababababacabababababababcAabcEababcEababcEababcEababbtababcFababcibMbMbMcGciababababababababababababababababaa
+aaababababababababababababababababababababababciaZcHaZaZcIbMbOcDcDcDbMbMbOciababbQababababababababababababababababcAabababababababababababababbtabababababcicJbMbMbMciabasascKababababababababababababaa
+aaabababababadababababababababababbxbxbxabababbycLcvaZaZcibMbMcMcNcObMbMbObJababbQababababababababababababababababcAabcEababcEababcEababcEababbtabababababbJbObMbMbOcicicibqciciabababababababababababaa
+aaababadabababababababababababababbxcPbxabababcicQaZcRaZcSbMbMbObMbMbMbOctciabababababababababababababababababababcAababababababababababcTababbtabababababcibMbMbMbXbMcicUcVcWciababacababababababababaa
+aaababababababababababababababababbxcXbxabadabcicYcZdadbcidcbMbMbMbMbMctddciabababababababababababababababababababcAabcEababcEababcEababcEababbtabababababcidebObXbObOdfdgdgdhciabababababababababababaa
+aaababababababababababababababacabbxbZbxdiababcicibycicicicicicidjciciciciciababacababadababababababacababadabababcAabababababababababababababbtabababababcicGdkcubOdlcidmdgdnciabababababababababababaa
+aaababababababababababababababababdododoababababbuabababcidpctbMbMbMdqbMdrciabababababababababababababababababababcAacababababababababababababbtabababababcicicicibJciciciciciciabababababababababababaa
+aaabababababababababababababababababdodoababababababababcibMbObMbMbMbMbOdsciabababababababababababababababababababcAababababababababababababaebtabababababacabababababababababababababababababababababaa
+aaabababababababababababababababababdododoabababababababcibMbMbMbOctbMbMdtciabababababababababababababababababababcAduabababababababdvdwdxdyabbtabababababababababababababababababababababaeabababababaa
+aaababababababababababababababababababdododododoababaeabcibMbMdzbOdAbMbMdBciababarabababababababababababababababababbsbsbsbsababababbsbsbsbsbsabababababababababarababababababababababababababababababaa
+aaababababaeabababababababacababababadabdododododododoabcicicicibqciciciciciababababababababababababababababababababababcacaabababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababababacabababababababdodododododoabdCasasasasabababababababababacababababababababababababababababababababadabababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababdododoababasasasababababababababababababababababababababababababababababacababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababbwbwbwbwbwbwbwbwbwababababababababababababababababababababababababababababababababababababaa
+dDababababababababababababababababababababababababababababababacababababababababababababababababababababababababababababababababababababababababaeababababababababababababababababababababababababababaa
+aaabababababababababababababababadababababababaeabababababababababababababababacababababababadababababababababababababababababababababababababababababababababababadabababababababababababababababababaa
+aaabababababababababababababababababacababababababababababababacabababababababababababababababababaeababababababababababababababababababababababababababababababacabababababababababababababababacababaa
+aaabababababadabababababacabababababababababababacababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababababababababadababababababababaa
+aaabababababababababababababababababababababababababababababababababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababbwbwbwbwbwbwbwababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababacababababababaeababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababadababababababababababababacababababadabababababababababababababababababababababadabababababababababababababababababababababacababacabababababababababacabababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacabababaa
+aaabacababababababababababababababababababababababababababababababababababababababababababababababababaeababababababababababababababababababaeabababababababaeababababababababaeabababababababababababaa
+aaababababababababababababababababababarabababababababababababababababababababababababababababarababababababababababababababababababababababababababababababababadababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababacabababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababadababababababacabababababababababababababababababababacababababababababaeababababababababababababababababababababababababababababadababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababazazazazazabababaa
+aaababababababababababababababababababababababababadababababababababababababababababababababababababababababababababababababadabababababababababbxdEdEbxbxbxdEdEbxacabababababababababababababababababaa
+aaabababababababababababababababadababababababababababababababababababababababacababababababababababababababababababadabababababababababababababbxdEasasasdFasasdGababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababababadababababababababababababababababababababababababbxdEasdHasasdIasbxababababababababababababababababarabaa
+aaaeababababababababababababababababababababababababababababababaeabababababababababababababababacabababababababababababababababababababababababdEdEasasdJdKasasdEababababababababababababababababababaa
+aaababababababababababababababababababababarababababababababababababababababababababababababababababababababababababababababababababababababababbxdLasdJdMdNasdEdEabababababaeababababababababababababaa
+aaababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbxasasasdNdOasdPbxabababababababacababababababababababaa
+aaabababababababababababadabababababababababababababababababababababababbAabababababababababababababababababababababababababababababababababababdEdEdEdEasdEdQdEbxababacabababababababababababadabababaa
+aaabababababababababababababababababababababababababababababababababababdRazazazazazazabababababababababababababababababababababababababababababbxbxbxdEbxdEbxbxbxababacabababababababababababababababaa
+aaacababababababababababababababababababababababababababababababababadabababababababababababababababababababababababababababababababababadababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababacabababababababababababacabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababababababacababababababababadabababababababababababababababababababababacababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababacababababacababababababababadabababababaeabababababababababababababababaeabababababababababababababababababadabababababababaa
+aaabababdSababdSababdSababdSababdSababdSababdSababdSababdSababdSabababababababababababababababababababababababacababababababababababababababababababababababababababababababababarababababababababababaa
+aaabababababababababababababababababababababababababababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababbAabababababababababababababaa
+aaadababbwbwbwbwbwbwbwbwbwabababbwbwbwbwbwbwbwbwbwbwabababdTabababababababababababababababababababababababababababababababababababababababababababababababababababababababbAabababababababababababababaa
+aaabababdUabababababababababababababababababababababababdUbQabdSabababababababababababababababababababababababababababababacabababababababaeabababababababaeabababababababbAabababababababababababababaa
+aaababababababababababababababababababababababababababababbQababababababababacabababababababaeababababababababababababababababababababababababababababababababababababababbAabababababababababababababaa
+aaababababababababdVdWababababababababababababababababababbQabababababababababababababababababababababababababadababababababababababababababababababababababababababacababbAabababababababababababababaa
+aaababdXciciciciciciciabababciciciciciciciabababcicicicicibQabdSababababababababadababababababababababababababababababababababababababababababababababababababababababababababababababababababacabababaa
+aaabababcidYdZeaebecciasasasciedeeefegehciabababeiasasejcibQabababababadabababababababababacabababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababasasasekasciasasasciasasasasasababababciasaselcibQabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababemememememasasasasasemememememababababciasasencibQabdSababababababababababababababababababababababababababacabababababadababababababababababababababababababadabababababababababababababababaa
+aaababababekekekeoasasasasasasepasasasasababababcidLaseqcibQababababababababababababababababababababababababadabababababababababababababababababababababababababacababababababababababababababababaeabaa
+aaabababciereseteuevciasasasciewexeyezeAciabababcieBeCeDcibQabababacababababababababababababababababababababababababababababababababababababababababababababadabababababababababababababacababababababaa
+aaabababciciciciciciciciciciciciciciciciciabababcicicicicibQabdSababababababababababababababacababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaacabababababababababababababababababababababababababababbQababababeEeFabeFabeFabeFababababababababababababababababababarababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaeabababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

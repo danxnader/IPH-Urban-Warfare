@@ -12,6 +12,15 @@
 
 	allowed_spawns = list("Arrivals Shuttle")
 
+	station_name  = "Dudaevskaya polyana, somewhere near postia"
+	station_short = "Polyana"
+	dock_name     = "Escape Helicopter Marking"
+	boss_name     = "Upper Command"
+	boss_short    = "Command"
+	company_name  = "Land of Postia"
+	company_short = "Postia"
+	system_name = "Postia"
+
 	shuttle_docked_message = "The shuttle has docked."
 	shuttle_leaving_dock = "The shuttle has departed from home dock."
 	shuttle_called_message = "A scheduled transfer shuttle has been sent."
